@@ -162,7 +162,7 @@
                   </div>                    
             </div>
         </div>
-        <div class="swiper-slide swiper-no-swiping">
+        <div class="swiper-slide">
             <div class="za_bg00">
                   <div class="back"><img src="images/back.png" /></div>
                   <div class="tip"><img src="images/btn_pc.png" /></div>
@@ -273,112 +273,100 @@
 <script src="swiper.min.js"></script><!-- Initialize Swiper -->
 <script type="text/javascript">
 $(function () {
-	
+
     var swiperH = new Swiper('.swiper-container-h', {
-	  direction: 'vertical',
-      spaceBetween: 0,
-      pagination: {
-        el: '.swiper-pagination-h',
-        clickable: true,
-      },    
-	  effect: 'coverflow',  
-	  coverflowEffect: {
-       rotate: 40,
-       stretch: 0,
-       depth: 50,
-       modifier: 1,
-       slideShadows : true,
-     },
+        direction: 'vertical',
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination-h',
+            clickable: true,
+        },
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 40,
+            stretch: 0,
+            depth: 50,
+            modifier: 1,
+            slideShadows: true,
+        },
 
-	  on:{
-		slideChange: function() {
-			var activeIndex = swiperH.activeIndex;
-			var previousIndex = swiperH.previousIndex;
-			console.info(activeIndex, previousIndex);
-			if (activeIndex != previousIndex) {
-	
-				switch (activeIndex) {
-					case 0:
-						$(".index_img01").addClass('index_img01_ani');
-						break;
-						
-					case 1:
-						break;
-						
-					case 2:
-						$(".jiantou").addClass('display');
-						break;
-						
-				}
-				
-	
-				switch (previousIndex) {
-					case 0:
-						$(".index_img01").removeClass('index_img01_ani');
-						break;
-						
-					case 1:
-						break;
-												
-					case 2:
-						$(".jiantou").removeClass('display');
-						break;
-												
-				}
-	
-			}
-		}
-	  }
-		
-	  
+        on: {
+            slideChange: function () {
+                var activeIndex = swiperH.activeIndex;
+                var previousIndex = swiperH.previousIndex;
+                if (activeIndex != previousIndex) {
+
+                    switch (activeIndex) {
+                        case 0:
+                            $(".index_img01").addClass('index_img01_ani');
+                            break;
+
+                        case 1:
+                            break;
+
+                        case 2:
+                            $(".jiantou").addClass('display');
+                            break;
+
+                    }
+
+
+                    switch (previousIndex) {
+                        case 0:
+                            $(".index_img01").removeClass('index_img01_ani');
+                            break;
+
+                        case 1:
+                            break;
+
+                        case 2:
+                            $(".jiantou").removeClass('display');
+                            break;
+
+                    }
+
+                }
+            }
+        }
     });
-
 
     var swiperS = new Swiper('.swiper-container-s', {
-      direction: 'vertical',
-      slidesPerView: 'auto',
-      freeMode: true,
-	  nested:true,
-	  //noSwiping : false,
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      mousewheel: true,
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        nested: true,
+        //noSwiping : false,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        mousewheel: true,
     });
-	
+
     var swiperD = new Swiper('.swiper-container-d', {
-      direction: 'vertical',
-      slidesPerView: 'auto',
-      freeMode: true,
-	  nested:true,
-	  //noSwiping : false,
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      mousewheel: true,
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        nested: true,
+        //noSwiping : false,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        mousewheel: true,
     });
 
 
-	$(function(){
-		$('.cir01').click(function(){
-			swiperH.slideTo(1);	
-		});	
-	});
+    $('.cir01').click(function () {
+        swiperH.slideTo(1);
+    });
 
-	$(function(){
-		$('.cir02').click(function(){
-			swiperH.slideTo(2);	
-		});	
-	});
+    $('.cir02').click(function () {
+        swiperH.slideTo(2);
+    });
 
-	$(function(){
-		$('.back').click(function(){
-			swiperH.slideTo(0);	
-		});	
-	});
-
-	//swiperH.slideTo(1);
-
+    $('.back').click(function () {
+        swiperH.slideTo(0);
+    });
+    //swiperH.slideTo(1);
 });
 </script>
 </body>
