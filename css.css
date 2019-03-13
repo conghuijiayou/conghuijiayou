@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,p,ul,li,span{ margin:0; padding:0; font-family:'微软雅黑'; font-size:14px;}
+body{-webkit-overflow-scrolling:touch;overflow-scrolling:touch;}
+li{ list-style:none;}
+h1,h2,h3{ font-weight:300;}
+a img{ border:0 none;}
+a{ text-decoration:none; color:#000;}
+img{ width:100%;}
+
+html, body { position: relative; height: 100%;}
+body { background: #eee; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; color:#000; margin: 0; padding: 0;}
+.swiper-container { /*width: 100%;*/ max-width:640px; height: 100%; margin-left: auto; margin-right: auto;}
+.swiper-slide { height:auto; text-align: center; font-size: 18px; /*background: #fff;*/  /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+
+.jiantou{ width:16%; position:absolute; z-index:100; left:42%; bottom:3%; opacity:1; animation:jiantou 1s ease-in-out 0s infinite; -webkit-animation:jiantou 1s ease-in-out 0s infinite;}
+.jiantou.display{ display:none;}
+
+.za_bg00{ width:100%; height:100%; position:absolute; left:0; top:0; position:absolute; overflow:hidden; background:url(images/bg00.jpg) no-repeat; background-size:100% 100%;}
+
+.box_one{ width:40%; height:auto; margin:0 5% 5%; float:left;}
+.v_tit_box{ position:relative; height:40px; width:70%; padding-left:25%;}
+.v_tit{ width:100%;}
+.v_tit h3{ width:45%; height:35px; line-height:35px; margin-left:5%; box-sizing:border-box; display:block; float:left; background:url(images/slide_btn01.png) no-repeat; background-size:100% 100%; font-size:14px; font-weight:300; color:#fff; text-indent:5px;}
+.v_tit h3.current{ background:url(images/slide_btn02.png) no-repeat; background-size:100% 100%;}
+.v_box{ width:100%; height:80%; position:relative; clear:both;}
+.v_con{ display:none; position:absolute; left:0; top:0; width:100%; height:100%;}
+
+.back{ width:4%; position:absolute; left:2%; top:3%; z-index:200;}
+
+.li_b{ width:100%; height:80%; position:absolute; left: 0; top: 10%; padding-right:3%; box-sizing:border-box;}
+
+.l_img{ margin-bottom:10px;}
+.l_img img{ border:1px solid #eec318; padding:1px;}
+.l_h{}
+
+.tip{ width:10%; position:absolute; right:3%; top:3%;}
+.myname{ width:15%; position:absolute; left:5%; top:10%; animation:myname_ani 0.5s ease-out 0s forwards; opacity:0; font-size:30px;}
+.cir01{ width:30%; position:absolute; right:20%; top:20%; text-align:center; font-size:30px; animation:cir01_ani 0.5s ease-out 0.5s forwards; opacity:0;}
+.cir02{ width:30%; position:absolute; right:20%; top:40%; text-align:center; font-size:30px; animation:cir02_ani 0.5s ease-out 0.5s forwards; opacity:0;}
+
+@keyframes myname_ani{0%{ transform:scale(0.5);}100%{ transform:scale(1); opacity:1;}}
+
+@keyframes cir01_ani{0%{ right:-50%;}100%{ opacity:1;}}
+
+@keyframes cir02_ani{0%{ right:-50%;}100%{ opacity:1;}}
+
+
+@keyframes jiantou{0%{ opacity:0;}100%{}}
+@-webkit-keyframes jiantou{0%{ opacity:0;}100%{}}
+
+.swiper-scrollbar{ background:#333;}
+.swiper-scrollbar-drag{ background:#eec318;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
