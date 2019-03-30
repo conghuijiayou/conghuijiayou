@@ -1,0 +1,161 @@
+body,ul,li,h1,h2,h3,p,div,span{ margin:0; padding:0; font-family:'微软雅黑';}
+li {list-style: none;}
+html, body {position: relative;height: 100%;}
+body {background: #fff;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color:#000;margin: 0;padding: 0;}
+a img{ border:0 none;}
+input,a,select{outline:none;}
+.swiper-container {width: 100%;height: 100%;margin-left: auto;margin-right: auto; position:relative;}
+.swiper-slide { width:100%; height:100%;font-size: 18px;background:#fff; background-size:100% 100%;/* Center slide text vertically */display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex; position:relative;}
+
+.jiantou{ width:6%; position:absolute; z-index:100;  margin-left:-3%; left:50%; bottom:1%;
+	   animation:jiantou 1s ease-in-out 0s infinite;
+	   -webkit-animation:jiantou 1s ease-in-out 0s infinite;}
+.jiantou.display{ display:none;}
+.qiche{ position:absolute; width:20%; margin-left:-10%; left:50%; bottom:5%; z-index:20;}
+.qiche.display{ display:none;}
+
+div img{ width:100%;}
+
+.top_bg{ position:absolute; left:0; top:0; width:100%;}
+.bot_bg{ position:absolute; left:0; top:30%; width:100%;}
+.bot_bgs5{ position:absolute; left:0; top:28%; width:100%;}
+.bot_bgs4{ position:absolute; left:0; top:30%; width:100%;}
+.bot_dian{ position:absolute; right:0; bottom:10%; width:16%;}
+/*01*/
+.p1_img01{ position:absolute; width:60%; right:10%; top:13%;}
+.p1_img02{ position:absolute; left:0; top:18%; left:0; width:40%;}
+.p1_img03{ position:absolute; top:35%; right:4%; width:32%;}
+.p1_img04{ position:absolute; top:56%; left:12%; width:62%;}
+
+.logo01,.logo02,.logo03,.logo04,.logo05{ position:absolute; left:50%; top:2%; width:26%; margin-left:-13%; opacity:1;}
+.logo_ani{animation:logo 1s ease-out 0s backwards; -webkit-animation:logo 1s ease-out 0s backwards;}
+.p1_ani01{animation:p1_ani01 0.8s ease-out 0s backwards; -webkit-animation:p1_ani01 0.8s ease-out 0s backwards;}
+.p1_ani03{animation:p1_ani03 0.8s ease-out 1.4s backwards; -webkit-animation:p1_ani03 0.8s ease-out 1.4s backwards;}
+.p1_ani04{animation:p1_ani04 0.6s ease-out 0.8s backwards; -webkit-animation:p1_ani04 0.6s ease-out 0.8s backwards;}
+
+/*02*/
+.slid_box01{ position:absolute; left:3%; top:48%; width:94%;}
+.slid_topimg{ position:absolute; left:0; top:0; width:100%; z-index:200;}
+.yun{ width:100%; position:absolute; left:0; top:8%;}
+.p2_img01{ position:absolute; left:0; top:26%; width:100%;}
+.p2_img02{ width:15%; position:absolute; right:13%; top:13%;}
+
+.p2_ani01{animation:p2_ani01 0.8s ease-out 0s backwards; -webkit-animation:p2_ani01 0.8s ease-out 0s backwards;}
+.p2_ani02{animation:p2_ani02 0.6s ease-out 0.8s backwards; -webkit-animation:p2_ani02 0.6s ease-out 0.8s backwards;}
+
+/*slider02*/
+.swiper-container02 { height:100%; position:relative; overflow:hidden;}
+.swiper-slide02 { float:left; width:100%; height:100%;}
+.swiper-slide02 .p_box{ position: relative; width:100%; height:100%; line-height:100%; overflow:hidden; margin:0 auto; text-align:center;}
+.swiper-slide02 .p_box img{ width:100%;}
+.swiper-button-next02, .swiper-button-prev02{ width:5%; position:absolute; top:50%; margin-top:-6%; cursor:pointer;}
+.swiper-button-next02 img, .swiper-button-prev02 img{ width:100%;}
+.swiper-button-prev02{ left:1%;}
+.swiper-button-next02{ right:1%;}
+.swiper-wrapper02 { overflow: hidden; position: relative; height:100%;}
+.swiper-wrapper02 > div { float:left;  width:100%; position: relative;}
+/*slider02*/
+
+/*03*/
+.p3_img01{ position:absolute; left:0; top:14%; width:100%; z-index:8;}
+.p3_img02{ position:absolute; left:0; top:23%; width:100%;}
+
+.p3_ani01{animation:p3_ani01 1s ease-out 1s backwards; -webkit-animation:p3_ani01 1s ease-out 1s backwards;}
+.p3_ani02{animation:p3_ani02 0.6s ease-out 2s backwards; -webkit-animation:p3_ani02 0.6s ease-out 2s backwards;}
+
+.slid_body{ position:absolute; left:0; top:40%; width:100%;}
+.mouse{ width:25%; position:absolute; left:15%; bottom:-3%; z-index:10; animation:mouse 1.5s ease-out 0s infinite; -webkit-animation:mouse 1.5s ease-out 0s infinite;}
+.slid_box02{ position:absolute; left:11%; top:8%; width:78%;}
+/*slider01*/
+.swiper-container01 { width:100%; height:auto; position:relative; overflow:hidden;}
+.swiper-slide01 { float:left; width:100%; height:100%;}
+.swiper-slide01 .p_box{ position: relative; width:100%; height:100%; line-height:100%; overflow:hidden; margin:0 auto; text-align:center; background:url(images/img_box.png) no-repeat; background-size:100% 100%;}
+.swiper-slide01 .p_box img{ width:100%;}
+.swiper-pagination01{ width: 120px; margin:0 auto; padding: 20px 0; }
+.swiper-pagination-bullet01{ width:10px; height:10px; background:#5a5959; border-radius:100%; float:left; margin:0 5px; display:inline;}
+.swiper-pagination-bullet-active01{ background:#b6b4b4;}
+.swiper-button-next01, .swiper-button-prev01{ width:32px; height:44px; position:absolute; top:50%; margin-top:-22px; cursor:pointer; z-index:100;}
+.swiper-button-next01 img, .swiper-button-prev01 img{ width:100%;}
+.swiper-button-prev01{ left:5px;}
+.swiper-button-next01{ right:5px;}
+.swiper-wrapper01 { overflow: hidden; position: relative; height:100%;}
+.swiper-wrapper01 > div { float:left;  width:100%; position: relative;}
+/*slider01*/
+
+/*04*/
+/*
+.p4_img01{ position:absolute; right:0; top:11%; width:80%;}
+.p4_img02{ width:28%; position:absolute; right:0%; top:34%;}
+.p4_img03{ width:100%; position:absolute; bottom:10%; left:0;}
+.p4_img04{ width:100%; position:absolute; bottom:15%; left:0;}
+.p4_img05{ width:20%; position:absolute; bottom:18%; left:5%; z-index:12;}
+*/
+.p4_img01{ position:absolute; right:0; top:8%; width:100%;}
+.p4_men{ position:absolute; left:0; top:52%; width:33%; z-index:20;}
+.p4_img02{ width:28%; position:absolute; right:5%; top:53%;}
+.p4_img03{ width:100%; position:absolute; bottom:11%; left:0; z-index:10;}
+.p4_img04{ width:90%; position:absolute; bottom:16%; left:10%;}
+.p4_img05{ width:22%; position:absolute; top:34%; right:5%; z-index:12;}
+
+.p4_ani01{animation:p4_ani01 0.8s ease-out 1s backwards; -webkit-animation:p4_ani01 0.8s ease-out 1s backwards;}
+.p4_ani02{animation:p4_ani02 0.8s ease-out 1.8s backwards; -webkit-animation:p4_ani02 0.8s ease-out 1.8s backwards; z-index:15;}
+.p4_ani03{animation:p4_ani03 0.8s ease-out 2.6s backwards; -webkit-animation:p4_ani03 0.8s ease-out 2.6s backwards; z-index:10;}
+.p4_ani04{animation:p4_ani04 0.8s ease-out 3s backwards; -webkit-animation:p4_ani04 0.8s ease-out 3s backwards; z-index:20;}
+
+/*05*/
+.slider_s{ position:absolute; width:70%; left:15%; top:10%;}
+.v_box{ width:100%; position:relative;}
+.v_cons{ width:100%; background:#fff; border:1px solid #ccc; box-shadow:0 0 5px #ccc; -webkit-box-shadow:0 0 5px #ccc; padding:6px; box-sizing:border-box; position:absolute; left:0; top:0; overflow:hidden}
+.v_con{ width:100%; background:#fff; border:1px solid #ccc; box-shadow:0 0 5px #ccc; -webkit-box-shadow:0 0 5px #ccc; display:none; padding:6px; box-sizing:border-box; overflow:hidden;}
+.v_tit{ position:absolute; left:0; top:102%; width:100%;}
+.v_tit h3{ width:50%; background:url(images/btn_bg_on.png) no-repeat; background-size:100% 100%;}
+.v_tit h3.current{ background:url(images/btn_bg.png) no-repeat; background-size:100% 100%;}
+.v_tit h3.fl{ float:left; margin-left:-18px;}
+.v_tit h3.fr{ float:right;}
+.inp_box{ position:absolute; bottom:2%; width:56%; left:22%; background:#fff; box-sizing:border-box; padding:5px;}
+.inp_li{ width:100%; background:#fff5f9; border-radius:5px; -webkit-border-radius:5px; box-shadow:2px 2px 2px #ccc inset; -webkit-box-shadow:2px 2px 2px #ccc inset; margin-bottom:6px;}
+.inp_li input{ background:none; border:none; padding:6px 10px; width:100%; box-sizing:border-box; font-family:'微软雅黑'; color:#666;}
+.go{ width:100%;}
+
+.inp_li select{ background:none; border:0 none; width:100%; padding:6px 7px; box-sizing:border-box; font-family:'微软雅黑'; color:#aaa;}
+.inp_li option{ font-family:'微软雅黑';}
+
+.tip{ position: absolute; z-index: 100; display: none; left: 0; top: 0; width: 100%; height: 100%; background: #000; background: rgba(0,0,0,0.8); }
+.close{ width: 5%; position: absolute; right: 17%; top: 20%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

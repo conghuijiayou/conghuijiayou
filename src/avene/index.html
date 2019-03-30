@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>雅漾</title>
+<meta name="description" content="雅漾">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="pixastic.js"></script>
+<script type="text/javascript" src="pixastic.effects.js"></script>
+<script type="text/javascript" src="pixastic.worker.js"></script>
+<script type="text/javascript" src="html2canvas.js"></script>
+<script type="text/javascript" src="load-image.all.min.js"></script>
+<!-- Initialize Swiper -->
+<link href="swiper.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="swiper.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<link type="text/css" rel="stylesheet" href="css.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51787134-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+var id = 0;
+$(function() {
+    $('#photo').hide();
+    $('.y_select').click(function() {
+        $('#photo').click();
+    });
+    $('.y_box').click(function() {
+        $('#photo').click();
+    });
+
+    $('.mask_img_s').hide();
+    $('.set_ok').css('opacity', '0.5');
+    // $('.ok_image').hide();
+    $('#photo').on('change', function(e) {
+        $('.set_ok').css('opacity', '1').attr('ok', 'ok');
+        $('.mask_img').hide();
+        $('.mask_img_s').show();
+        $('.ok_image', '.cvs').remove();
+        // $('.ok_image').attr('src', URL.createObjectURL(this.files[0])).show();
+        loadImage(e.target.files[0], function(img) {
+            $(img).addClass('ok_image').addClass('ok_image_one').css({
+                position: 'absolute',
+                height: 'inherit',
+                width: '100%',
+                left: 0,
+                top: '50%',
+                marginTop: $('.cvs .img_box').width() * img.height / img.width / -2 + 'px',
+            }).appendTo('.cvs .img_box p');
+            change();
+        }, {
+            maxWidth: 600,
+            canvas: true,
+            pixelRatio: window.devicePixelRatio,
+            orientation: true
+        });
+    });
+    var brightness = 100;
+    var contrast = 100;
+    var saturate = 100;
+    var step = 5;
+
+    function change() {
+        // var css = 'brightness(' + brightness + '%) contrast(' + contrast + '%) saturate(' + saturate + '%)';
+        // $('.ok_image').css('filter', css).css('-webkit-filter', css);
+        if ($('.ok_image', '.cvs').length === 0) return;
+        var one = $('.ok_image_one', '.cvs').get(0);
+        if ($('.ok_image', '.cvs').length === 1) {
+            $('<canvas />').css({
+                    position: 'absolute',
+                    height: 'inherit',
+                    width: '100%',
+                    left: 0,
+                    top: '50%',
+                    marginTop: $(one).css('margin-top'),
+                })
+                .addClass('ok_image')
+                .addClass('ok_image_two')
+                .appendTo('.cvs .img_box p');
+        }
+        var two = $('.ok_image_two', '.cvs').get(0);
+        two.width = one.width;
+        two.height = one.height;
+        var ctx = two.getContext('2d');
+        ctx.drawImage(one, 0, 0);
+        var P = new Pixastic(ctx);
+        P['brightness']({
+            brightness: (brightness / 100 - 1) * 1,
+            contrast: (contrast / 100 - 1) * 1
+        }).done();
+    }
+    change();
+
+    $('.box_bg').hide();
+
+    $('.set01,.set02,.set03').on('click', function() {
+        $('.box_bg').show();
+        var ok = $(this).attr('ok') !== 'ok';
+        $('.set01,.set02,.set03').attr('ok', '');
+        $(this).attr('ok', ok ? 'ok' : '');
+        brightness = ok ? parseInt($(this).attr('brightness')) : 100;
+        contrast = ok ? parseInt($(this).attr('contrast')) : 100;
+        saturate = ok ? parseInt($(this).attr('saturate')) : 100;
+        change();
+    });
+
+
+    $(".set_ok").click(function() {
+        if ($(this).attr('ok') !== 'ok') return;
+        var src = $('.ok_image_two', '.cvs').get(0);
+        $('.ok_image', '.final').remove();
+        $('<canvas />').css({
+                position: 'absolute',
+                height: 'inherit',
+                width: '100%',
+                left: 0,
+                top: '50%',
+                marginTop: $(src).css('margin-top'),
+            })
+            .addClass('ok_image')
+            .appendTo('.final .img_box p');
+        var dst = $('.ok_image', '.final').get(0);
+        dst.width = src.width;
+        dst.height = src.height;
+        var ctx = dst.getContext('2d');
+        ctx.drawImage(src, 0, 0);
+
+
+        swiper.params.allowSwipeToNext = true;
+        swiper.slideNext();
+
+    });
+
+    $('.p4_tip').hide();
+    $('.p4_btn01').click(function(){
+        // $('.p4_tip').show();    
+        $('.p4_btn01,.p4_btn02').hide();
+        var src = $('.final');
+        var canvas = document.createElement('canvas');
+        //canvas.width = src.width();
+        //canvas.height = src.height();
+		var src = $('.final');
+        var canvas = document.createElement('canvas');
+        canvas.width = src.width()*2;
+        canvas.height = src.height()*2;
+        var ctx = canvas.getContext('2d');
+        ctx.scale(2,2);
+        html2canvas(src.get(0), {
+            canvas: canvas
+        }).then(function(c) {
+			//window.open(c.toDataURL());
+            //$('.p4_btn01,.p4_btn02').show();
+            //在这里写上传图片代码
+			var url = 'http://adsite3.rayli.com.cn/mini2017/avene/avene_saveinfo.php';
+			 $.post(url, {
+				imgdata: c.toDataURL()
+			}).done(function(data) {
+				if(data.res > 0) {          
+					id = data.res;			
+					//跳转到share页面
+					window.location.href = 'share.html?id='+id;
+				} else {
+					alert('网络繁忙，图片未保存成功！');						
+				}
+			}).fail(function(data){ 									
+			});	           
+        });
+    }); 
+    $('.p4_tip_close').click(function(){
+        $('.p4_tip').hide();    
+    });
+});
+</script>
+
+</head>
+
+<body>
+<div class="p4_tip">
+    <div class="p4_tip_close"><img src="images/p4_tip_img.png" /></div>
+</div>
+<div class="swiper-container">
+    <div class="jiantou"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="y_bg">
+				<div class="p1_bg01"><img src="images/p1_bg01.png"></div>
+				<div class="p1_bg02"><img src="images/p1_bg02.png"></div>
+				<div class="p1_bg07"><img src="images/p1_bg07.png"></div>
+                <div class="p1_img03"><img src="images/p1_img03.png"></div>
+				<div class="p1_bg03"><img src="images/p1_bg03.png"></div>
+				<div class="p1_bg04"><img src="images/p1_bg04.png"></div>
+				<div class="p1_bg05"><img src="images/p1_bg05.png"></div>
+				<div class="p1_bg06"><img src="images/p1_bg06.png"></div>
+				<div class="p1_bg08"><img src="images/p1_bg08.png"></div>
+                <div class="p1_bot p1_bot_ani01"><img src="images/p1_img04.png"></div>
+                <div class="p1_logo p1_logo_ani"><img src="images/logo.png"></div>
+                <div class="p1_img01 p1_img01_ani"><img src="images/p1_img01.png"></div>
+                <div class="p1_img02 p1_img02_ani"><img src="images/p1_img02.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="y_bg">
+				<div class="p1_bg01"><img src="images/p1_bg01.png"></div>
+				<div class="p1_bg02"><img src="images/p1_bg02.png"></div>
+				<div class="p1_bg03"><img src="images/p1_bg03.png"></div>
+				<div class="p1_bg04"><img src="images/p1_bg04.png"></div>
+				<div class="p1_bg05"><img src="images/p1_bg05.png"></div>
+                <div class="p1_bg06 p1_bg06_s2"><img src="images/p1_bg06.png"></div>
+				<div class="p1_bg08"><img src="images/p1_bg08.png"></div>
+                <div class="p2_bot"><img src="images/p1_img04.png"></div>
+                <div class="p2_logo"><img src="images/logo.png"></div>
+                <div class="p2_img01"><img src="images/p2_img01.png"></div>
+                <div class="p2_img02_line">
+                    <img src="images/p2_img02_line.png">
+                    <div class="p2_img02"><img src="images/p2_img0002.gif"></div>
+                </div>
+                <div class="p2_img03"><img src="images/p2_img03.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="y_bg cvs">
+				<div class="p1_bg01"><img src="images/p1_bg01.png"></div>
+				<div class="p1_bg02"><img src="images/p1_bg02.png"></div>
+				<div class="p1_bg03_s"><img src="images/p1_bg03_s.png"></div>
+				<div class="p1_bg06 p1_bg06_s3"><img src="images/p1_bg06.png"></div>
+				<div class="p1_bg08"><img src="images/p1_bg08.png"></div>
+                <div class="p3_logo"><img src="images/logo.png"></div>
+                <div class="p3_img01"><img src="images/p3_img01.png"></div>
+                
+            
+            	<div class="y_line">
+                	<img src="images/p3_img02.png">
+                    <div class="y_box">
+                        <img class="mask_img_s" src="images/p3_img03_s1.png">
+                        <img class="mask_img" src="images/p3_img031.png">
+                        <div class="img_box"><p><!-- <img class="ok_image" src="" /> --></p></div>
+                        <div class="box_bg"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="btn_group">
+                <div class="set01_s"><img src="images/p3_btn02_s.png"></div>
+                <div class="set02_s"><img src="images/p3_btn03_s.png"></div>
+                <div class="set03_s"><img src="images/p3_btn04_s.png"></div>
+                <div class="y_select"><img src="images/p3_btn01.png"></div>
+                <input type="file" name="photo" id="photo" accept="image/*" /><br /><br /><br />
+                <a href="javascript:void(0);" class="set01" brightness="105" contrast="103" saturate="103"><img src="images/p3_btn02.png"></a>
+                <a href="javascript:void(0);" class="set02" brightness="110" contrast="104" saturate="104"><img src="images/p3_btn03.png"></a>
+                <a href="javascript:void(0);" class="set03" brightness="118" contrast="105" saturate="104"><img src="images/p3_btn04.png"></a>
+                <div class="set_ok"><img src="images/p3_btn05.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="y_bg final">
+                <div class="p1_bg01"><img src="images/p1_bg01.png"></div>
+                <div class="p1_bg02"><img src="images/p1_bg02.png"></div>
+                <div class="p1_bg07"><img src="images/p1_bg07.png"></div>
+                <div class="p1_bg03_s"><img src="images/p1_bg03_s.png"></div>
+                <div class="p1_bg04"><img src="images/p1_bg04.png"></div>
+                <div class="p1_bg05 p1_bg05_s"><img src="images/p1_bg05.png"></div>
+                <div class="p1_bg06 p1_bg06_s4"><img src="images/p1_bg06.png"></div>
+                <div class="p1_bg08"><img src="images/p1_bg08.png"></div>
+                <div class="p4_logo"><img src="images/logo.png"></div>
+                <div class="p4_img01"><img src="images/p4_img01.png"></div>
+                
+                <div class="y_line y_top">
+                    <img src="images/p3_img02.png">
+                    <div class="y_box">
+                        <img class="mask_img_s" src="images/p3_img03_s1.png">
+                        <img class="mask_img" src="images/p3_img031.png">
+                        <div class="img_box"><p><!-- <img class="ok_image" src="" /> --></p></div>
+                        <div class="box_bg"></div>
+                    </div>
+                    <div class="y_box2">
+                        <img class="mask_img_bg" src="images/p3_img03_bg.png">
+                    </div>
+                </div>
+                
+                <!--<div class="p4_img03"><img src="images/p4_img03.png"></div>-->
+                <div class="p4_btn01"><img src="images/p4_btn01_1.png"></div>
+                <div class="p4_btn02"><a href="http://weixin.eau-thermale-avene.cn/Mulberry/campaign/Avene_authInit?state=1__19__1008" target="_blank"><img src="images/p4_btn02_g.png"></a></div>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+var swiper = new Swiper('.swiper-container', {
+	
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 0,
+    mousewheelControl: true,
+    onlyExternal: false, //禁止
+
+    onSlideChangeStart: function() {
+        var activeIndex = swiper.activeIndex;
+        var previousIndex = swiper.previousIndex;
+        if (activeIndex != previousIndex) {
+
+            switch (activeIndex) {
+                case 0:
+					$(".p1_logo").addClass("p1_logo_ani");
+					$(".p1_bot").addClass("p1_bot_ani01");
+					$(".p1_img01").addClass("p1_img01_ani");
+					$(".p1_img02").addClass("p1_img02_ani");
+					$(".p1_img03").addClass("p1_img03_ani");
+                    break;
+					
+                case 1:
+					$(".p2_logo").addClass("p2_logo_ani");
+					$(".p2_bot").addClass("p2_bot_ani02");
+					$(".p2_img01").addClass("p2_img01_ani");
+					$(".p2_img02").addClass("p2_img02_ani");
+					$(".p2_img03").addClass("p2_img03_ani");
+                    break;
+					
+                case 2:
+					$(".p3_logo").addClass("p3_logo_ani");
+					$(".p3_img01").addClass("p3_img01_ani");
+					
+					swiper.params.allowSwipeToNext = false;
+                    break;
+					
+                case 3:
+					$(".p4_logo").addClass("p4_logo_ani");
+					$(".p4_img01").addClass("p4_img01_ani");
+					$(".p4_img02").addClass("p4_img02_ani");
+					$(".p4_img03").addClass("p4_img03_ani");
+                    $(".jiantou").addClass('display');
+                    break;
+					
+            }
+			
+			$(".swiper-wrapper .swiper-slide").eq(previousIndex).find("video").each(function(index, element) {
+                    element.pause();
+            });
+
+            switch (previousIndex) {
+                case 0:
+					$(".p1_logo").removeClass("p1_logo_ani");
+					$(".p1_bot").removeClass("p1_bot_ani01");
+					$(".p1_img01").removeClass("p1_img01_ani");
+					$(".p1_img02").removeClass("p1_img02_ani");
+					$(".p1_img03").removeClass("p1_img03_ani");
+                    break;
+					
+                case 1:
+					$(".p2_logo").removeClass("p2_logo_ani");
+					$(".p2_bot").removeClass("p2_bot_ani02");
+					$(".p2_img01").removeClass("p2_img01_ani");
+					$(".p2_img02").removeClass("p2_img02_ani");
+					$(".p2_img03").removeClass("p2_img03_ani");
+                    break;
+					
+                case 2:
+					$(".p3_logo").removeClass("p3_logo_ani");
+					$(".p3_img01").removeClass("p3_img01_ani");
+					
+					swiper.params.allowSwipeToNext = true;
+                    break;
+					
+                case 3:
+					$(".p4_logo").removeClass("p4_logo_ani");
+					$(".p4_img01").removeClass("p4_img01_ani");
+					$(".p4_img02").removeClass("p4_img02_ani");
+					$(".p4_img03").removeClass("p4_img03_ani");
+                    $(".jiantou").removeClass('display');
+                    break;
+					
+            }
+
+        }
+    }
+});
+// swiper.slideTo(2);
+</script>
+<script>
+function getParastrByName(strname) 
+{ 
+   var hrefstr,pos,parastr,para,tempstr; 
+   hrefstr = window.location.href; 
+   pos = hrefstr.indexOf("?"); 
+   parastr = hrefstr.substring(pos+1); 
+   para = parastr.split("&"); 
+   tempstr=""; 
+   for(i=0;i<para.length;i++) 
+   { 
+       tempstr = para[i]; 
+       pos = tempstr.indexOf("="); 
+       if(tempstr.substring(0,pos) == strname) 
+       { 
+          return tempstr.substring(pos+1); 
+       } 
+   } 
+   return null; 
+}
+
+var curUrl = location.href.split('#')[0];
+$.ajax({
+    dataType: 'jsonp',
+    url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+    success: function(wxConfig){     
+        wx.config({ 
+//              debug: true,
+            appId: wxConfig.appId,
+            timestamp: wxConfig.timestamp,
+            nonceStr: wxConfig.nonceStr,
+            signature: wxConfig.signature,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        }); 
+    },
+});      
+    
+// 分享链接
+var index_url = 'http://m.rayli.com.cn/mini/2017/avene/index.html';       
+var img_url = 'http://m.rayli.com.cn/mini/2017/avene/images/share.jpg';
+var g = getParastrByName('r');  
+if(g == null){
+    g = 80;
+} 
+// 分享信息
+var shareInfo = {
+    title: '保持肌龄年轻小秘密 保湿是关键！',  // 分享标题
+    desc : '雅漾，开启敏感肌保湿新纪元',
+    link: index_url, // 分享链接
+    imgUrl: img_url, // 分享图标
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+       
+    }, 
+};
+
+wx.ready(function () {
+    wx.onMenuShareTimeline(shareInfo);      
+    wx.onMenuShareAppMessage(shareInfo);
+    wx.onMenuShareQQ(shareInfo);
+    wx.onMenuShareWeibo(shareInfo);
+});
+
+wx.error(function (res) {
+    alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+
+</body>
+
+</html>

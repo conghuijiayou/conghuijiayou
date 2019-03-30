@@ -1,0 +1,847 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>猫系女友撩汉攻略！瑞丽网|Rayli.com.cn</title>
+<meta name="description" content="猫系女友撩汉攻略！">
+<meta name="author" content="情人节">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<link type="text/css" rel="stylesheet" href="css.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51787134-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+</script>
+<style type="text/css">
+    #musicControl { position:fixed;right:2%;top:2%;display:inline-block;z-index:99999999; }
+    #musicControl a { display:inline-block;width:29px;height:29px; background:url(images/mcbg.png) no-repeat 0 0; background-size:100%;}
+    #musicControl a audio{width:100%;}
+    #musicControl a.stop { background-position:left bottom; }
+	
+    #musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.2s linear infinite;}
+    #music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+@-webkit-keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+
+/*播放音乐结束*/
+
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+	
+	
+    $(function () {
+        $('audio,video').on('play', function() {
+            $('audio,video').not(this).each(function(i, e) {
+                e.pause();
+            });
+        });
+        $('video').on('pause', function() {
+            $('audio').each(function(i, e) {
+                e.play();
+            });
+        });
+        $('#musicfx').on('play', function () {
+            $('#mc_play').attr('class','on');
+        }).on('pause', function () {
+            $('#mc_play').attr('class','stop');
+        });
+    });	
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('musicfx').play(); 
+    }, false);
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.pro_tip_all').hide();	
+	$('.ww').click(function(){
+		var i = $(this).index() - 2;
+		$('.pro_tip_all').eq(i).fadeIn();	
+	});
+	$('.pro_close').click(function(){
+		$('.pro_tip_all').fadeOut();	
+	});
+});
+$(function(){
+	$('.pro_tip_all02').hide();	
+	$('.ww02').click(function(){
+		var i = $(this).index() - 3;
+		$('.pro_tip_all02').eq(i).fadeIn();	
+	});
+	$('.pro_close02').click(function(){
+		$('.pro_tip_all02').fadeOut();	
+	});
+});
+</script>
+
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<!--<span id="musicControl">
+    <a id="mc_play" class="on" onclick="play_music()">
+        <audio id="musicfx" loop autoplay="autoplay"><source src="images/music.mp3" type="audio/mpeg"></audio>
+    </a>
+</span>
+-->
+<!--嵌入音乐结束 -->
+
+<!-- Swiper -->
+<div class="share_bg"><img src="images/share_img.png" /></div>
+<div class="swiper-container swiper-container-h">
+    <div class="jiantou"><img src="images/jiantou.png" /></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p0_qiu01 p0_qiu01_ani"><img src="images/qiu01.png" /></div>
+                <div class="qiu03 p0_qiu03 p0_qiu03_ani"><img src="images/qiu03.png" /></div>
+                <div class="p0_img01"><img src="images/p0_img01.png" /></div>
+                <div class="p0_img02 p0_img02_ani"><img src="images/p0_img02.png" /></div>
+                <div class="qiu02 p0_qiu02 p0_qiu02_ani"><img src="images/qiu02.png" /></div>
+                <div class="p0_img03 p0_img03_ani"><img src="images/p0_img03.png" /></div>
+                <div class="p0_img05 p0_img05_ani"><img src="images/p0_img05.png" /></div>
+                <div class="p0_img04 p0_img04_ani"><img src="images/p0_img04.png" /></div>
+                <div class="p0_img06"><img src="images/p0_img06.png" /></div>
+                <div class="p0_line"><img src="images/p0_line.png" /></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p1_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p1_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p1_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p1_t"><img src="images/tit01.png" /></div>
+                <div class="ga_img01 p1_img01"><img src="images/p1_img01.png" /></div>
+                <div class="ga_img02 p1_img02"><img src="images/p1_img02.png" /></div>
+                <div class="ga_img03 p1_img03"><img src="images/p1_img03.png" /></div>
+                <div class="ga_img04 p1_img04"><img src="images/p1_img04.png" /></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p2_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p2_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p2_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p2_t"><img src="images/tit01.png" /></div>
+                <div class="ga_img01 p2_img01"><img src="images/p2_img01.png" /></div>
+                <div class="ga_img02 p2_img02"><img src="images/p2_img02.png" /></div>
+                <div class="ga_img03 p2_img03"><img src="images/p2_img03.png" /></div>
+                <div class="ga_img04 p2_img04"><img src="images/p2_img04.png" /></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p3_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p3_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p3_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p3_t"><img src="images/tit01.png" /></div>
+                <div class="ga_img01 p3_img01"><img src="images/p3_img01.png" /></div>
+                <div class="ga_img02 p3_img02"><img src="images/p3_img02.png" /></div>
+                <div class="ga_img03 p3_img03"><img src="images/p3_img03.png" /></div>
+                <div class="ga_img04 p3_img04"><img src="images/p3_img04.png" /></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p4_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p4_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p4_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p4_t"><img src="images/tit02.png" /></div>
+                <div class="gb_img01 p4_img01"><img src="images/p4_img01.png" /></div>
+                <div class="gb_img02 p4_img02"><img src="images/p4_img02.png" /></div>
+                <div class="gb_img03 p4_img03">
+					<img src="images/p4_img03.png" />
+					<div class="gb_img04 p4_img04"><img src="images/p4_img04.png" /></div>
+					<div class="gb_img05 p4_img05"><img src="images/p4_img05.png" /></div>
+					<div class="gb_img06 p4_img06"><img src="images/p4_img06.png" /></div>
+				</div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p5_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p5_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p5_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p5_t"><img src="images/tit02.png" /></div>
+                <div class="gb_img01 p5_img01"><img src="images/p5_img01.png" /></div>
+                <div class="gb_img02 p5_img02"><img src="images/p5_img02.png" /></div>
+                <div class="gb_img03 p5_img03">
+					<img src="images/p5_img03.png" />
+					<div class="gb_img04 p5_img04"><img src="images/p5_img04.png" /></div>
+					<div class="gb_img05 p5_img05"><img src="images/p5_img05.png" /></div>
+					<div class="gb_img06 p5_img06"><img src="images/p5_img06.png" /></div>
+				</div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p6_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p6_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p6_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p6_t"><img src="images/tit02.png" /></div>
+                <div class="gb_img01 p6_img01"><img src="images/p6_img01.png" /></div>
+                <div class="gb_img02 p6_img02"><img src="images/p6_img02.png" /></div>
+                <div class="gb_img03 p6_img03">
+					<img src="images/p6_img03.png" />
+					<div class="gb_img04 gb_z4 p6_img04"><img src="images/p6_img04.png" /></div>
+					<div class="gb_img05 gb_z5 p6_img05"><img src="images/p6_img05.png" /></div>				
+				</div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p7_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p7_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p7_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p7_t"><img src="images/tit03.png" /></div>
+                <div class="p_cirbg"><img src="images/p_cirbg.png" /></div>
+                <div class="p7_txt"><img src="images/p7_txt.png" /></div>
+                <div class="p7_img01"><img src="images/p7_img01.png" /></div>
+                <div class="p7_img02"><img src="images/p7_img02.png" /></div>
+                <div class="p7_img03"><img src="images/p7_img03.png" /></div>
+                <div class="p7_img04"><img src="images/p7_img04.png" /></div>
+                <div class="p7_img05"><img src="images/p7_img05.png" /></div>
+                
+                <div class="btn_box a7 x01">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                        <div class="tip_txt">SURRATT BEAUTY 迷你彩妆盘（色号：4）$90</div>
+                    </div>
+                </div>             
+                <div class="btn_box a7 x02">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con wid n02">
+                    	<div class="tip_tit">MENOW美诺幸运小角唇膏</div>
+                        <div class="tip_txt">即将到来的情人节，你准备好了吗？无论是恋爱中的仙女还是单身中的女王，如此特别的日子不妨用完美的唇色来开启恋爱的篇章吧！为迎接这一有爱的日子，MENOW美诺特别推出情人节定制礼盒——幸运小角唇膏·挚爱限量款，永生玫瑰+口红的黄金组合，让浪漫升值，让爱情升温。幸运小角唇膏是美诺20周年纪念款，联手意大利知名艺术家共同打造，是彩妆也是饰品，8大时尚色号高调显色，吸睛力十足，助你成为人群中最耀眼的girl。膏体富含玻尿酸、角鲨烷等多种护肤成分，可有效淡化双唇，让双唇时刻水润饱满，让TA忍不住想要亲吻下去！</div>
+                    </div>
+                </div>
+                <div class="btn_box a7 x03">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n02">
+                        <div class="tip_txt">戴森Supersonic™金色臻选礼盒版吹风机</div>
+                    </div>
+                </div>
+                <div class="btn_box a7 x04">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                        <div class="tip_txt">CHARLOTTE TILBURY 青春亮彩高光腮红两用盘（色号：Seduce Beauty）</div>
+                    </div>
+                </div>
+                <div class="btn_box a7 x05">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                    	<div class="tip_tit">美迪若雅保湿紧致面膜</div>
+                        <div class="tip_txt">这款碳酸面膜可以一次性改善各种肌肤问题，抗衰老，淡化细纹，紧致焕颜，又被称为“PS面膜”</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p8_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p8_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p8_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p8_t"><img src="images/tit03.png" /></div>
+                <div class="p_cirbg"><img src="images/p_cirbg.png" /></div>
+                <div class="p8_txt"><img src="images/p8_txt.png" /></div>
+                <div class="p8_img01"><img src="images/p8_img01.png" /></div>
+                <div class="p8_img02"><img src="images/p8_img02.png" /></div>
+                <div class="p8_img03"><img src="images/p8_img03.png" /></div>
+                <div class="p8_img04"><img src="images/p8_img04.png" /></div>
+                <div class="p8_img05"><img src="images/p8_img05.png" /></div>
+                <div class="btn_box a8 x06">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                        <div class="tip_txt">HELMUT LANGlogo 印花连帽衫</div>
+                    </div>
+                </div>
+                <div class="btn_box a8 x07">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                        <div class="tip_txt">ROBERT RODRIGUEZ STUDIO 花卉印花连衣裙</div>
+                    </div>
+                </div>
+                <div class="btn_box a8 x08">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n02">
+                        <div class="tip_txt">MACGRAW Daisy Chain<br />百褶设计短裙</div>
+                    </div>
+                </div>
+                <div class="btn_box a8 x09">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                        <div class="tip_txt">BALMAIN排扣粗花呢短裤</div>
+                    </div>
+                </div>
+                <div class="btn_box a8 x10">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n02">
+                        <div class="tip_txt">LOEWE蕾丝不对称衬衫</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p9_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="qiu04 p9_qiu02"><img src="images/qiu04.png" /></div>
+                <div class="qiu05 p9_qiu03"><img src="images/qiu05.png" /></div>
+                <div class="p1_tit p9_t"><img src="images/tit03.png" /></div>
+                <div class="p_cirbg"><img src="images/p_cirbg.png" /></div>
+                <div class="p9_txt"><img src="images/p9_txt.png" /></div>
+                <div class="p9_img01"><img src="images/p9_img01.png" /></div>
+                <div class="p9_img02"><img src="images/p9_img02.png" /></div>
+                <div class="p9_img03"><img src="images/p9_img03.png" /></div>
+                <div class="btn_box a9 x11">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                    	<div class="tip_tit">GIVENCHYGV3 Nano<br />山羊皮单肩包</div>
+                        <div class="tip_txt">红色包包性感妩媚，代表着火热的感情郁郁升温，不需要花哨的设计，小巧便携就是最好的。</div>
+                    </div>
+                </div>
+                <div class="btn_box a9 x12">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n02">
+                    	<div class="tip_tit">ULYSSE NARDINClassico<br />鎏金腕表</div>
+                        <div class="tip_txt">腕表是女人味的代表，充满气质的体现。简约银色款凸显大气。</div>
+                    </div>
+                </div>
+                <div class="btn_box a9 x13">
+                	<div class="btn_click"><img src="images/btn_click.png" /></div>
+                    <div class="btn_con n01">
+                    	<div class="tip_tit">金至尊K’s collection</div>
+                        <div class="tip_txt">金至尊珠宝x Kelly 15周年特别款 - 闪醉钻饰系列「K’s collection」，闪烁碎钻围绕主钻并配以多刻面车花片工艺，有一种加倍放大主钻视觉效果，呈现惊人火彩。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="qiu01 p10_qiu01"><img src="images/qiu01.png" /></div>
+                <div class="p10_img01">
+                	<img src="images/p10_img01.png" />
+                    <div class="p10_img02"><img src="images/p10_img02.png" /></div>
+                    <div class="wish_bor">
+                    	<div class="wish_con">
+                          <div class="swiper-container swiper-container-s">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+								  <div class="wish_txt"></div>
+							  </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                          </div> 
+                        </div>
+                        <div class="wish_box">
+                            <textarea maxlength="100" placeholder="写下我的愿望"></textarea>
+                        </div>
+                    </div>
+                    <div class="p10_btn01"><button type="submit"></button></div>
+                    <div class="p10_btn02"><img src="images/p10_btn02.png" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.p10_btn01').click(function(){
+		if($('textarea').val() == '') return;
+		$('.wish_txt').text($('textarea').val());
+		$('textarea').val('');
+		var swiperS = document.querySelector('.swiper-container-s').swiper;
+		swiperS.update();
+	});
+});
+$(function(){
+	$('.btn_con').hide();
+	$('.btn_box').click(function(e){
+		e.stopPropagation();
+		$(this).children('.btn_con').fadeIn();
+		$(this).siblings('.btn_box').children('.btn_con').fadeOut();	
+	});
+	$(document).on('click', function(){
+		$('.btn_con:visible', '.btn_box').fadeOut();
+	});
+});
+$(function(){
+	$('.share_bg').hide();
+	$('.p10_btn02').click(function(){
+		$('.share_bg').fadeIn();		
+	});	
+	$('.share_bg').click(function(){
+		$(this).fadeOut();		
+	});	
+});
+</script>
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script><!-- Initialize Swiper -->
+<script type="text/javascript">
+$(function () {
+	
+    var swiperH = new Swiper('.swiper-container-h', {
+	  direction: 'vertical',
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination-h',
+        clickable: true,
+      },    
+	  effect: 'coverflow',  
+	  coverflowEffect: {
+       rotate: 40,
+       stretch: 0,
+       depth: 50,
+       modifier: 1,
+       slideShadows : true,
+     },
+
+	  on:{
+		slideChange: function() {
+			var activeIndex = swiperH.activeIndex;
+			var previousIndex = swiperH.previousIndex;
+			console.info(activeIndex, previousIndex);
+			if (activeIndex != previousIndex) {
+	
+				switch (activeIndex) {
+					case 0:
+						$(".index_img01").addClass('index_img01_ani');
+						$(".p0_qiu01").addClass('p0_qiu01_ani');
+						$(".p0_qiu02").addClass('p0_qiu02_ani');
+						$(".p0_qiu03").addClass('p0_qiu03_ani');
+						$(".p0_img02").addClass('p0_img02_ani');
+						$(".p0_img03").addClass('p0_img03_ani');
+						$(".p0_img04").addClass('p0_img04_ani');
+						$(".p0_img05").addClass('p0_img05_ani');
+						
+						break;
+						
+					case 1:
+						$('.p1_qiu01').addClass('p1_qiu01_ani');
+						$('.p1_qiu02').addClass('p1_qiu02_ani');
+						$('.p1_qiu03').addClass('p1_qiu03_ani');
+						$('.p1_t').addClass('p1_t_ani');
+						$('.p1_img01').addClass('p1_img01_ani');
+						$('.p1_img02').addClass('p1_img02_ani');
+						$('.p1_img03').addClass('p1_img03_ani');
+						$('.p1_img04').addClass('p1_img04_ani');
+						break;
+						
+					case 2:
+						$('.p2_qiu01').addClass('p2_qiu01_ani');
+						$('.p2_qiu02').addClass('p2_qiu02_ani');
+						$('.p2_qiu03').addClass('p2_qiu03_ani');
+						$('.p2_t').addClass('p2_t_ani');
+						$('.p2_img01').addClass('p2_img01_ani');
+						$('.p2_img02').addClass('p2_img02_ani');
+						$('.p2_img03').addClass('p2_img03_ani');
+						$('.p2_img04').addClass('p2_img04_ani');
+                        
+						break;
+						
+					case 3:
+						$('.p3_qiu01').addClass('p3_qiu01_ani');
+						$('.p3_qiu02').addClass('p3_qiu02_ani');
+						$('.p3_qiu03').addClass('p3_qiu03_ani');
+						$('.p3_t').addClass('p3_t_ani');
+						$('.p3_img01').addClass('p3_img01_ani');
+						$('.p3_img02').addClass('p3_img02_ani');
+						$('.p3_img03').addClass('p3_img03_ani');
+						$('.p3_img04').addClass('p3_img04_ani');
+                        
+						break;
+						
+					case 4:
+						$('.p4_qiu01').addClass('p4_qiu01_ani');
+						$('.p4_qiu02').addClass('p4_qiu02_ani');
+						$('.p4_qiu03').addClass('p4_qiu03_ani');
+						$('.p4_t').addClass('p4_t_ani');
+						$('.p4_img01').addClass('p4_img01_ani');
+						$('.p4_img02').addClass('p4_img02_ani');
+						$('.p4_img03').addClass('p4_img03_ani');
+						$('.p4_img04').addClass('p4_img04_ani');
+						$('.p4_img05').addClass('p4_img05_ani');
+						$('.p4_img06').addClass('p4_img06_ani');
+                        
+						break;
+						
+					case 5:
+						$('.p5_qiu01').addClass('p5_qiu01_ani');
+						$('.p5_qiu02').addClass('p5_qiu02_ani');
+						$('.p5_qiu03').addClass('p5_qiu03_ani');
+						$('.p5_t').addClass('p5_t_ani');
+						$('.p5_img01').addClass('p5_img01_ani');
+						$('.p5_img02').addClass('p5_img02_ani');
+						$('.p5_img03').addClass('p5_img03_ani');
+						$('.p5_img04').addClass('p5_img04_ani');
+						$('.p5_img05').addClass('p5_img05_ani');
+						$('.p5_img06').addClass('p5_img06_ani');
+                        
+						break;
+						
+					case 6:
+						$('.p6_qiu01').addClass('p6_qiu01_ani');
+						$('.p6_qiu02').addClass('p6_qiu02_ani');
+						$('.p6_qiu03').addClass('p6_qiu03_ani');
+						$('.p6_t').addClass('p6_t_ani');
+						$('.p6_img01').addClass('p6_img01_ani');
+						$('.p6_img02').addClass('p6_img02_ani');
+						$('.p6_img03').addClass('p6_img03_ani');
+						$('.p6_img04').addClass('p6_img04_ani');
+						$('.p6_img05').addClass('p6_img05_ani');
+                        
+						break;
+						
+					case 7:
+						$('.p7_qiu01').addClass('p7_qiu01_ani');
+						$('.p7_qiu02').addClass('p7_qiu02_ani');
+						$('.p7_qiu03').addClass('p7_qiu03_ani');
+						$('.p7_t').addClass('p7_t_ani');
+						$('.p7_txt').addClass('p7_txt_ani');
+						$('.p7_img01').addClass('p7_img01_ani');
+						$('.p7_img02').addClass('p7_img02_ani');
+						$('.p7_img03').addClass('p7_img03_ani');
+						$('.p7_img04').addClass('p7_img04_ani');
+						$('.p7_img05').addClass('p7_img05_ani');
+                        						
+						setTimeout(function(){
+							$('.btn_box.a7').fadeIn();
+						},1000);
+												
+						break;
+						
+					case 8:
+						$('.p8_qiu01').addClass('p8_qiu01_ani');
+						$('.p8_qiu02').addClass('p8_qiu02_ani');
+						$('.p8_qiu03').addClass('p8_qiu03_ani');
+						$('.p8_t').addClass('p8_t_ani');
+						$('.p8_txt').addClass('p8_txt_ani');
+						$('.p8_img01').addClass('p8_img01_ani');
+						$('.p8_img02').addClass('p8_img02_ani');
+						$('.p8_img03').addClass('p8_img03_ani');
+						$('.p8_img04').addClass('p8_img04_ani');
+						$('.p8_img05').addClass('p8_img05_ani');
+                        
+						setTimeout(function(){
+							$('.btn_box.a8').fadeIn();
+						},1000);
+						break;
+						
+					case 9:
+						$('.p9_qiu01').addClass('p9_qiu01_ani');
+						$('.p9_qiu02').addClass('p9_qiu02_ani');
+						$('.p9_qiu03').addClass('p9_qiu03_ani');
+						$('.p9_t').addClass('p9_t_ani');
+						$('.p9_txt').addClass('p9_txt_ani');
+						$('.p9_img01').addClass('p9_img01_ani');
+						$('.p9_img02').addClass('p9_img02_ani');
+						$('.p9_img03').addClass('p9_img03_ani');
+                        
+						setTimeout(function(){
+							$('.btn_box.a9').fadeIn();
+						},1000);
+						break;
+						
+					case 10:
+						$('.p10_qiu01').addClass('p10_qiu01_ani');
+						$('.p10_btn01').addClass('p10_btn01_ani');
+						$('.p10_btn02').addClass('p10_btn02_ani');
+						$('.p10_img01').addClass('p10_img01_ani');
+						$(".jiantou").addClass('display');
+						break;
+				}
+				
+				$(".swiper-wrapper .swiper-slide").eq(previousIndex).find(".btn_con").each(function(index, element) {
+                    $(this).hide();
+            	});
+	
+				switch (previousIndex) {
+					case 0:
+						$(".index_img01").removeClass('index_img01_ani');
+						$(".p0_qiu01").removeClass('p0_qiu01_ani');
+						$(".p0_qiu02").removeClass('p0_qiu02_ani');
+						$(".p0_qiu03").removeClass('p0_qiu03_ani');
+						$(".p0_img02").removeClass('p0_img02_ani');
+						$(".p0_img03").removeClass('p0_img03_ani');
+						$(".p0_img04").removeClass('p0_img04_ani');
+						$(".p0_img05").removeClass('p0_img05_ani');
+						break;
+						
+					case 1:
+						$('.p1_qiu01').removeClass('p1_qiu01_ani');
+						$('.p1_qiu02').removeClass('p1_qiu02_ani');
+						$('.p1_qiu03').removeClass('p1_qiu03_ani');
+						$('.p1_t').removeClass('p1_t_ani');
+						$('.p1_img01').removeClass('p1_img01_ani');
+						$('.p1_img02').removeClass('p1_img02_ani');
+						$('.p1_img03').removeClass('p1_img03_ani');
+						$('.p1_img04').removeClass('p1_img04_ani');
+						break;
+						
+					case 2:
+						$('.p2_qiu01').removeClass('p2_qiu01_ani');
+						$('.p2_qiu02').removeClass('p2_qiu02_ani');
+						$('.p2_qiu03').removeClass('p2_qiu03_ani');
+						$('.p2_t').removeClass('p2_t_ani');
+						$('.p2_img01').removeClass('p2_img01_ani');
+						$('.p2_img02').removeClass('p2_img02_ani');
+						$('.p2_img03').removeClass('p2_img03_ani');
+						$('.p2_img04').removeClass('p2_img04_ani');
+                        
+						break;
+						
+					case 3:
+						$('.p3_qiu01').removeClass('p3_qiu01_ani');
+						$('.p3_qiu02').removeClass('p3_qiu02_ani');
+						$('.p3_qiu03').removeClass('p3_qiu03_ani');
+						$('.p3_t').removeClass('p3_t_ani');
+						$('.p3_img01').removeClass('p3_img01_ani');
+						$('.p3_img02').removeClass('p3_img02_ani');
+						$('.p3_img03').removeClass('p3_img03_ani');
+						$('.p3_img04').removeClass('p3_img04_ani');
+                        
+						break;
+						
+					case 4:
+						$('.p4_qiu01').removeClass('p4_qiu01_ani');
+						$('.p4_qiu02').removeClass('p4_qiu02_ani');
+						$('.p4_qiu03').removeClass('p4_qiu03_ani');
+						$('.p4_t').removeClass('p4_t_ani');
+						$('.p4_img01').removeClass('p4_img01_ani');
+						$('.p4_img02').removeClass('p4_img02_ani');
+						$('.p4_img03').removeClass('p4_img03_ani');
+						$('.p4_img04').removeClass('p4_img04_ani');
+						$('.p4_img05').removeClass('p4_img05_ani');
+						$('.p4_img06').removeClass('p4_img06_ani');
+                        
+						break;
+						
+					case 5:
+						$('.p5_qiu01').removeClass('p5_qiu01_ani');
+						$('.p5_qiu02').removeClass('p5_qiu02_ani');
+						$('.p5_qiu03').removeClass('p5_qiu03_ani');
+						$('.p5_t').removeClass('p5_t_ani');
+						$('.p5_img01').removeClass('p5_img01_ani');
+						$('.p5_img02').removeClass('p5_img02_ani');
+						$('.p5_img03').removeClass('p5_img03_ani');
+						$('.p5_img04').removeClass('p5_img04_ani');
+						$('.p5_img05').removeClass('p5_img05_ani');
+						$('.p5_img06').removeClass('p5_img06_ani');
+                        
+						break;
+						
+					case 6:
+						$('.p6_qiu01').removeClass('p6_qiu01_ani');
+						$('.p6_qiu02').removeClass('p6_qiu02_ani');
+						$('.p6_qiu03').removeClass('p6_qiu03_ani');
+						$('.p6_t').removeClass('p6_t_ani');
+						$('.p6_img01').removeClass('p6_img01_ani');
+						$('.p6_img02').removeClass('p6_img02_ani');
+						$('.p6_img03').removeClass('p6_img03_ani');
+						$('.p6_img04').removeClass('p6_img04_ani');
+						$('.p6_img05').removeClass('p6_img05_ani');
+                        
+						break;
+						
+					case 7:
+						$('.p7_qiu01').removeClass('p7_qiu01_ani');
+						$('.p7_qiu02').removeClass('p7_qiu02_ani');
+						$('.p7_qiu03').removeClass('p7_qiu03_ani');
+						$('.p7_t').removeClass('p7_t_ani');
+						$('.p7_txt').removeClass('p7_txt_ani');
+						$('.p7_img01').removeClass('p7_img01_ani');
+						$('.p7_img02').removeClass('p7_img02_ani');
+						$('.p7_img03').removeClass('p7_img03_ani');
+						$('.p7_img04').removeClass('p7_img04_ani');
+						$('.p7_img05').removeClass('p7_img05_ani');
+                        
+						setTimeout(function(){
+							$('.btn_box.a7').fadeOut();
+						},1000);
+						
+						break;
+						
+					case 8:
+						$('.p8_qiu01').removeClass('p8_qiu01_ani');
+						$('.p8_qiu02').removeClass('p8_qiu02_ani');
+						$('.p8_qiu03').removeClass('p8_qiu03_ani');
+						$('.p8_t').removeClass('p8_t_ani');
+						$('.p8_txt').removeClass('p8_txt_ani');
+						$('.p8_img01').removeClass('p8_img01_ani');
+						$('.p8_img02').removeClass('p8_img02_ani');
+						$('.p8_img03').removeClass('p8_img03_ani');
+						$('.p8_img04').removeClass('p8_img04_ani');
+						$('.p8_img05').removeClass('p8_img05_ani');
+                        
+						setTimeout(function(){
+							$('.btn_box.a8').fadeOut();
+						},1000);
+						
+						break;
+						
+					case 9:
+						$('.p9_qiu01').removeClass('p9_qiu01_ani');
+						$('.p9_qiu02').removeClass('p9_qiu02_ani');
+						$('.p9_qiu03').removeClass('p9_qiu03_ani');
+						$('.p9_t').removeClass('p9_t_ani');
+						$('.p9_txt').removeClass('p9_txt_ani');
+						$('.p9_img01').removeClass('p9_img01_ani');
+						$('.p9_img02').removeClass('p9_img02_ani');
+						$('.p9_img03').removeClass('p9_img03_ani');
+                        
+						setTimeout(function(){
+							$('.btn_box.a9').fadeOut();
+						},1000);
+						
+						break;
+						
+					case 10:
+						$('.p10_qiu01').removeClass('p10_qiu01_ani');
+						$('.p10_btn01').removeClass('p10_btn01_ani');
+						$('.p10_btn02').removeClass('p10_btn02_ani');
+						$('.p10_img01').removeClass('p10_img01_ani');
+						$(".jiantou").removeClass('display');
+						break;
+						
+				}
+	
+			}
+		}
+	  }
+		
+	  
+    });
+	
+    var swiperS = new Swiper('.swiper-container-s', {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      freeMode: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      mousewheel: true,
+    });
+
+	//swiperH.slideTo(7);
+
+});
+</script>
+<script  type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var curUrl = location.href.split('#')[0];
+$.ajax({
+	dataType: 'jsonp',
+	url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+	success: function(wxConfig){ 	 
+		wx.config({ 
+//        		debug: true,
+			appId: wxConfig.appId,
+			timestamp: wxConfig.timestamp,
+			nonceStr: wxConfig.nonceStr,
+			signature: wxConfig.signature,
+			jsApiList: [
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo'
+			]
+		}); 
+	},
+});   	
+// 分享链接_编辑修改以下下两个url和标题描述
+var index_url = 'http://www.rayli.com.cn/zhuanti/fashion/VD';		
+var img_url = 'http://www.rayli.com.cn/zhuanti/fashion/VD/images/share.jpg';
+// 分享信息
+var shareInfo = {
+	title: '猫系女友撩汉攻略！', 	// 分享标题
+	desc : '宋慧乔和帅气的朴宝剑演的《男朋友》迷倒了一众少男少女，之所以能拿下两位男神主要是宋慧乔温柔淑女的形象，简称为猫系女友。',
+	link: index_url, // 分享链接
+	imgUrl: img_url, // 分享图标
+	success: function () { 
+		// 用户确认分享后执行的回调函数
+		alert('分享成功！');	
+	}, 
+};
+wx.ready(function () {
+	wx.onMenuShareTimeline(shareInfo);		
+	wx.onMenuShareAppMessage(shareInfo);
+	wx.onMenuShareQQ(shareInfo);
+	wx.onMenuShareWeibo(shareInfo);
+});
+wx.error(function (res) {
+	alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+</html>

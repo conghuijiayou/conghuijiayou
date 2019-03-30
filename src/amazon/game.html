@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>亚马逊</title>
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="fabric.min.js"></script>
+<script type="text/javascript" src="html2canvas.min.js"></script>
+<link href="swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.swiper-container {width: 100%;height: 100%;margin:0 auto;}
+.swiper-slide {}
+.swiper-slide img{ width:100%;}
+#canvas{ background:#fff;}
+.canvas-container{ position:absolute; left:3%; top:12%;}
+</style>
+<script type="text/javascript" src="http://adsite3.rayli.com.cn/res/js/appJSCallback.js"></script>
+<script>
+var backurl = 'http://m.rayli.com.cn/mini/2016/amazon/code.html';
+</script>
+</head> 
+
+<body>
+<div class="all">
+	<div class="head_top">
+    	<p>创建搭配</p>
+    	<a href="index.html#4" class="back"><img src="images/back.png" /></a>
+        <a class="send" href="#"><img src="images/ok_btn.png" /></a>
+    </div>
+    <canvas id="canvas"></canvas>
+    <a href="#" class="del">删除</a>
+    <div class="tip_box"></div>
+    <div class="img_bg">
+        <span class="img_close"><img src="images/close.png" /></span>     
+        <a class="friend" href="javascript:void(0)"><img src="images/friend.png" /></a>
+        <a class="weixin" href="javascript:void(0)"><img src="images/weixin.png" /></a>
+        <div class="img_box i_box1">
+            <img id="resultimg" />
+            <div class="img_ma">
+                <img src="images/ma_bg.jpg" />
+                <div class="img_ma_box"><img src="images/ma_img.jpg" /></div>
+            </div>
+        </div>
+        <!--<div class="img_box i_box2"><img id="finalimg"></div> -->
+        <div class="tips">
+        	<div class="tips_txt"><img src="images/tip_txt.png" /></div>
+            <div class="tips_btn"><div><img src="images/tip_btn.png" /></div></div>
+        </div>
+    </div>
+
+    <div class="list_bot"> 
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img01.png" /></p></div>
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img02.png" /></p></div>
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img03.png" /></p></div>
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img04.png" /></p></div>
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img05.png" /></p></div>
+                <div class="swiper-slide"><p class="pic"><img src="images/list_img06.png" /></p></div>
+            </div>
+            <!-- Add Pagination -->
+            <!--<div class="swiper-pagination swiper-pagination-v"></div>-->
+        </div>
+    
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit01.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/a1.png" /></div></li>
+                <li><div><img src="images/a2.png" /></div></li>
+                <li><div><img src="images/a3.png" /></div></li>
+                <li><div><img src="images/a4.png" /></div></li>
+                <li><div><img src="images/a5.png" /></div></li>                
+                <li><div><img src="images/a6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit02.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/b1.png" /></div></li>
+                <li><div><img src="images/b2.png" /></div></li>
+                <li><div><img src="images/b3.png" /></div></li>
+                <li><div><img src="images/b4.png" /></div></li>
+                <li><div><img src="images/b5.png" /></div></li>                
+                <li><div><img src="images/b6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit03.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/c1.png" /></div></li>
+                <li><div><img src="images/c2.png" /></div></li>
+                <li><div><img src="images/c3.png" /></div></li>
+                <li><div><img src="images/c4.png" /></div></li>
+                <li><div><img src="images/c5.png" /></div></li>                
+                <li><div><img src="images/c6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit04.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/d1.png" /></div></li>
+                <li><div><img src="images/d2.png" /></div></li>
+                <li><div><img src="images/d3.png" /></div></li>
+                <li><div><img src="images/d4.png" /></div></li>
+                <li><div><img src="images/d5.png" /></div></li>                
+                <li><div><img src="images/d6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit05.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/e1.png" /></div></li>
+                <li><div><img src="images/e2.png" /></div></li>
+                <li><div><img src="images/e3.png" /></div></li>
+                <li><div><img src="images/e4.png" /></div></li>
+                <li><div><img src="images/e5.png" /></div></li>                
+                <li><div><img src="images/e6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="show_box">
+        <span class="close"><img src="images/close.png" /></span>
+        <div class="show_all">
+            <div class="show_tit"><img src="images/sel_tit06.png" /></div>
+            <ul class="show_ul">
+                <li><div><img src="images/f1.png" /></div></li>
+                <li><div><img src="images/f2.png" /></div></li>
+                <li><div><img src="images/f3.png" /></div></li>
+                <li><div><img src="images/f4.png" /></div></li>
+                <li><div><img src="images/f5.png" /></div></li>                
+                <li><div><img src="images/f6.png" /></div></li>                
+            </ul>
+        </div>
+    </div>
+    
+</div>
+
+    <script>
+    $('#canvas').attr({
+        width: $(window).width() * 0.94,
+        height: $(window).height() * 0.6,
+    });
+    var canvas = new fabric.Canvas('canvas', {
+        selection: false
+    });
+	canvas.on('object:selected', function () {
+		if(canvas.getActiveObject()){
+			$('.del').show();
+		}else{
+			$('.del').hide();
+		}
+	}).on('selection:cleared', function () {
+		if(canvas.getActiveObject()){
+			$('.del').show();
+		}else{
+			$('.del').hide();
+		}
+	});
+    $('.pic').click(function(){
+        $('.show_box').eq($(this).parent('.swiper-slide').index()).animate({
+            top:"0",    
+        },200); 
+    }); 
+    $('.close').click(function(){
+        $(this).parents('.show_box').animate({
+            top:"100%", 
+        },200); 
+    });
+
+    $('.show_ul img').on('click', function() {
+        var src = $(this).attr('src');
+        fabric.Image.fromURL(src, function(img) {
+            var scale = 0.5;
+            img.scale(scale).set({
+                left: ($('#canvas').width() - img.width*scale) * 0.5,
+                top: ($('#canvas').height() - img.height*scale) * 0.5,
+                lockUniScaling: true,
+                cornerSize:16,
+                cornerColor:'#999',
+                borderColor:'#999',
+                angle: 0
+            });
+            canvas.add(img).setActiveObject(img);
+			$('.tip_box').hide();
+        });
+		
+		$('.show_box').animate({
+			top:"100%",	
+		},200);	
+		
+    });
+    $('.del').on('click', function () {
+        canvas.remove(canvas.getActiveObject());
+    }).hide();
+
+    $('.send').on('click', function () {
+        if(canvas.getObjects().length == 0){
+            $('.tip_box').show();
+            return;
+        }
+        canvas.deactivateAll().renderAll();
+        $('.img_bg').show();
+        $('.i_box1').show();
+        var data = document.getElementById('canvas').toDataURL();
+        document.getElementById('resultimg').src = data;
+    });
+
+
+    $('.friend,.weixin').on('click', function() {
+    	var friend = $(this).is('.friend');
+    	var canvas = document.createElement('canvas');
+    	canvas.width = $('.i_box1').width()*2;
+    	canvas.height = $('.i_box1').height()*2;
+    	var context = canvas.getContext('2d');
+    	context.scale(1.8,1.7);
+		
+		context.fillStyle = "white";
+		context.fillRect(0, 0, canvas.width, canvas.height);
+        html2canvas($('.i_box1').get(0),{canvas:canvas}).then(function(c) {
+        	//使用函数 c.toDataURL() 取最终生成的base64图片
+            //window.open(c.toDataURL());
+            if(friend){
+            	//朋友圈
+				//shareApp('wxtimeline', 2, '',c.toDataURL(), '', backurl);
+				var url = 'http://adsite3.rayli.com.cn/mini2016/amazon_image/amazon_saveimg.php';
+				 $.post(url, {
+					imgdata: c.toDataURL()
+				}).done(function(data) {
+					if(data.res == '1') {          
+						shareApp('wxtimeline', 2, '',data.msg, '', backurl);
+					} else {						
+					}
+				}).fail(function(data){ 									
+				});		
+				appJSCallback.shareApp('wxtimeline', 2, '',c.toDataURL(), '', backurl);
+            }else{
+            	//微信好友
+				var url = 'http://adsite3.rayli.com.cn/mini2016/amazon_image/amazon_saveimg.php';
+				 $.post(url, {
+					imgdata: c.toDataURL()
+				}).done(function(data) {
+					if(data.res == '1') {          
+						//shareApp('wxsession', 2, '',data.msg, '', backurl);
+						shareApp('wxsession', 2, '',data.msg, '', backurl);
+					} else {						
+					}
+				}).fail(function(data){ 								
+				});		
+				appJSCallback.shareApp('wxsession', 2, '',c.toDataURL(), '', backurl);
+            }
+        });
+
+		var browserName=navigator.userAgent.toLowerCase(); 
+		if(browserName.match(/MicroMessenger/i)=="micromessenger") {  
+			tanchuFenxiang();
+			return;
+		 } else if(/msie/i.test(browserName) && !/opera/.test(browserName)){  
+			tanchuFenxiang();
+			return;
+		 }else if(/firefox/i.test(browserName)){  
+			tanchuFenxiang();
+			return;
+		 }else if(/opera/i.test(browserName)){  
+			tanchuFenxiang();
+			return;
+		 }else if(/chrome/i.test(browserName) && /safari/i.test(browserName) ){
+			return;
+		 }else if(/safari/i.test(browserName)){
+			tanchuFenxiang();
+			return;
+		 }else if(/qq/i.test(browserName)){
+			tanchuFenxiang();
+			return;
+		 }else if(/chrome/i.test(browserName)){
+			return;
+		 }else{
+			return false;
+		 } 			
+    });
+
+    $('.img_close').click(function() {
+        $('.img_bg').hide();
+		//canvas.clear();
+    });
+
+	function tanchuFenxiang()
+	{
+		$('.tips').show();
+		$('.tips_btn').click(function(){
+			$('.tips').hide();	
+		});	
+	}
+
+    </script>
+
+
+    <!-- Swiper JS -->
+    <script src="swiper.min.js"></script>
+   
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+		slidesPerView: 6,
+        paginationClickable: true,
+		freeMode: true,
+		spaceBetween:10,
+    });
+    </script>    
+  
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+function getParastrByName(strname) 
+{ 
+   var hrefstr,pos,parastr,para,tempstr; 
+   hrefstr = window.location.href; 
+   pos = hrefstr.indexOf("?"); 
+   parastr = hrefstr.substring(pos+1); 
+   para = parastr.split("&"); 
+   tempstr=""; 
+   for(i=0;i<para.length;i++) 
+   { 
+       tempstr = para[i]; 
+       pos = tempstr.indexOf("="); 
+       if(tempstr.substring(0,pos) == strname) 
+       { 
+          return tempstr.substring(pos+1); 
+       } 
+   } 
+   return null; 
+}
+
+var curUrl = location.href.split('#')[0];
+$.ajax({
+    dataType: 'jsonp',
+    url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+    success: function(wxConfig){     
+        wx.config({ 
+//              debug: true,
+            appId: wxConfig.appId,
+            timestamp: wxConfig.timestamp,
+            nonceStr: wxConfig.nonceStr,
+            signature: wxConfig.signature,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        }); 
+    },
+});      
+    
+// 分享链接
+var index_url = 'http://m.rayli.com.cn/mini/2016/amazon4/index.html';       
+var img_url = 'http://m.rayli.com.cn/mini/2016/amazon4/images/img4.jpg';
+var g = getParastrByName('r');  
+if(g == null){
+    g = 80;
+} 
+// 分享信息
+var shareInfo = {
+    title: '肤色其实也要分冷暖，你不会白到适合所有色！',  // 分享标题
+    desc : '冷皮MM手背血管呈蓝紫色，适合佩戴银饰品；而暖皮MM手背血管呈橄榄绿色，适合佩戴金饰品。冷皮or暖皮你们分清了吗？如果以上两种都幸运避开，那就是中性肤色，大胆穿出你的美。不要穿错衣服出门啦！',
+    link: index_url, // 分享链接
+    imgUrl: img_url, // 分享图标
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+        alert('分享成功！'); 
+    }, 
+};
+
+wx.ready(function () {
+    wx.onMenuShareTimeline(shareInfo);      
+    wx.onMenuShareAppMessage(shareInfo);
+    wx.onMenuShareQQ(shareInfo);
+    wx.onMenuShareWeibo(shareInfo);
+});
+
+wx.error(function (res) {
+    alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>    
+</body>
+</html>

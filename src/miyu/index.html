@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>水之密语</title>
+<meta name="description" content="水之密语">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<link type="text/css" rel="stylesheet" href="css.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+<style type="text/css">
+    #musicControl { position:fixed;right:2%;top:2%;display:inline-block;z-index:99999999; }
+    #musicControl a { display:inline-block;width:29px;height:29px; background:url(images/mcbg.png) no-repeat 0 0; background-size:100%;}
+    #musicControl a audio{width:100%;}
+    #musicControl a.stop { background-position:left bottom; }
+	
+    #musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.2s linear infinite;}
+    #music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+@-webkit-keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+
+/*播放音乐结束*/
+
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+	
+	
+    $(function () {
+        $('audio,video').on('play', function() {
+            $('audio,video').not(this).each(function(i, e) {
+                e.pause();
+            });
+        });
+        $('#musicfx').on('play', function () {
+            $('#mc_play').attr('class','on');
+        }).on('pause', function () {
+            $('#mc_play').attr('class','stop');
+        });
+    });	
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.bk_tip_bg').hide();
+	$('.sc_box01').click(function(){
+		$('.bk_tip_bg').eq(0).show();	
+	});	
+	$('.sc_box02').click(function(){
+		$('.bk_tip_bg').eq(1).show();	
+	});	
+	$('.sc_box03').click(function(){
+		$('.bk_tip_bg').eq(2).show();	
+	});	
+	$('.sc_box04').click(function(){
+		$('.bk_tip_bg').eq(3).show();	
+	});	
+	$('.sc_box05').click(function(){
+		$('.bk_tip_bg').eq(4).show();	
+	});	
+	$('.sc_box06').click(function(){
+		$('.bk_tip_bg').eq(5).show();	
+	});	
+	$('.sc_box07').click(function(){
+		$('.bk_tip_bg').eq(6).show();	
+	});	
+	$('.sc_box08').click(function(){
+		$('.bk_tip_bg').eq(7).show();	
+	});	
+	
+	
+	$('.bk_close').click(function(){
+		$('.bk_tip_bg').hide();	
+	});
+});
+$(function(){
+	$('.dian_all').hide();
+	$('.dian_bg01').click(function(){
+		$('.dian_all').eq(0).show();	
+	});	
+	$('.dian_bg02').click(function(){
+		$('.dian_all').eq(1).show();	
+	});	
+	$('.dian_bg03').click(function(){
+		$('.dian_all').eq(2).show();	
+	});	
+	
+	$('.dian_close').click(function(){
+		$('.dian_all').hide();	
+	});
+});
+</script>
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<!--<span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" loop autoplay="autoplay"><source src="images/audio.mp3" type="audio/mpeg"></audio>
+        </a>
+ </span>
+-->
+<!--嵌入音乐结束 -->
+<div class="dian_all">
+	<div class="dian_box">
+    	<a href="http://hzp.rayli.com.cn/list/p-45468.html" target="_blank" class="dian_con">
+            <h3>净澄水活系列洗发露<br />（控油型）</h3>
+            <p>针对中性油性发质，洗后秀发清爽飘逸，含水源净活成分和多效凝水修护成分，净化洗发时水源本身对头发的侵蚀，清爽呵护，有效控油。</p>
+        </a>
+    	<div class="dian_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="dian_all">
+	<div class="dian_box">
+    	<a href="http://hzp.rayli.com.cn/list/p-45159.html" target="_blank" class="dian_con">
+            <h3>净澄水活护发素</h3>
+            <p>放静电效果，保护头发免受尘埃困扰，净化洗发时水源本身对头发的侵蚀，卓能锁水呵护，深锁滋润，秀发思思净柔，透现熠熠润泽！</p>
+        </a>
+    	<div class="dian_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="dian_all">
+	<div class="dian_box">
+    	<a href="http://hzp.rayli.com.cn/list/p-45156.html" target="_blank" class="dian_con">
+            <h3>净澄水活系列洗发露<br />（倍润型）</h3>
+            <p>针对干枯脆硬发质，洗后秀发净润柔顺，含水源净活成分和多效凝水修护成分，净化洗发时水源本身对头发的侵蚀，倍润呵护直达发芯。</p>
+        </a>
+    	<div class="dian_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img01.jpg">
+        <div class="bk_cont">首先将泡沫涂抹在发顶，用指肚轻轻揉搓发根，以便清理掉头皮上的汗渍污垢。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img02.jpg">
+        <div class="bk_cont">注意应以画圆圈的方式洗发，用指肚按摩头皮，这样可促进血液循环。切忌用指甲搔抓头皮，易使头皮受伤。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img03.jpg">
+        <div class="bk_cont">揉搓完头顶之后开始揉搓发丝，若无造型品残留的话，轻轻带过发梢即可。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img04.jpg">
+        <div class="bk_cont">从头顶开始冲洗第一遍，着重冲洗头皮，但无须太彻底。清洗后再将适量洗发水用手揉出泡沫。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img05.jpg">
+        <div class="bk_cont">第二次洗发重点仍在头皮，同时着重清洁死角：这次脑后发根、耳后发根也要由前至后、从下至上地彻底揉搓，揉搓之后若仍有大量泡沫，说明发丝比较洁净了，冲洗干净即可。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img06.jpg">
+        <div class="bk_cont">洗发后可用手将多余水分挤压掉，避免过多水分影响护发产品的吸收。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img07.jpg">
+        <div class="bk_cont">缠绕毛巾以干发。用干爽的毛巾以按压方式吸走头发表面的水分，以水分不再滴落为目标，适当的时候可以将毛巾缠绕在头上3分钟。切忌不能揉搓，那样会增加发丝摩擦，造成损伤。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+<div class="bk_tip_bg">
+    <div class="bk_tip_box">
+        <img src="images/add_img08.jpg">
+        <div class="bk_cont">涂抹护发素。将双手沾湿，顺势涂抹发丝中上部，避免触碰头皮和立即冲洗。由于湿发是负电荷，发膜是正电荷，适度揉搓有助护发成分渗透入发丝内部，停留一定时间更能促进吸收。</div>
+        <div class="bk_close"><img src="images/close.png"></div>
+    </div>
+</div>
+
+<div class="swiper-container swiper-container-h">
+    <div class="jiantou"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="za_bg00">
+                <div class="bk_index_img01 bk_index_img01_ani"><img src="images/bk_index_tit.png"></div>
+                <div class="bk_index_t01 bk_index_t01_ani"><img src="images/bk_index_t01.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+                <div class="bk_p3_tit01"><img src="images/p3_tit01.png"></div>
+                <div class="bk_p3_tit02"><img src="images/p3_tit02.png"></div>
+                <div class="bk_p3_body">
+                    <div class="swiper-container swiper-container-v">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="girl_box">
+                                    <img src="images/girl_img01.png">
+                                    <div class="girl_txt">
+                                    	<h3>发质不好？可惜了我的3D大卷！</h3>
+                                        <p>最近做了超火的3D大卷，造型师手法很赞，但被我枯黄干燥的发质拉下了 “颜值”，效果大打折扣，这就是我爱惜了15年的头发！每次照镜子，内心都很受伤啊！</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="girl_box">
+                                    <img src="images/girl_img02.png">
+                                    <div class="girl_txt">
+                                    	<h3>女神与女神精只是一头秀发的差距</h3>
+                                        <p>本喵真是为了头发操碎了心！头发毛躁不堪，不好好打理就会由女神降到女神精的状态，我的爱豆代言的水之密语净澄水活系列，让我可以爽上天，秀发出众无烦恼！</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="girl_box">
+                                    <img src="images/girl_img03.png">
+                                    <div class="girl_txt">
+                                    	<h3>每天不洗头会死星人，越洗越糟心</h3>
+                                        <p>爱逛街、爱花钱、最爱洗头发，每天不洗头绝对睡不着，可是每天清洗头发越来越干枯、脆弱、黯然无光，不管怎么护理都不行，谁来救救我？</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="girl_box">
+                                    <img src="images/girl_img04.png">
+                                    <div class="girl_txt">
+                                    	<h3>头发也会有高原反应？厉害了！</h3>
+                                        <p>“金毛狮王”就是用来形容发质干枯，分叉无光泽的头发，而且因为我还恰巧染了金色，最近自驾了个游，从西藏回来后闺蜜就这样称呼我，难到头发也会有高原反应？女神江疏影帮我！</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next swiper-button-next-v"></div>
+                    <div class="swiper-button-prev swiper-button-prev-v"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+                <div class="bk_pa_tit01"><img src="images/p2_tit01.png"></div>
+                <div class="bk_pa_tit02"><img src="images/p2_tit02.png"></div>
+                <div class="bk_pa_tit03"><img src="images/p2_tit03.png"></div>
+                <div class="ques_img"><img src="images/ques_img.png"></div>
+                <div class="tips"><img src="images/tips.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+                <div class="sc_tit01"><img src="images/sc_tit01.png"></div>
+                <div class="sc_tit02"><img src="images/sc_tit02.png"></div>
+            	<div class="sc_body">
+                    <div class="swiper-container swiper-container-s">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="sc_body">
+                                <div class="sc_box01 sc"><img src="images/sc_img01.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box02 sc"><img src="images/sc_img02.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box03 sc"><img src="images/sc_img03.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box04 sc"><img src="images/sc_img04.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="sc_body">
+                                <div class="sc_box05 sc"><img src="images/sc_img05.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box06 sc"><img src="images/sc_img06.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box07 sc"><img src="images/sc_img07.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                <div class="sc_box08 sc"><img src="images/sc_img08.png"><p><img src="images/add.png"></p><span><img src="images/add.png"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-s"></div>
+                        <div class="swiper-button-prev swiper-button-prev-s"></div>
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+				<div class="qa_tit"><img src="images/qa_tit.png"></div>
+                <div class="qa_img"><img src="images/qa_img.png"></div>
+                <div class="qa_con"><img src="images/qa_con.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+                <div class="bk_p4_tit01"><img src="images/jing_tit.png"></div>
+                <div class="bk_p4_tit03"><img src="images/jing_tit02.png"></div>
+                <div class="bk_cir02"><img src="images/p4_cir02.png"></div>
+                <div class="bk_cir03"><img src="images/p4_cir03.png"></div>
+                <div class="bk_cir04"><img src="images/p4_cir04.png"></div>
+                <div class="bk_cir05"><img src="images/p4_cir05.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg01">
+                <div class="bk_p5_tit01"><a href="http://hair.rayli.com.cn/adarticles/2017-09-08/598056.shtml" target="_blank"><img src="images/video_tit.png"></a></div>
+                <div class="video_box">
+                    <img src="images/video_bg.png">
+                    <div class="video_body">
+                        <div class="video_box">
+                            <video controls width="100%" height="auto" poster="images/video_img.jpg">
+                                <source src="http://v.rayli.com.cn/2016-10-28/20161028205620.mp4" type="video/mp4">
+                                <source src="http://www.ckplayer.com/webm/0.webm" type="video/webm">
+                                <source src="http://www.ckplayer.com/webm/0.ogv" type="video/ogg">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg02">
+                <div class="bk_p6_tit01"><img src="images/mm_tit.png"></div>
+                <div class="bk_p6_tit02"><img src="images/mm_tit02.png"></div>
+                <div class="dian_img01"><img src="images/dian.png"></div>
+                <div class="dian_img02"><img src="images/dian.png"></div>
+                <div class="dian_img03"><img src="images/dian.png"></div>
+                <div class="dian_bg01"><img src="images/dian.png"></div>
+                <div class="dian_bg02"><img src="images/dian.png"></div>
+                <div class="dian_bg03"><img src="images/dian.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg03">
+                <div class="js_tit01"><img src="images/js_tit01.png"></div>
+                <div class="js_tit02"><img src="images/js_tit02.png"></div>
+                <div class="hx_img01"><img src="images/hx_img01.png"></div>
+                <div class="hx_img02"><img src="images/hx_img02.png"></div>
+                <div class="hx_img03"><img src="images/hx_img03.png"></div>
+                <div class="hx_img04"><img src="images/hx_img04.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="za_bg03">
+				<div class="h_tit01"><img src="images/h_tit.png"></div>
+                <div class="nav_body">
+                    <div class="slider01">
+                        <div class="swiper-container01">
+                            <div class="swiper-wrapper01">
+                                <div class="swiper-slide01">
+                                    <a href="https://weibo.com/1742884561/Fo1QEy1hh?from=page_1005051742884561_profile&wvr=6&mod=weibotime" target="_blank" class="p_box"><img src="images/p5_img01.png"></a>                    
+                                </div>
+                                <div class="swiper-slide01">
+                                    <a href="http://weibo.com/1649211301/FnO6EgXSW?from=page_1005051649211301_profile&wvr=6&mod=weibotime " target="_blank" class="p_box"><img src="images/p5_img02.png"></a>
+                                </div>
+                                <div class="swiper-slide01">
+                                    <a href="https://weibo.com/2518538357/Fo1HIrXdz?from=page_1005052518538357_profile&wvr=6&mod=weibotime" target="_blank" class="p_box"><img src="images/p5_img03.png"></a> 
+                                </div>
+                                
+                            </div>
+                             <div class="swiper-pagination01">
+                                <div class="swiper-pagination-bullet01 swiper-pagination-bullet-active01"><img src="images/p5_nav01.png"><span></span></div>
+                                <div class="swiper-pagination-bullet01"><img src="images/p5_nav02.png"><span></span></div>
+                                <div class="swiper-pagination-bullet01"><img src="images/p5_nav03.png"><span></span></div>
+                            </div> 
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="swipe.js"></script>
+<script type="text/javascript">
+$(function(){
+   var swipe = $('.swiper-container01').Swipe({
+      startSlide: 0,
+      speed: 400,
+      auto: 5000,
+      continuous: true,
+      disableScroll: false,
+      stopPropagation: false,
+  
+        callback:function (i,e) {
+        $('.swiper-pagination-bullet01').eq(i).addClass('swiper-pagination-bullet-active01')
+        .siblings().removeClass('swiper-pagination-bullet-active01');
+    }}).data('Swipe');
+
+    $('.swiper-button-next01').click(function () {
+        swipe.next();
+    });
+    $('.swiper-button-prev01').click(function () {
+        swipe.prev();
+    });
+    $('.swiper-pagination-bullet01').mouseover(function () {
+       swipe.slide($(this).index()); 
+    }); 
+});
+
+</script>
+
+<!-- Initialize Swiper -->
+<link href="swiper.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="swiper.min.js"></script>
+
+<script type="text/javascript">
+
+var swiperH = new Swiper('.swiper-container-h', {
+	
+    pagination: '.swiper-pagination-h',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 0,
+    mousewheelControl: true,
+    onlyExternal: false, //禁止
+
+    onSlideChangeStart: function() {
+        var activeIndex = swiperH.activeIndex;
+        var previousIndex = swiperH.previousIndex;
+        if (activeIndex != previousIndex) {
+
+            switch (activeIndex) {
+                case 0:
+					$(".bk_index_logo").addClass("bk_index_logo_ani");
+					$(".bk_index_img01").addClass("bk_index_img01_ani");
+					$(".bk_index_t01").addClass("bk_index_t01_ani");
+                    break;
+					
+                case 1:
+					$(".bk_p3_tit01").addClass("bk_p3_tit01_ani");
+					$(".bk_p3_tit02").addClass("bk_p3_tit02_ani");
+					$(".bk_p3_tit03").addClass("bk_p3_tit03_ani");
+					swiperV.slideTo(0);
+				    swiperV.startAutoplay();
+                    break;
+					
+                case 2:
+					$(".bk_pa_tit01").addClass("bk_pa_tit01_ani");
+					$(".bk_pa_tit02").addClass("bk_pa_tit02_ani");
+					$(".bk_pa_tit03").addClass("bk_pa_tit03_ani");
+					$(".ques_img").addClass("ques_img_ani");
+					$(".tips").addClass("tips_ani");
+                    break;
+					
+                case 3:
+					$(".sc_tit01").addClass("sc_tit01_ani");
+					$(".sc_tit02").addClass("sc_tit02_ani");
+                    break;
+					
+                case 4:
+				    $(".qa_tit").addClass("qa_tit_ani");
+					$(".qa_con").addClass("qa_con_ani");
+                    break;
+					
+                case 5:
+					$(".bk_p4_tit01").addClass("bk_p4_tit01_ani");
+					$(".bk_p4_tit03").addClass("bk_p4_tit03_ani");
+					$(".bk_cir01").addClass("bk_cir01_ani");
+					$(".bk_cir02").addClass("bk_cir02_ani");
+					$(".bk_cir03").addClass("bk_cir03_ani");
+					$(".bk_cir04").addClass("bk_cir04_ani");
+					$(".bk_cir05").addClass("bk_cir05_ani");
+                    break;
+					
+                case 6:
+					$(".bk_p5_tit01").addClass("bk_p5_tit01_ani");
+					$(".bk_p5_tit02").addClass("bk_p5_tit02_ani");
+					$(".bk_p5_tit03").addClass("bk_p5_tit03_ani");
+					$(".bk_p5_show").addClass("bk_p5_show_ani");
+					$(".bk_p5_link01").addClass("bk_p5_link01_ani");
+					$(".bk_p5_link02").addClass("bk_p5_link02_ani");
+                    break;
+					
+                case 7:
+					$(".bk_p6_tit01").addClass("bk_p6_tit01_ani");
+					$(".bk_p6_tit02").addClass("bk_p6_tit02_ani");
+					$(".bk_p6_show01").addClass("bk_p6_show_ani01");
+					$(".bk_p6_show02").addClass("bk_p6_show_ani02");
+					$(".bk_p6_txt01").addClass("bk_p6_txt01_ani");
+					$(".bk_p6_txt02").addClass("bk_p6_txt02_ani");
+                    break;
+					
+                case 8:
+					$(".js_tit01").addClass("js_tit01_ani");
+                    $(".js_tit02").addClass('js_tit02_ani');
+                    $(".hx_img01").addClass('hx_img01_ani');
+                    $(".hx_img02").addClass('hx_img02_ani');
+                    $(".hx_img03").addClass('hx_img03_ani');
+                    $(".hx_img04").addClass('hx_img04_ani');
+                    break;
+					
+                case 9:
+					$(".h_tit01").addClass("h_tit01_ani");
+                    $(".jiantou").addClass('display');
+                    break;
+            }
+			
+			$(".swiper-wrapper .swiper-slide").eq(previousIndex).find("video").each(function(index, element) {
+                    element.pause();
+            });
+
+            switch (previousIndex) {
+                case 0:
+					$(".bk_index_logo").removeClass("bk_index_logo_ani");
+					$(".bk_index_img01").removeClass("bk_index_img01_ani");
+					$(".bk_index_t01").removeClass("bk_index_t01_ani");
+                    break;
+					
+                case 1:
+					$(".bk_p3_tit01").removeClass("bk_p3_tit01_ani");
+					$(".bk_p3_tit02").removeClass("bk_p3_tit02_ani");
+					$(".bk_p3_tit03").removeClass("bk_p3_tit03_ani");
+					swiperV.stopAutoplay();
+                    break;
+					
+                case 2:
+					$(".bk_pa_tit01").removeClass("bk_pa_tit01_ani");
+					$(".bk_pa_tit02").removeClass("bk_pa_tit02_ani");
+					$(".bk_pa_tit03").removeClass("bk_pa_tit03_ani");
+					$(".ques_img").removeClass("ques_img_ani");
+					$(".tips").removeClass("tips_ani");
+                    break;
+					
+                case 3:
+					$(".sc_tit01").removeClass("sc_tit01_ani");
+					$(".sc_tit02").removeClass("sc_tit02_ani");
+                    break;
+					
+                case 4:
+					$(".qa_tit").removeClass("qa_tit_ani");
+					$(".qa_con").removeClass("qa_con_ani");
+                    break;
+					
+                case 5:
+					$(".bk_p4_tit01").removeClass("bk_p4_tit01_ani");
+					$(".bk_p4_tit03").removeClass("bk_p4_tit03_ani");
+					$(".bk_cir01").removeClass("bk_cir01_ani");
+					$(".bk_cir02").removeClass("bk_cir02_ani");
+					$(".bk_cir03").removeClass("bk_cir03_ani");
+					$(".bk_cir04").removeClass("bk_cir04_ani");
+					$(".bk_cir05").removeClass("bk_cir05_ani");
+                    break;
+					
+                case 6:
+					$(".bk_p5_tit01").removeClass("bk_p5_tit01_ani");
+					$(".bk_p5_tit02").removeClass("bk_p5_tit02_ani");
+					$(".bk_p5_tit03").removeClass("bk_p5_tit03_ani");
+					$(".bk_p5_show").removeClass("bk_p5_show_ani");
+					$(".bk_p5_link01").removeClass("bk_p5_link01_ani");
+					$(".bk_p5_link02").removeClass("bk_p5_link02_ani");
+                    break;
+					
+                case 7:
+					$(".bk_p6_tit01").removeClass("bk_p6_tit01_ani");
+					$(".bk_p6_tit02").removeClass("bk_p6_tit02_ani");
+					$(".bk_p6_show01").removeClass("bk_p6_show_ani01");
+					$(".bk_p6_show02").removeClass("bk_p6_show_ani02");
+					$(".bk_p6_txt01").removeClass("bk_p6_txt01_ani");
+					$(".bk_p6_txt02").removeClass("bk_p6_txt02_ani");
+                    break;
+					
+                case 8:
+					$(".js_tit01").removeClass("js_tit01_ani");
+                    $(".js_tit02").removeClass('js_tit02_ani');
+                    $(".hx_img01").removeClass('hx_img01_ani');
+                    $(".hx_img02").removeClass('hx_img02_ani');
+                    $(".hx_img03").removeClass('hx_img03_ani');
+                    $(".hx_img04").removeClass('hx_img04_ani');
+                    break;
+					
+                case 9:
+					$(".h_tit01").removeClass("h_tit01_ani");
+                    $(".jiantou").removeClass('display');
+                    break;
+            }
+
+        }
+    }
+});
+
+
+var swiperV = new Swiper('.swiper-container-v', {
+    pagination: '.swiper-pagination-v',
+    nextButton: '.swiper-button-next-v',
+    prevButton: '.swiper-button-prev-v',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    autoplay: 3000,
+    loop: true,
+    effect: 'cube',
+    grabCursor: true,
+    cube: {
+        shadow: false,
+        slideShadows: false,
+        shadowOffset: 20,
+        shadowScale: 0.94
+    },
+
+    onSlideChangeStart: function(swiper) {
+        var activeIndex = swiper_active(swiper);
+        var previousIndex = swiper_previous(swiper);
+    }
+});
+
+swiperV.stopAutoplay();
+
+function swiper_index(swiper, index) {
+    return parseInt(swiper.slides.eq(index).attr('data-swiper-slide-index') || index);
+}
+function swiper_active(swiper) {
+    return swiper_index(swiper, swiper.activeIndex);
+}
+function swiper_previous(swiper) {
+    return swiper_index(swiper, swiper.previousIndex);
+}
+
+var swiperS = new Swiper('.swiper-container-s', {
+    pagination: '.swiper-pagination-s',
+    nextButton: '.swiper-button-next-s',
+    prevButton: '.swiper-button-prev-s',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    //autoplay: 3000,
+    //loop: true,
+
+    onSlideChangeStart: function(swiper) {
+        var activeIndex = swiper_active(swiper);
+        var previousIndex = swiper_previous(swiper);
+        if (activeIndex != previousIndex) {
+            switch (activeIndex) {
+                case 0:
+                    $(".sc_box01").addClass("sc_box01_ani");
+                    $(".sc_box02").addClass("sc_box02_ani");
+                    $(".sc_box03").addClass("sc_box03_ani");
+                    $(".sc_box04").addClass("sc_box04_ani");
+                    break;
+
+                case 1:
+                    $(".sc_box05").addClass("sc_box05_ani");
+                    $(".sc_box06").addClass("sc_box06_ani");
+                    $(".sc_box07").addClass("sc_box07_ani");
+                    $(".sc_box08").addClass("sc_box08_ani");
+                    break;
+
+            }
+
+            switch (previousIndex) {
+                case 0:
+                    $(".sc_box01").removeClass("sc_box01_ani");
+                    $(".sc_box02").removeClass("sc_box02_ani");
+                    $(".sc_box03").removeClass("sc_box03_ani");
+                    $(".sc_box04").removeClass("sc_box04_ani");
+                    break;
+
+                case 1:
+                    $(".sc_box05").removeClass("sc_box05_ani");
+                    $(".sc_box06").removeClass("sc_box06_ani");
+                    $(".sc_box07").removeClass("sc_box07_ani");
+                    $(".sc_box08").removeClass("sc_box08_ani");
+                    break;
+
+            }
+        }
+    }
+});
+
+
+
+var swiperD = new Swiper('.swiper-container-d', {
+    pagination: '.swiper-pagination-d',
+    nextButton: '.swiper-button-next-d',
+    prevButton: '.swiper-button-prev-d',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    //autoplay: 3000,
+    loop: true,
+
+    onSlideChangeStart: function(swiper) {
+        var activeIndex = swiper_active(swiper);
+        var previousIndex = swiper_previous(swiper);
+        if (activeIndex != previousIndex) {
+            switch (activeIndex) {
+                case 0:
+                    
+                    break;
+
+                case 1:
+                    
+                    break;
+
+            }
+
+            switch (previousIndex) {
+                case 0:
+                    
+                    break;
+
+                case 1:
+                    
+                    break;
+
+            }
+        }
+    }
+});
+
+</script>
+<script  type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var curUrl = location.href.split('#')[0];
+$.ajax({
+	dataType: 'jsonp',
+	url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+	success: function(wxConfig){ 	 
+		wx.config({ 
+//        		debug: true,
+			appId: wxConfig.appId,
+			timestamp: wxConfig.timestamp,
+			nonceStr: wxConfig.nonceStr,
+			signature: wxConfig.signature,
+			jsApiList: [
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo'
+			]
+		}); 
+	},
+});   	
+// 分享链接_编辑修改以下下两个url和标题描述
+var index_url = 'http://www.rayli.com.cn/mini/2017/Aquair15/index.html';		
+var img_url = 'http://www.rayli.com.cn/mini/2017/Aquair15/images/share.jpg';
+// 分享信息
+var shareInfo = {
+	title: '柔柔密语 水润由芯焕生', 	// 分享标题
+	desc : '15年，以润泽柔顺为目标  健康秀发要靠“水”',
+	link: index_url, // 分享链接
+	imgUrl: img_url, // 分享图标
+	success: function () { 
+		// 用户确认分享后执行的回调函数
+		alert('分享成功！');	
+	}, 
+};
+wx.ready(function () {
+	wx.onMenuShareTimeline(shareInfo);		
+	wx.onMenuShareAppMessage(shareInfo);
+	wx.onMenuShareQQ(shareInfo);
+	wx.onMenuShareWeibo(shareInfo);
+});
+wx.error(function (res) {
+	alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+
+</html>

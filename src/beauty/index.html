@@ -1,0 +1,975 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百人评测</title>
+<meta name="keywords" content="百人评测" />
+<meta name="description" content="百人评测" />
+<script type="text/javascript">
+var rayliEditor = "";
+var rayliChannel = "zhuanti";
+var rayliUser = "";
+(function() {
+var raylijs = document.createElement('script'); raylijs.type = 'text/javascript'; raylijs.async = true;
+raylijs.src = 'http://www.rayli.com.cn/comjs/rayli.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(raylijs, s);
+})();
+</script>
+<link href="http://www.rayli.com.cn/css/rayliglobalutf.css" rel="stylesheet" type="text/css" />
+<link href="http://images.rayli.com.cn/css/head_tail.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css_lch.css" />
+<link rel="stylesheet" type="text/css" href="idangerous.swiper.css" />
+<script type="text/javascript" src="http://www.rayli.com.cn/comjs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://images.rayli.com.cn/raylijs/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://images.rayli.com.cn/templates/rayli/rayli/js/head.js"></script>
+<script type="text/javascript" src="http://images.rayli.com.cn/js/config.js"></script>
+<script type="text/javascript">
+$(function(){
+$(window).scroll(function(){
+	var temp = $(this).scrollTop();var i;
+	var tops = $('.partbox').map(function(index, element) {return $(element).offset().top;});
+	for(i = tops.length - 1; i >= 0; i--){if(temp >= tops[i]){break;}}
+	if(i < 0){i = 0;}
+	$('.bty_ul li').removeClass('current').eq(i).addClass('current');
+});});
+</script>
+<style type="text/css">
+img.png{background-image: expression(this.runtimeStyle.backgroundImage = "none",this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",this.src = "http://image.rayliimg.cn/news/2012/beauty_index/images/1.gif")} 
+</style>
+<script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+        $(tabTit).children().click(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(tabTit).children().index(this);
+           	$(tabCon).children().eq(index).show().siblings().hide();
+    	});
+	};
+    tabs(".ts_nav","current",".ts_con");
+    tabs(".tp_nav","current",".tp_con");
+    tabs(".slide_nav","current",".slide_con_body");
+    tabs(".sr_nav","current",".sr_con_body");
+});
+$(function(){
+	$('.slide_nav h3').click(function(){
+		$('.dr_icon').addClass('i_ani');
+	});	
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$(".bty_img img,.ts_img img,.red_img img").mouseover(function(){
+		 $(this).stop(1,0).animate({ 
+			width: "106%",
+			height: "106%", 
+			left: "-3%",
+			top: "-3%",
+		  }, 500 );            
+		}).mouseout(function(){
+		 $(this).stop(1,0).animate({ 
+			width: "100%",
+			height: "100%", 
+			left: "0",
+			top: "0",
+		  }, 500 );            
+		});
+});
+$(function(){
+	$('.group_bg').hide();
+	$('.group_li').mouseover(function(){
+		$(this).children('.group_bg').fadeIn().stop(1,1);	
+	}).mouseleave(function(){
+		$(this).children('.group_bg').fadeOut();	
+	});	
+});
+</script>
+</head>
+
+<body>
+<a name="raylitop" id="raylitop"></a>
+<!--登录框登录弹出层开始　-->
+<div class="dd_bigblack"></div>
+<div class="ggg_login">
+</div>
+<!--登录框登录弹出层结束-->
+
+
+<!--吸顶导航开始-->
+<div id="dh_dand_xd" class="dand_dt01" style="height:32px;">
+<div class="dhang zdand555">
+<div class="main_sl backEE1" style="height:32px;">
+	<div class="dand_zidh">
+    	<ul>
+		<li><a href="http://www.rayli.com.cn/" title="瑞丽网" target="_blank">瑞丽网</a></li>
+        <li><a href="http://fashion.rayli.com.cn/" title="服饰" target="_blank">服饰</a></li>
+        <li><a href="http://beauty.rayli.com.cn/" title="美容" target="_blank">美容</a></li>
+        <li><a href="http://luxury.rayli.com.cn/" title="奢华" target="_blank">奢华</a></li>
+        <li><a href="http://hair.rayli.com.cn/" title="靓发" target="_blank">靓发</a></li>
+        <li><a href="http://life.rayli.com.cn/" title="生活" target="_blank">生活</a></li>
+        <li><a href="http://video.rayli.com.cn/" title="视频" target="_blank">视频</a></li>
+        <li class="right"><a href="http://hzp.rayli.com.cn/trycenter.html" title="试用" target="_blank">试用</a></li>
+        <li><a href="http://star.rayli.com.cn/" title="瑞丽之星" target="_blank">瑞丽之星</a></li>
+        <li><a href="http://hzp.rayli.com.cn/" title="化妆品库" target="_blank">化妆品库</a></li>
+        <li><a href="http://bbs.rayli.com.cn/" title="论坛" target="_blank">论坛</a></li>
+        <li><a href="http://www.rayli.com.cn/juhe/" target="_blank">聚时尚</a></li>
+		</ul>
+	</div>
+    
+    
+    <!--登录后状态begin-->
+    <div class="ggg_right ggg_dlzcbf2 ggg_ysabc8" id="login_status"  style="display:none;">
+	<a href="http://search.rayli.com.cn/" target="_blank" title="" class="ggg_fl ggg_up1"><img src="http://images.rayli.com.cn/templates/rayli/rayli/images/53_sl.jpg" width="17" height="17" alt=""/></a>
+        <div class="ggg_fl ggg_mright">你好，<span id='uname'></span></div>
+        <div class="ggg_fl ggg_allbf1">
+        <div class="ggg_hoverzh1"><span class="ggg_fl">我的</span><img src="http://images.rayli.com.cn/templates/rayli/rayli/images/g_up.jpg" width="7" height="4" class="ggg_fl ggg_up1" /></div>
+        <div class="ggg_clear"></div>
+        <div class="zhx1">
+            <ul>
+                <li><a href="http://user.rayli.com.cn/home.php " target="_blank">我的个人中心</a></li>
+                <li><a href="http://hzp.rayli.com.cn/ucenter/mytry.html " target="_blank">我的化妆品库</a></li>
+                <li><a href="" target="_blank" id='rstart'>我的瑞丽之星</a></li>
+                <li><a href="http://user.rayli.com.cn/credit.html" target="_blank">我的财富中心</a></li>
+            </ul>
+            </div>
+        </div>    
+        <div class="ggg_fl ggg_mright">消息<span>0</span></div>
+        <div class="ggg_fl ggg_allbf2">
+        <div class="ggg_hoverzh2"><span class="ggg_fl">帐号</span><img src="http://images.rayli.com.cn/templates/rayli/rayli/images/g_up.jpg" width="7" height="4" class="ggg_fl ggg_up2" /></div>
+        <div class="ggg_clear"></div>
+        <div class="zhx2">
+            <ul>
+                <li><a href="http://user.rayli.com.cn/home.php?mod=spacecp&ac=avatar" target="_blank">修改头像</a></li>
+                <li><a href="http://user.rayli.com.cn/home.php?mod=spacecp&ac=profile" target="_blank">个人资料</a></li>
+                <li><a href="http://user.rayli.com.cn/home.php?mod=spacecp&ac=profile&op=password" target="_blank">密码安全</a></li>
+                <li><a href="http://user.rayli.com.cn/home.php?mod=spacecp&ac=plugin&vb=sina&id=sina_xweibo:home_binding" target="_blank">新浪微博绑定设置</a></li>
+                <li style='display:none;'><a href="http://connect.manyou.com/discuz/login?s_id=3130872&redirect_url=http%3A%2F%2Fuser.rayli.com.cn%2Fconnect.php%3Fmod%3Ddispatch%26referer%3Dhttp%3A%2F%2Frayli.com.cn%2F&type=login&statfrom=login_simple" target="_blank">QQ绑定</a></li>
+                <li><a href="http://user.rayli.com.cn/member.php?mod=logging&action=logout" >退出</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <!--登录后状态end-->
+     
+     <!--登录前状态begin-->
+    <div class="ggg_right ggg_land ggg_dlzcbf1 " id="logout_status" style="display:none;"><a href="http://search.rayli.com.cn/" target="_blank" title="" class="ggg_fl"><img src="http://images.rayli.com.cn/templates/rayli/rayli/images/53_sl.jpg" width="17" height="17" alt=""/></a><a href="javascript:;" id="login" class="ggg_fl j_login">登录</a> <a href="http://user.rayli.com.cn/member-register.html?back_url='+top.location.href+'" target="_blank" title="" class="ggg_fl">注册</a></div>    
+    <!--登录前状态end-->
+
+    
+    <script type="text/javascript">
+			$(function(){
+				var rurl = 'http://user.rayli.com.cn/member-register.html?back_url='+top.location.href;
+				$('#register').attr('href', rurl);
+				 if ($.cookie('pass_username') !=null ) {
+					$('#login_status').show(); 
+					var username = decodeURIComponent($.cookie('pass_username'));
+					var uid = $.cookie('pass_uid');
+					if(strlen(username)>10){
+						username=SetString(username, 6)+'…';
+					}
+					$('#uname').html(username);
+					$('#rstart').attr('href', 'http://star.rayli.com.cn/u/'+uid+'/me');
+				} else {
+					$('#logout_status').show();
+				} 
+			});
+			function SetString(str,len)
+			{
+				var strlen = 0; 
+				var s = "";
+				for(var i = 0;i < str.length;i++)
+				{
+					if(str.charCodeAt(i) > 128){
+						strlen += 2;
+					}else{ 
+						strlen++;
+					}
+					s += str.charAt(i);
+					if(strlen >= len){ 
+						return s ;
+					}
+				}
+				return s;
+			}
+
+			function strlen(str) {
+				var len = 0;
+				for (var i = 0; i < str.length; i++) {
+					var c = str.charCodeAt(i);
+					if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+						len++;
+					}
+					else {
+						len += 2;
+					}
+				}
+				return len;
+			}
+		</script>
+</div>
+</div>  	
+</div>
+<!--吸顶导航结束-->
+<div class="div_body">
+    <div class="bty_nav">
+        <ul class="bty_ul">
+            <li class="current"><a href="#part01"><img src="images/nav_img01.png" /></a></li>
+            <li><a href="#part02"><img src="images/nav_img02.png" /></a></li>
+            <li><a href="#part03"><img src="images/nav_img03.png" /></a></li>
+            <li><a href="#part04"><img src="images/nav_img04.png" /></a></li>
+            <li><a href="#part05"><img src="images/nav_img05.png" /></a></li>
+            <li><a href="#part06"><img src="images/nav_img06.png" /></a></li>
+        </ul>
+        <div class="nav_icon"></div>
+    </div>
+    <div class="header"></div>
+    <div class="partbox part_01_box" id="part01">
+    	<div class="bg01">
+            <div class="tit01"><img src="images/tit01.png" /></div>
+            <div class="red_body">
+            	<div class="red_li">
+                	<div class="red_img"><img src="images/p1_img01.png" /></div>
+                    <div class="red_p"><span>NUFACE TRINTIY</span><br />面部紧肤仪</div>
+                </div>
+            	<div class="red_li">
+                	<div class="red_img"><img src="images/p1_img02.png" /></div>
+                    <div class="red_p"><span>NU SKIN</span><br />如新 修身美颜SPA机</div>
+                </div>
+            	<div class="red_li">
+                	<div class="red_img"><img src="images/p1_img03.png" /></div>
+                    <div class="red_p"><span>REFA CARAT</span><br />面部美容仪</div>
+                </div>
+            	<div class="red_li">
+                	<div class="red_img"><img src="images/p1_img04.png" /></div>
+                    <div class="red_p">
+                        <div class="red_txt">享优乐美容仪</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="partbox part_02_box" id="part02">
+    	<div class="bg02">
+            <div class="tit02"><img src="images/tit02.png" /></div>
+            <div class="ts_all">
+                <div class="ts_nav">
+                    <h3 class="current">拼细节</h3>
+                    <h3>拼颜值</h3>
+                    <h3>拼内涵</h3>
+                    <h3>拼使用体验</h3>
+                    <h3>拼价格</h3>
+                </div>
+                <div class="ts_con">
+                    <div class="ts_content block">
+						<img src="images/p2_show.png" />
+                        <div class="ts_img g01"><img src="images/bty_img02.png" /></div>
+                        <div class="ts_img g02"><img src="images/bty_img03.png" /></div>
+                        <div class="ts_img g03"><img src="images/bty_img01.png" /></div>
+                        <div class="ts_img g04"><img src="images/bty_img04.png" /></div>
+                        <div class="ts_a_show01">
+                        	<div class="ts_tit">111享优乐美容仪</div>
+                            <div class="ts_txt">流线型的机身设计，白金色的色调搭配，磨砂的质感更凸显出它的高端气质，摆放在梳妆台上绝对的赏心悦目。<br />机身形状根据亚洲女性手掌大小而设，即使是手小的女生，单手掌控也是完全没问题的，握感非常舒适。</div>
+                        </div>
+                        <div class="ts_a_show02">
+                        	<div class="ts_tit">111NUFACE</div>
+                            <div class="ts_txt">两个微电流头像两只大大的青蛙眼，外观设计很可爱。<br />但在使用中发现，机身光面的设计非常容易粘指纹和护肤品，用久了之后会显得油油的。<br />另外，机身宽而扁平的设计不是太好拿，用久了会稍感觉手酸。</div>
+                        </div>
+                        <div class="ts_a_show03">
+                        	<div class="ts_tit">111NU SKIN<br />如新 修身美颜SPA机</div>
+                            <div class="ts_txt">整体设计感较其它三款不强，材质显塑料感，看起来不太匹配这么贵的价格。灰暗的机身颜色也略显陈旧，缺少了一点精致感。</div>
+                        </div>
+                        <div class="ts_a_show04">
+                        	<div class="ts_tit">111REFA</div>
+                            <div class="ts_txt">铂金材质的滚轮，闪烁blingbling的光泽，绝对抢眼球。<br />但只配了绒布袋，接触皮肤的滚轮头易沾染灰尘细，不够卫生。</div>
+                        </div>
+                    </div>
+                    <div class="ts_content">
+						<img src="images/p2_show.png" />
+                        <div class="ts_img g01"><img src="images/bty_img02.png" /></div>
+                        <div class="ts_img g02"><img src="images/bty_img03.png" /></div>
+                        <div class="ts_img g03"><img src="images/bty_img01.png" /></div>
+                        <div class="ts_img g04"><img src="images/bty_img04.png" /></div>
+                        <div class="ts_a_show01">
+                        	<div class="ts_tit">222享优乐美容仪</div>
+                            <div class="ts_txt">222流线型的机身设计</div>
+                        </div>
+                        <div class="ts_a_show02">
+                        	<div class="ts_tit">222NUFACE</div>
+                            <div class="ts_txt">222两个微电流头像两只大大的青蛙眼</div>
+                        </div>
+                        <div class="ts_a_show03">
+                        	<div class="ts_tit">222NU SKIN<br />如新 修身美颜SPA机</div>
+                            <div class="ts_txt">222整体设计感较其它三款不强</div>
+                        </div>
+                        <div class="ts_a_show04">
+                        	<div class="ts_tit">222REFA</div>
+                            <div class="ts_txt">222铂金材质的滚轮，闪烁blingbling的光泽，绝对抢眼球。</div>
+                        </div>
+                    </div>
+                    <div class="ts_content">
+						<img src="images/p2_show.png" />
+                        <div class="ts_img g01"><img src="images/bty_img02.png" /></div>
+                        <div class="ts_img g02"><img src="images/bty_img03.png" /></div>
+                        <div class="ts_img g03"><img src="images/bty_img01.png" /></div>
+                        <div class="ts_img g04"><img src="images/bty_img04.png" /></div>
+                        <div class="ts_a_show01">
+                        	<div class="ts_tit">333享优乐美容仪</div>
+                            <div class="ts_txt">333流线型的机身设计，白金色的色调搭配</div>
+                        </div>
+                        <div class="ts_a_show02">
+                        	<div class="ts_tit">333NUFACE</div>
+                            <div class="ts_txt">333两个微电流头像两只大大的青蛙眼</div>
+                        </div>
+                        <div class="ts_a_show03">
+                        	<div class="ts_tit">333NU SKIN<br />如新 修身美颜SPA机</div>
+                            <div class="ts_txt">333整体设计感较其它三款不强</div>
+                        </div>
+                        <div class="ts_a_show04">
+                        	<div class="ts_tit">333REFA</div>
+                            <div class="ts_txt">333铂金材质的滚轮，闪烁blingbling的光泽，绝对抢眼球。</div>
+                        </div>
+                    </div>
+                    <div class="ts_content">
+						<img src="images/p2_show.png" />
+                        <div class="ts_img g01"><img src="images/bty_img02.png" /></div>
+                        <div class="ts_img g02"><img src="images/bty_img03.png" /></div>
+                        <div class="ts_img g03"><img src="images/bty_img01.png" /></div>
+                        <div class="ts_img g04"><img src="images/bty_img04.png" /></div>
+                        <div class="ts_a_show01">
+                        	<div class="ts_tit">444享优乐美容仪</div>
+                            <div class="ts_txt">444流线型的机身设计</div>
+                        </div>
+                        <div class="ts_a_show02">
+                        	<div class="ts_tit">444NUFACE</div>
+                            <div class="ts_txt">444两个微电流头像两只大大的青</div>
+                        </div>
+                        <div class="ts_a_show03">
+                        	<div class="ts_tit">444NU SKIN<br />如新 修身美颜SPA机</div>
+                            <div class="ts_txt">444整体设计感较其它三款不强</div>
+                        </div>
+                        <div class="ts_a_show04">
+                        	<div class="ts_tit">444REFA</div>
+                            <div class="ts_txt">444铂金材质的滚轮，闪烁blingbling的光泽，绝对抢眼球</div>
+                        </div>
+                    </div>
+                    <div class="ts_content">
+						<img src="images/p2_show.png" />
+                        <div class="ts_img g01"><img src="images/bty_img02.png" /></div>
+                        <div class="ts_img g02"><img src="images/bty_img03.png" /></div>
+                        <div class="ts_img g03"><img src="images/bty_img01.png" /></div>
+                        <div class="ts_img g04"><img src="images/bty_img04.png" /></div>
+                        <div class="ts_a_show01">
+                        	<div class="ts_tit">555享优乐美容仪</div>
+                            <div class="ts_txt">555流线型的机身设计，白金色的色调搭配</div>
+                        </div>
+                        <div class="ts_a_show02">
+                        	<div class="ts_tit">555NUFACE</div>
+                            <div class="ts_txt">555两个微电流头像两只大大的青蛙眼</div>
+                        </div>
+                        <div class="ts_a_show03">
+                        	<div class="ts_tit">555NU SKIN<br />如新 修身美颜SPA机</div>
+                            <div class="ts_txt">555整体设计感较其它三款不强，材质显塑料感</div>
+                        </div>
+                        <div class="ts_a_show04">
+                        	<div class="ts_tit">555REFA</div>
+                            <div class="ts_txt">555铂金材质的滚轮</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ts_bot">
+                    <img src="images/p2_bot.png" />
+                    <div class="ts_botxt">在经过第二轮颜值pk后，可以感受到享优乐美容仪在整体设计感、机身的手握舒<br />适度上表现十分优异 可谓是颜值担当。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg02_a">
+        <div class="bg02_a_in">
+            <img src="images/beauty_show.png" />
+            <div class="bty_img i01"><img src="images/bty_img01.png" /></div>
+            <div class="bty_img i02"><img src="images/bty_img02.png" /></div>
+            <div class="bty_img i03"><img src="images/bty_img03.png" /></div>
+            <div class="bty_img i04"><img src="images/bty_img04.png" /></div>
+            <div class="bty_cir"><img src="images/no_01.png" /></div>
+            <div class="bty_txt">在国内美容仪市场上，欧美日韩等国外品牌一直占据主导地位。<br />通过这次测评，想必聪明的你也看出来，<br />享优乐美容仪，在产品设计、功效和使用感受上都能与三款国际品牌相媲美。<br />就我个人多年来”混迹“美容界的经验来说，功效才是评价一款美容仪好坏与否的硬道理。<br />但俗话说得好：大家说好才是真的好。<br />下面我们看看享优乐美容仪这匹黑马如何胜出？<br />且能否过得了“百人测评团”的严谨大卡。</div>
+        </div>
+    </div>
+    <div class="partbox part_03_box" id="part03">
+    	<div class="bg03">
+        	<div class="tit03"><img src="images/tit03.png" /></div>
+            <div class="bg03_show"><img src="images/bg03_show.png" /></div>
+        </div>
+    </div>
+    <div class="partbox part_04_box" id="part04">
+    	<div class="bg04">
+        	<div class="tit04"><img src="images/tit04.png" /></div>
+            <div class="tit_txt">享优乐美容仪的操作手法并不复杂，只需要简单三步就能轻松的逆转时光。<br />下面跟我一起踏上肌肤的年轻之旅。</div>
+            <div class="p4_n">
+                <div class="preview">
+                    <a class="arrow-left" href="#"><img src="images/btn_l.png" ></a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide active-nav">
+                                <div><p><span>Step1</span><br />面部<br />清洁</p></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div><p><span>Step2</span><br />面部<br />清洁</p></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div><p><span>Step3</span><br />红光<br />嫩肤</p></div>
+                            </div>
+                        </div>
+                 </div>
+                 <a class="arrow-right" href="#"><img src="images/btn_r.png" ></a>
+                </div>
+                <div class="view">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            	<div class="step_show"><img src="images/step01.png" /></div>
+                                <div class="step_txt">111使用微电流时，速度要慢，力度要均匀，从第一声“滴”响起时提拉，到第二声“滴”时结束，每条线提拉7秒。<br />每半边脸反复进行三次“七线提拉”循环”。</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="step_show"><img src="images/step02.png" /></div>
+                                <div class="step_txt">222使用微电流时，速度要慢，力度要均匀，从第一声“滴”响起时提拉，到第二声“滴”时结束，每条线提拉7秒。<br />每半边脸反复进行三次“七线提拉”循环”。</div>
+                            </div>
+                            <div class="swiper-slide">
+                            	<div class="step_show"><img src="images/step03.png" /></div>
+                                <div class="step_txt">333使用微电流时，速度要慢，力度要均匀，从第一声“滴”响起时提拉，到第二声“滴”时结束，每条线提拉7秒。<br />每半边脸反复进行三次“七线提拉”循环”。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="partbox part_05_box" id="part05">
+    	<div class="bg05">
+        	<div class="tit05"><img src="images/tit05.png" /></div>
+            <div class="dr_con">
+                <div class="slide01_box">
+                    <div class="slide_nav">
+                        <h3 class="current"></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                        <h3></h3>
+                    </div>
+                    <div class="slide_con_body">
+                        <div class="slide_con block">
+                        	<div class="dr_icon i01"><img src="images/dr_i01.png"></div>
+                            <div class="dr_show"><img src="images/dr_show01.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">111接近一周的连续熬夜追剧，皮肤被摧残都好厉害，尤其是眼周附近：黑眼圈、眼角纹、金鱼眼……开始天天敷面膜急救，但效果不大。真的是熬夜一天，一个月都补不回来。<br />接触享优乐美容仪的时候很期待它的效果，使用28天后它果然没有让我失望。温温的红光打在脸上感觉很舒服。可能是改善了脸部和眼周的血液循环，熬夜造成的黑眼圈不见了，眼角细纹好像也变淡了好多！<br />虽然享优乐美容仪”救“了我，但还是奉劝大家还是少熬夜的好！</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t01.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i02"><img src="images/dr_i02.png"></div>
+                            <div class="dr_show"><img src="images/dr_show02.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">222她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t02.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i03"><img src="images/dr_i03.png"></div>
+                            <div class="dr_show"><img src="images/dr_show03.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">333她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t03.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i04"><img src="images/dr_i04.png"></div>
+                            <div class="dr_show"><img src="images/dr_show04.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">444她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t04.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i05"><img src="images/dr_i05.png"></div>
+                            <div class="dr_show"><img src="images/dr_show05.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">555她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t05.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i06"><img src="images/dr_i06.png"></div>
+                            <div class="dr_show"><img src="images/dr_show06.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">666她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t06.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i07"><img src="images/dr_i07.png"></div>
+                            <div class="dr_show"><img src="images/dr_show07.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">777她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t07.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i08"><img src="images/dr_i08.png"></div>
+                            <div class="dr_show"><img src="images/dr_show08.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">888她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t08.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i09"><img src="images/dr_i09.png"></div>
+                            <div class="dr_show"><img src="images/dr_show09.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">999她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t09.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i10"><img src="images/dr_i10.png"></div>
+                            <div class="dr_show"><img src="images/dr_show10.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">101010她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t10.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i11"><img src="images/dr_i11.png"></div>
+                            <div class="dr_show"><img src="images/dr_show11.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">111111她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t11.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i12"><img src="images/dr_i12.png"></div>
+                            <div class="dr_show"><img src="images/dr_show12.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">121212她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t12.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i13"><img src="images/dr_i13.png"></div>
+                            <div class="dr_show"><img src="images/dr_show13.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">131313她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t13.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i14"><img src="images/dr_i14.png"></div>
+                            <div class="dr_show"><img src="images/dr_show14.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">141414她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t14.png" /></div>
+                        </div>
+                        <div class="slide_con">
+                        	<div class="dr_icon i15"><img src="images/dr_i15.png"></div>
+                            <div class="dr_show"><img src="images/dr_show15.png"></div>
+                            <div class="dr_ta"><img src="images/dr_ta01.png"></div>
+                            <div class="dr_txt">
+                            	<div class="dr_detail">151515她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟她们对美有独特的感悟</div>
+                            </div>
+                            <div class="dr_t"><img src="images/dr_t15.png" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="partbox part_06_box" id="part06">
+    	<div class="bg06">
+        	<div class="tit06"><img src="images/tit06.png" /></div>
+            <div class="sr_con">
+                <div class="sr_box">
+                    <div class="sr_nav">
+                        <h3 class="current"><img src="images/sr_num01.png"></h3>
+                        <h3><img src="images/sr_num02.png"></h3>
+                        <h3><img src="images/sr_num03.png"></h3>
+                        <h3><img src="images/sr_num04.png"></h3>
+                        <h3><img src="images/sr_num05.png"></h3>
+                    </div>
+                    <div class="sr_con_body">
+                        <div class="sr_content block">
+                            <div class="sr_txt">
+                            	<div class="sr_z">111素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比</div>
+                            </div>
+                            <div class="sr_show_a"><img src="images/sr_img_01.png"></div>
+                        </div>
+                        <div class="sr_content">
+                            <div class="sr_txt">
+                            	<div class="sr_z">222素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比</div>
+                            </div>
+                            <div class="sr_show_a"><img src="images/sr_img_02.png"></div>
+                        </div>
+                        <div class="sr_content">
+                            <div class="sr_txt">
+                            	<div class="sr_z">333素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比</div>
+                            </div>
+                            <div class="sr_show_a"><img src="images/sr_img_03.png"></div>
+                        </div>
+                        <div class="sr_content">
+                            <div class="sr_txt">
+                            	<div class="sr_z">444素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比</div>
+                            </div>
+                            <div class="sr_show_a"><img src="images/sr_img_04.png"></div>
+                        </div>
+                        <div class="sr_content">
+                            <div class="sr_txt">
+                            	<div class="sr_z">555素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比素人对比</div>
+                            </div>
+                            <div class="sr_show_a"><img src="images/sr_img_05.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="partbox part_07_box">
+    	<div class="bg07">
+        	<div class="tit07"><img src="images/tit07.png" /></div>
+            <div class="group_body">
+            	<ul class="group_ul">
+                	<li class="group_li one"><img src="images/g_img_big.jpg" /></li>
+                	<li class="group_li">
+                    	<img src="images/g_img01.jpg" />
+                        <div class="group_bg"><p>1雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img02.jpg" />
+                        <div class="group_bg"><p>2雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img03.jpg" />
+                        <div class="group_bg"><p>3雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img04.jpg" />
+                        <div class="group_bg"><p>4雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img05.jpg" />
+                        <div class="group_bg"><p>5雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img06.jpg" />
+                        <div class="group_bg"><p>6雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img07.jpg" />
+                        <div class="group_bg"><p>7雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img08.jpg" />
+                        <div class="group_bg"><p>8雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img09.jpg" />
+                        <div class="group_bg"><p>9雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img10.jpg" />
+                        <div class="group_bg"><p>10雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img11.jpg" />
+                        <div class="group_bg"><p>11雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img12.jpg" />
+                        <div class="group_bg"><p>12雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img13.jpg" />
+                        <div class="group_bg"><p>13雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img14.jpg" />
+                        <div class="group_bg"><p>14雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img15.jpg" />
+                        <div class="group_bg"><p>15雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img16.jpg" />
+                        <div class="group_bg"><p>16雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img17.jpg" />
+                        <div class="group_bg"><p>17雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img18.jpg" />
+                        <div class="group_bg"><p>18雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img19.jpg" />
+                        <div class="group_bg"><p>19雅楠<br />编辑</p></div>
+                    </li>
+                	<li class="group_li">
+                    	<img src="images/g_img20.jpg" />
+                        <div class="group_bg"><p>20雅楠<br />编辑</p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- 页脚 -->
+<div class="m_footer">
+    <div class="ghy_hezuo">
+        <div class="w1180_dand">
+            <div class="ghy_yqlj">
+                <ul>
+                    <li class="ghy_add1" onClick="ggg_nuvqh(1)">友情链接</li>
+                    <li class="ghy_add2 cur" onClick="ggg_nuvqh(2)">合作媒体</li>
+                    <li class="ghy_add3" onClick="ggg_nuvqh(3)">合作伙伴</li>
+                    <li class="ghy_add4" onclick="ggg_nuvqh(4)">热门链接</li>
+                </ul>
+            </div>
+        </div>
+        <div class="w1180_dand">	        
+            <div class="ghy_qhlj">
+               <dl id="ggg_ljqh1"  style="display:none;">
+                    <a href="http://www.mplife.com/" target="_blank">名品导购网</a>
+            <a href="http://www.herschina.com/" target="_blank">HERS女性门户</a>
+            <a href="http://www.autohome.com.cn/" target="_blank">汽车之家</a>
+            <a href="http://www.99166.com/" target="_blank">非常运势算命网</a>
+            <a href="http://www.i-modec.com/" target="_blank">摩登客</a>
+            <a href="http://www.v1.cn/" target="_blank">第一视频</a>
+            <a href="http://www.cnga.org.cn/" target="_blank">中国服装协会</a>
+            <a href="http://bbs.55bbs.com/" target="_blank">55BBS购物论坛</a>
+            <a href="http://www.luxtarget.com/" target="_blank">TARGET致品网</a>
+            <a href="http://www.uncars.com/" target="_blank">卓众汽车网</a>
+            <a href="http://www.moochic.com/" target="_blank">慕奇网</a>
+            <a href="http://cbbs.chinadaily.com.cn/" target="_blank">天下社区</a>
+            <a href="http://www.huanqiu.com/" target="_blank">环球网</a>
+            <a href="http://www.pimei.com/" target="_blank">媲美网</a>
+            <a href="http://www.51pinwei.com/" target="_blank">51品味</a>
+            <a href="http://www.lolitabox.com/" target="_blank">萝莉盒</a>
+            <a href="http://www.hitao.com/" target="_blank">嗨淘化妆品</a>
+            <a href="http://www.esquire.com.cn/" target="_blank">时尚先生网</a>
+            <a href="http://www.rayli.com.cn/zhuanti/luxury/2015sspr/index.html" target="_blank">2015春夏巴黎时装周</a>
+            <a href="http://www.rayli.com.cn/mini/2014/panting/ganku/toufaganku.html" target="_blank">头发干枯毛躁怎么办</a>
+        
+                </dl>
+                <dl id="ggg_ljqh2">
+                    <a href="http://www.pptv.com/" target="_blank">PPTV网络电视</a>
+            <a href="http://fashion.sina.com.cn/" target="_blank">新浪时尚</a>
+            <a href="http://www.sohu.com/" target="_blank">搜狐</a>
+            <a href="http://www.brides.com.cn/" target="_blank">新娘网</a>
+            <a href="http://www.ijie.com/" target="_blank">爱结网</a>
+            <a href="http://www.lady8844.com/" target="_blank">爱美网</a>
+            <a href="http://www.lifestyle.com.cn/" target="_blank">精品购物指南</a>
+            <a href="http://www.jinghua.cn/" target="_blank">京华网</a>
+            <a href="http://www.chlip.com.cn/" target="_blank">轻工出版社</a>
+            <a href="http://xinniang.sohu.com/" target="_blank">搜狐新娘</a>
+            <a href="http://www.gemexpo.com/" target="_blank">中国珠宝品牌网</a>
+            <a href="http://fashion.ifeng.com/" target="_blank">凤凰时尚</a>
+            <a href="http://lady.qq.com/" target="_blank">QQ女性</a>
+            <a href="http://lady.163.com/" target="_blank">网易女人</a>
+            <a href="http://www.ileehoo.com/" target="_blank">轻奢网</a>
+        
+                </dl>
+                <dl id="ggg_ljqh3" style="display:none;">
+                    <a href="http://www.naturesbounty.com.cn/" target="_blank">自然之宝</a>
+            <a href="http://www.casarte.cn/#num=11" target="_blank">卡萨帝</a>
+            <a href="http://www.el-lady.com.cn/" target="_blank">雅诗兰黛官网</a>
+            <a href="http://www.lancome.com.cn/" target="_blank">兰蔻中国</a>
+        
+    
+                </dl>
+                <dl id="ggg_ljqh4" style="display:none;">
+                <a href="http://hzp.rayli.com.cn/biotherm/index.html" title="碧欧泉" target="_blank">碧欧泉</a>
+    <a href="http://hzp.rayli.com.cn/lancome/p-33452.html" title="兰蔻水份缘舒缓柔肤啫喱（舒缓水）" target="_blank">兰蔻水份缘舒缓柔肤啫喱（舒缓水）</a>
+    <a href="http://hzp.rayli.com.cn/lancome/p-42061.html" title="兰蔻美肤修护美容液（修护水）" target="_blank">兰蔻美肤修护美容液（修护水）</a>
+    <a href="http://www.rayli.com.cn/mini/2014/panting/ganku/toufaganku.html" title="头发干枯毛躁怎么办" target="_blank">头发干枯毛躁怎么办</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/smpzdysxgh.html" target="_blank">什么牌子的眼霜效果好</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/qxwysphb.html" target="_blank">去细纹眼霜排行榜</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/nkyshy.html" target="_blank">哪款眼霜好用</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/bsysngpzh.html" target="_blank">补水眼霜哪个牌子好</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/bsxghdys.html" target="_blank">补水效果好的眼霜</a>
+    <a href="http://www.rayli.com.cn/mini/2015/elis/" title="卫生棉条用法" target="_blank">卫生棉条用法</a>
+    <a href="http://beauty.rayli.com.cn/conversation/2015-07-20/492485.shtml" title="Olay大红瓶" target="_blank">Olay大红瓶</a>
+    <a href="http://www.rayli.com.cn/mini/2015/elis/" title="卫生棉条好处" target="_blank">卫生棉条好处</a>
+    <a href="http://bbs.rayli.com.cn/thread-52044799-1-1.html" title="CC霜" target="_blank">CC霜</a>
+    <a href="http://bbs.rayli.com.cn/thread-52044927-1-1.html" title="珍珠皂" target="_blank">珍珠皂</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/bsbsysphb.html" target="_blank">补水保湿眼霜排行榜</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/ybjhngpzh.html" target="_blank">眼部精华哪个牌子好</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/kzysngpzh.html" target="_blank">抗皱眼霜哪个牌子好</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/hydysphb.html" target="_blank">好用的眼霜排行榜</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lancomedyjh/lkxhpdyjh.html" target="_blank">兰蔻小黑瓶大眼精华</a>
+    <a href="http://hzp.rayli.com.cn/beautydiary/index.html" title="我的美丽日志" target="_blank">我的美丽日志</a>
+    <a href="http://hzp.rayli.com.cn/cetaphil/index.html" title="丝塔芙" target="_blank">丝塔芙</a>
+    <a href="http://hzp.rayli.com.cn/clinique/index.html" title="倩碧" target="_blank">倩碧</a>
+    <a href="http://www.rayli.com.cn/mini/2015/lankouqijixiangshui/" title="兰蔻奇迹香水" target="_blank">兰蔻奇迹香水</a>
+    <a href="http://hzp.rayli.com.cn/dove/index.html" title="多芬" target="_blank">多芬</a>
+    <a href="http://hzp.rayli.com.cn/kose/index.html" title="高丝" target="_blank">高丝</a>
+    <a href="http://hzp.rayli.com.cn/lancome/index.html" title="兰蔻" target="_blank">兰蔻</a>
+    <a href="http://hzp.rayli.com.cn/maybellinenewyork/index.html" title="美宝莲" target="_blank">美宝莲</a>
+    <a href="http://hzp.rayli.com.cn/neutrogena/index.html" title="露得清" target="_blank">露得清</a>
+    <a href="http://hzp.rayli.com.cn/nivea/index.html" title="妮维雅" target="_blank">妮维雅</a>
+    <a href="http://hzp.rayli.com.cn/origins/index.html" title="悦木之源" target="_blank">悦木之源</a>
+    <a href="http://hzp.rayli.com.cn/vichy/index.html" title="薇姿" target="_blank">薇姿</a>
+    <a href="http://hzp.rayli.com.cn/vs/index.html" title="沙宣" target="_blank">沙宣</a>
+    <a href="http://hzp.rayli.com.cn/yuesai/index.html" title="羽西" target="_blank">羽西</a>
+    <a href="http://hzp.rayli.com.cn/za/index.html" title="姬茵" target="_blank">姬茵</a>
+    <a href="http://hzp.rayli.com.cn/chanel/index.html" title="香奈儿" target="_blank">香奈儿</a>
+    <a href="http://hzp.rayli.com.cn/shiseido/index.html" title="资生堂" target="_blank">资生堂</a>
+    <a href="http://hzp.rayli.com.cn/OLAY/index.html" title="OLAY" target="_blank">OLAY</a>
+    <a href="http://hzp.rayli.com.cn/lorealparis/index.html" title="欧莱雅" target="_blank">欧莱雅</a>
+    <a href="http://hzp.rayli.com.cn/aupres/index.html" title="欧珀莱" target="_blank">欧珀莱</a>
+    <a href="http://hzp.rayli.com.cn/laneige/index.html" title="兰芝" target="_blank">兰芝</a>
+    <a href="http://hzp.rayli.com.cn/skii/index.html" title="SK-II" target="_blank">SK-II</a>
+    <a href="http://hzp.rayli.com.cn/clarins/index.html" title="娇韵诗" target="_blank">娇韵诗</a>
+    <a href="http://feature.rayli.com.cn/special/fashioncircle/zhangyuxi/index.shtml" title="张予曦" target="_blank">张予曦</a>
+    <a href="http://feature.rayli.com.cn/special/awards/jinqiu2015/index.shtml" title="2015金球奖" target="_blank">2015金球奖</a>
+    <a href="http://hzp.rayli.com.cn/esteelauder/index.html" title="雅诗兰黛" target="_blank">雅诗兰黛</a>
+    
+                </dl>
+                <div class="ggg_clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ggg_clear"></div>
+    <div class="ghy_foot html5hide">
+        <div class="w1180_dand">
+        <div class="ggg_banquan ggg_clear">
+        <div class="cgg_w280 ggg_left">
+            <div class="title">关注我们</div>
+                <ul>
+                    <li class="first"><a href="http://weibo.com/rayli" target="_blank" title="" class="xinlang">新浪</a>
+                    <a href="http://e.t.qq.com/raylirayli" target="_blank" title="" class="weibo">微博</a>
+                    <a href="http://user.qzone.qq.com/1909517553/main" target="_blank" title="" class="zz">z</a>
+                    <a href="http://page.renren.com/601396420/index" target="_blank" title="" class="ren">人人网</a>
+                    </li>
+                    <li><img src="http://images.rayli.com.cn/templates/rayli/rayli/images/86_sl.jpg" width="111" height="111" alt="" /></li>
+                </ul>
+            </div>
+        <div class="col_w618 ggg_left">
+        <div class="nav"><a href="http://www.rayli.com.cn/mini/2013/adservice2013/adservice1.html" target="_blank" title="">广告服务</a>|<a href="http://about.rayli.com.cn/2008-12-04/L0069009_343175.html" target="_blank" title="">联系我们</a>|<a href="http://about.rayli.com.cn/2008-12-04/L0069008_343190.html" target="_blank" title="">法律声明</a>|<a href="http://www.rayli.com.cn/0069/2012-06-27/L0069010_975034.html" target="_blank" title="">隐私声明</a>|<a href="http://about.rayli.com.cn/2008-12-04/L0069007_343192.html" target="_blank" title="">瑞丽招聘</a>|<a href="http://about.rayli.com.cn/" target="_blank" title="">关于瑞丽</a>|<a href="http://www.rayli.com.cn/static/map.htm" target="_blank" title="">网站地图</a>|<a href="http://www.rayli.com.cn/rss/index.html" target="_blank" title="">RSS</a></div>
+        <div class="ray_icp01"><p><a href="http://www.rayli.com.cn/comjs/rayliicp.html" target="_blank"><u>京ICP证010512号</u></a>　<a target="_blank" href="http://www.rayli.com.cn/dxyw651.html"><u>电信业务审批[2001]字第651号</u></a><br><a href="http://www.rayli.com.cn/comjs/gbds.html" target="_blank"><u>广播电视节目制作许可证(京)字第1135号</u></a>　<a target="_blank" href="http://www.rayli.com.cn/comjs/xxwlcb.html"><u>信息网络传播视听节目许可证0110471</u></a><br><a href="http://www.rayli.com.cn/comjs/chuban.html" target="_blank"><u>互联网出版许可证 新出网证（京）字 063号</u></a>　京公网安备11010102000003号<br>&copy;2001-2014 Rayli.com All Right Reserved 版权所有 不得转载</p></div>
+        <div class="ray_icp02"><a target="_blank" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202006092100011"><img border="0" align="absmiddle" width="36" height="43" src="http://www.rayli.com.cn/eightimages/beianlogod2.gif"></a><br>经营性网站<br>备案信息</div>
+        </div>
+        <div class="col_w256 ggg_right">
+        <p><span class="title">时尚</span><a href="http://fashion.rayli.com.cn/" target="_blank">服饰</a><a href="http://beauty.rayli.com.cn/" target="_blank">美容</a><a href="http://luxury.rayli.com.cn/" target="_blank">奢华</a><a href="http://hair.rayli.com.cn/" target="_blank">靓发</a><a href="http://bride.rayli.com.cn/" target="_blank">新娘</a><a href="http://video.rayli.com.cn/" target="_blank">视频</a></p>
+    
+        <p><span class="title">生活</span><a href="http://deco.rayli.com.cn/" target="_blank">家居</a><a href="http://life.rayli.com.cn/" target="_blank">享乐</a><a href="http://astro.rayli.com.cn/" target="_blank">星座</a><a href="http://emotion.rayli.com.cn/" target="_blank">情感</a><a href="http://feature.rayli.com.cn/" target="_blank">专题</a></p>      
+    
+        <p><span class="title">互动</span><a href="http://hzp.rayli.com.cn/" target="_blank">化妆品库</a><a href="http://hzp.rayli.com.cn/try.shtml" target="_blank">试用</a><a href="http://xiangmai.rayli.com.cn/" target="_blank">享买</a><a href="http://star.rayli.com.cn/" target="_blank">瑞丽之星</a><a href="http://bbs.rayli.com.cn/" target="_blank">论坛</a></p>
+        </div>
+    
+        </div>
+        </div>
+        <div class="ggg_clear"></div>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=11bd5233-d037-4683-a6e3-7fff25922d3d&amp;pophcol=2&amp;lang=zh"></script>
+    <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+    
+    <!--1104开始-->
+    <div class="share html5hide" id="sharediv_new">
+        <div>
+            <ul class="share_new"><li class="fsgeli01"><img src="http://images.rayli.com.cn/css/images/fbxinggainow_03.gif" width="50" height="50" /></li><li class="fsgeli02"><img src="http://images.rayli.com.cn/css/images/fbxinggainow_06.gif" width="50" height="49" /></li><li><a href="#raylitop"></a></li></ul>
+            <div class="share_new_0"><ul>
+                <li><a onclick="javascript:bShare.share(event,'sinaminiblog',0);return false;" href="javascript:void(0);" class="bshare-sinaminiblog sina" title="分享到新浪微博"></a></li>
+                <li><a href="javascript:void(0);" onclick="javascript:bShare.share(event,'qqmb',0);return false;" class="tencent" title="分享到腾讯微博">分享到腾讯微博</a></li>
+                <li><a href="javascript:void(0);" onclick="javascript:bShare.share(event,'qzone',0);return false;" class="qzone" title="分享到Qzone">分享到Qzone</a></li>
+                <li><a class="friendster" onclick="javascript:bShare.share(event,'weixin',0);return false;" title="分享到微信" href="javascript:;">分享到微信</a></li></ul></div>
+            <div class="share_new_1"><img src="http://images.rayli.com.cn/css/images/fbxinggainow_15.jpg" width="108" height="124" /></div>
+        </div>
+    </div>
+    <!--1104结束-->
+    <!--尾部end-->
+    <script type="text/javascript" src="http://images.rayli.com.cn/raylijs/head.js"></script>
+    <script type="text/javascript" src="http://www.rayli.com.cn/comjs/ad_assist.js"></script>
+    <!--0925begin-->
+    <div class="qipao_sharedown close_qp jclose_show" style="display:none;"><img src="http://images.rayli.com.cn/css/images/fxqpshare02.png" width="29" height="29" /></div>
+    <!--0925end-->
+    <!--@end 页脚 --> 
+</div>
+
+<script type="text/javascript" src="idangerous.swiper.min.js"></script>
+<script>
+var viewSwiper = new Swiper('.view .swiper-container', {
+	fade:'horizontal',
+	onSlideChangeStart: function() {
+		updateNavPosition()
+	}
+})
+
+$('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
+	e.preventDefault()
+	if (viewSwiper.activeIndex == 0) {
+		viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
+		return
+	}
+	viewSwiper.swipePrev()
+
+})
+$('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
+	e.preventDefault()
+	if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+		viewSwiper.swipeTo(0, 1000);
+		return
+	}
+	viewSwiper.swipeNext()
+})
+
+var previewSwiper = new Swiper('.preview .swiper-container', {
+	visibilityFullFit: true,
+	slidesPerView: 'auto',
+	onlyExternal: true,
+	onSlideClick: function() {
+		viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
+	}
+})
+
+function updateNavPosition() {
+		$('.preview .active-nav').removeClass('active-nav')
+		var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+		if (!activeNav.hasClass('swiper-slide-visible')) {
+			if (activeNav.index() > previewSwiper.activeIndex) {
+				var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+				previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
+			} else {
+				previewSwiper.swipeTo(activeNav.index())
+			}
+		}
+	}
+</script>
+
+</body>
+</html>

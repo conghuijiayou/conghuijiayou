@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1, user-scalable=no">
+<meta name="description" content="菲洛嘉">
+<meta name="author" content="菲洛嘉">
+<title>菲洛嘉</title>
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css.css">
+<style type="text/css">
+/*播放音乐*/
+#musicControl { position:fixed;right:2%;top:2%;display:inline-block;z-index:99999999; }
+#musicControl a { display:inline-block;width:29px;height:29px; background:url(images/music_icon.png) no-repeat 0 0; background-size:100%;}
+#musicControl a audio{width:100%;}
+#musicControl a.stop { background-position:left bottom; }
+#musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.5s linear infinite;}
+#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+@-webkit-keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+@keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg);}
+}
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+/*播放音乐结束*/
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+</script>
+<script type="text/javascript">
+$(function(){
+	$('audio,video').on('play', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+	$('audio,video').on('pause', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+	
+	$('video').on('pause', function() {
+		$('audio').each(function(i, e) {
+			e.play();
+		});
+	});
+		
+	$('#musicfx').on('play', function () {
+		$('#mc_play').attr('class','on');
+	}).on('pause', function () {
+		$('#mc_play').attr('class','stop');
+	});
+});
+</script>
+<script type="text/javascript" src="swipe.js"></script>
+<script type="text/javascript">
+$(function() {
+	var swipe = $('.swiper-container01').Swipe({
+		startSlide: 0,
+		speed: 400,
+		//auto: 5000,
+		continuous: true,
+		disableScroll: false,
+		stopPropagation: false,
+
+		callback: function(i, e) {
+			$('.swiper-pagination-bullet01').eq(i).addClass('swiper-pagination-bullet-active01')
+				.siblings().removeClass('swiper-pagination-bullet-active01');
+		}
+	}).data('Swipe');
+
+	$('.swiper-button-next01').click(function() {
+		swipe.next();
+	});
+	$('.swiper-button-prev01').click(function() {
+		swipe.prev();
+	});
+	$('.swiper-pagination-bullet01').mouseover(function() {
+		swipe.slide($(this).index());
+	});
+
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.tip_all').hide();
+	
+	$('.p1_img01').click(function(){
+		$('.p1_tip01').fadeIn();
+	});
+	$('.p1_img02').click(function(){
+		$('.p1_tip02').fadeIn();
+	});
+	$('.p1_img03').click(function(){
+		$('.p1_tip03').fadeIn();
+	});
+	$('.p1_img04').click(function(){
+		$('.p1_tip04').fadeIn();
+	});
+	$('.p3_02_btn01').click(function(){
+		$('.p3_tip01').fadeIn();
+	});
+	$('.p3_02_btn02').click(function(){
+		$('.p3_tip02').fadeIn();
+	});
+	$('.p3_02_btn03').click(function(){
+		$('.p3_tip03').fadeIn();
+	});
+	
+	$('.tip_close').click(function(){
+		$('.tip_all').hide();
+	});
+});	
+</script>
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<!--<span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" loop autoplay="autoplay"><source src="images/music.mp3" type="audio/mpeg"></audio>
+        </a>
+ </span>-->
+<!--嵌入音乐结束 -->
+<div class="tip_all p1_tip01">
+	<div class="tip_box"><img src="images/p1_tip01.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p1_tip02">
+	<div class="tip_box"><img src="images/p1_tip02.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p1_tip03">
+	<div class="tip_box"><img src="images/p1_tip03.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p1_tip04">
+	<div class="tip_box"><img src="images/p1_tip04.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p3_tip01">
+	<div class="tip_box"><img src="images/p3_tip01.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p3_tip02">
+	<div class="tip_box"><img src="images/p3_tip02.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="tip_all p3_tip03">
+	<div class="tip_box"><img src="images/p3_tip03.png"><span class="tip_close"><img src="images/tip_close.png"></span></div>	
+</div>
+<div class="bg02">
+	<div class="p_head">
+    	<img src="images/bg_head.jpg" />
+        <div class="head_img01"><img src="images/head_img01_g.png" /></div>
+        <div class="head_img02"><img src="images/head_img02.png" /></div>
+        <div class="head_img03"><img src="images/head_img03.png" /></div>
+        <div class="head_img04"><img src="images/head_img04.png" /></div>
+    </div>
+    <div class="bg_p1">
+    	<img src="images/bg_p1.jpg" />
+        <div class="p1_tit" scroll-class="p1_tit_ani"><img src="images/p_tit01.png" /></div>
+        <div class="p1_img01" scroll-class="p1_img01_ani"><img src="images/p1_img01.png" /></div>
+        <div class="p1_img02" scroll-class="p1_img02_ani"><img src="images/p1_img02.png" /></div>
+        <div class="p1_img03" scroll-class="p1_img03_ani"><img src="images/p1_img03.png" /></div>
+        <div class="p1_img04" scroll-class="p1_img04_ani"><img src="images/p1_img04.png" /></div>
+    </div>
+    <div class="bg_p2">
+    	<img src="images/bg_p2.jpg" />
+        <div class="p2_tit" scroll-class="p2_tit_ani"><img src="images/p_tit02.png" /></div>
+        <div class="p2_img01" scroll-class="p2_img01_ani"><img src="images/p2_img01_g.png" /></div>
+        <div class="video_bg" scroll-class="video_bg_ani">
+            <img src="images/video_bg_bo.png" />
+            <div class="video_box">
+                <video controls width="100%" height="auto" poster="images/video_bg_g.jpg">
+                    <source src="http://v.rayli.com.cn/2018-04-24/20180424142252.mp4" type="video/mp4">
+                    <source src="http://www.ckplayer.com/webm/0.webm" type="video/webm">
+                    <source src="http://www.ckplayer.com/webm/0.ogv" type="video/ogg">
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="bg_p2_01">
+    	<img src="images/bg_p2_01.jpg" />
+        <div class="p2_01_img01" scroll-class="p2_01_img01_ani"><img src="images/hscr_img01.png" /></div>
+        <div class="p2_01_img02" scroll-class="p2_01_img02_ani"><img src="images/hscr_img02.png" /></div>
+        <div class="p2_01_img03" scroll-class="p2_01_img03_ani"><img src="images/hscr_img03.png" /></div>
+        <div class="p2_01_img04" scroll-class="p2_01_img04_ani"><img src="images/hscr_img04.png" /></div>
+        <div class="p2_01_img05" scroll-class="p2_01_img05_ani"><img src="images/hscr_img05.png" /></div>
+        <div class="p2_01_img06" scroll-class="p2_01_img06_ani"><img src="images/hscr_img06.png" /></div>
+        <div class="p2_01_img07" scroll-class="p2_01_img07_ani"><img src="images/hscr_img07.png" /></div>
+    </div>
+	<div class="bg_p3_01">
+		<img src="images/bg_p3_01.jpg">
+		<div class="p3_tit" scroll-class="p3_tit_ani"><img src="images/p_tit03.png"></div>
+		<div class="p3_01_img01" scroll-class="p3_01_img01_ani"><img src="images/p3_01_img01.png"></div>
+		<div class="p3_01_img02" scroll-class="p3_01_img02_ani"><img src="images/p3_01_img02_g.png"></div>
+	</div>
+	<div class="bg_p3_02">
+		<img src="images/bg_p3_02.jpg">
+		<div class="p3_02_img01" scroll-class="p3_02_img01_ani"><img src="images/p3_02_img01.png"></div>
+		<a href="https://h5.youzan.com/v2/goods/2ok6epry0mubi" target="_blank" class="p3_02_img02" scroll-class="p3_02_img02_ani"><img src="images/p3_02_img02.png"><span class="shop01"><img src="images/shop.png"></span></a>
+		<div class="p3_02_btn01" scroll-class="p3_02_btn01_ani"><img src="images/p3_02_btn01.png"></div>
+		<div class="p3_02_btn02" scroll-class="p3_02_btn02_ani"><img src="images/p3_02_btn02.png"></div>
+		<div class="p3_02_btn03" scroll-class="p3_02_btn03_ani"><img src="images/p3_02_btn03.png"></div>
+	</div>
+	<div class="bg_p3_03">
+		<img src="images/bg_p3_03.jpg">
+		<div class="p3_03_img01" scroll-class="p3_03_img01_ani"><img src="images/p3_03_img01.png"></div>
+		<a href="https://h5.youzan.com/v2/goods/2fz06lfwclo9a" target="_blank" class="p3_03_img02" scroll-class="p3_03_img02_ani"><img src="images/p3_03_img02.png"><span class="shop02"><img src="images/shop.png"></span></a>
+		<a href="https://h5.youzan.com/v2/goods/35xxafz5efxou" target="_blank" class="p3_03_img03" scroll-class="p3_03_img03_ani"><img src="images/p3_03_img03.png"><span class="shop03"><img src="images/shop.png"></span></a>
+	</div>
+    <div class="bg_p4">
+    	<img src="images/bg_p4.jpg" />
+		<div class="p4_tit" scroll-class="p4_tit_ani"><img src="images/p_tit04.png"></div>
+		<div class="slide_body">
+            <div class="slider01">
+                <div class="swiper-container01">
+                    <div class="swiper-wrapper01">
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img01.png"></div>                    
+                        </div>
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img02.png"></div>
+                        </div>
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img03.png"></div> 
+                        </div>
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img04.png"></div> 
+                        </div>
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img05.png"></div> 
+                        </div>
+                        <div class="swiper-slide01">
+                            <div class="p_box"><img src="images/p4_img06.png"></div> 
+                        </div>
+                    </div>
+                    <div class="swiper-pagination01">
+                        <div class="swiper-pagination-bullet01 swiper-pagination-bullet-active01"><span class="sp01"><img src="images/p4_nav01_aa.png"></span><span class="sp02"><img src="images/p4_nav01_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav02_aa.png"></span><span class="sp02"><img src="images/p4_nav02_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav03_aa.png"></span><span class="sp02"><img src="images/p4_nav03_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav04_aa.png"></span><span class="sp02"><img src="images/p4_nav04_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav05_aa.png"></span><span class="sp02"><img src="images/p4_nav05_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav06_aa.png"></span><span class="sp02"><img src="images/p4_nav06_bb.png"></span></div>
+                    </div> 
+                </div>        
+				<!--<div class="swiper-button-prev01"><img src="images/jiantou_l.png"></div>-->
+				<!--<div class="swiper-button-next01"><img src="images/jiantou_r.png"></div>-->
+            </div>
+        </div>	
+	</div>
+	<div class="bg_p5">
+    	<img src="images/bg_p5.jpg" />
+		<div class="p5_tit" scroll-class="p5_tit_ani"><img src="images/p_tit05.png"></div>
+		<a href="http://v3.rabbitpre.com/mspa/IFVRrud?lc=1&sui=z75AEal6#from=share" target="_blank" class="p5_img01" scroll-class="p5_img01_ani"><img src="images/p5_img01.png"><span class="p5_btn"><img src="images/p5_btn.jpg"></span></a>		
+		<div class="p5_img02" scroll-class="p5_img02_ani"><img src="images/p5_img02.png"></div>
+	</div>
+	<div class="bg_p6">
+    	<img src="images/bg_p6.jpg" />
+		<div class="p6_tit" scroll-class="p6_tit_ani"><img src="images/p_tit06.png"></div>
+		<div class="p6_img01" scroll-class="p6_img01_ani"><img src="images/p6_img01.png"></div>
+	</div>
+</div>
+  
+<script type="text/javascript">
+    $(function(){
+        //$('[scroll-class]').css('visibility', 'hidden');
+        $(window).scroll(function(event) {
+            var top = $(window).scrollTop();
+            var height = $(window).height();
+            $('[scroll-class]').each(function (i,e) {
+                if(top > $(e).offset().top - height + $(e).height() / 1.3){
+                    $(e)/*.css('visibility', 'visible')*/.addClass($(e).attr('scroll-class'));
+                }
+            });
+        });
+    });
+</script>
+<script  type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var curUrl = location.href.split('#')[0];
+$.ajax({
+	dataType: 'jsonp',
+	url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+	success: function(wxConfig){ 	 
+		wx.config({ 
+//        		debug: true,
+			appId: wxConfig.appId,
+			timestamp: wxConfig.timestamp,
+			nonceStr: wxConfig.nonceStr,
+			signature: wxConfig.signature,
+			jsApiList: [
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo'
+			]
+		}); 
+	},
+});   	
+// 分享链接_编辑修改以下下两个url和标题描述
+var index_url = 'http://m.rayli.com.cn/mini/2018/filorga_wenwen/index.html';
+var img_url = 'http://m.rayli.com.cn/mini/2018/filorga_wenwen/images/share.jpg';
+// 分享信息
+var shareInfo = {
+	title: '“耀”领先  拒绝平凡', 	// 分享标题
+	desc : '和瑞丽之星文雯一起 领先一步，用菲洛嘉“黑科技”，焕亮你的未来美肌！',
+	link: index_url, // 分享链接
+	imgUrl: img_url, // 分享图标
+	success: function () { 
+		// 用户确认分享后执行的回调函数
+		alert('分享成功！');	
+	}, 
+};
+wx.ready(function () {
+	wx.onMenuShareTimeline(shareInfo);		
+	wx.onMenuShareAppMessage(shareInfo);
+	wx.onMenuShareQQ(shareInfo);
+	wx.onMenuShareWeibo(shareInfo);
+});
+wx.error(function (res) {
+	alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+
+</html>

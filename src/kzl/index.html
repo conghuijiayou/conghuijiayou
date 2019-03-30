@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>#大尺度直播来袭：女神玩吻鲜肉送轻唇釉！#</title>
+<meta name="description" content="#大尺度直播来袭：女神玩吻鲜肉送轻唇釉！#">
+<meta name="author" content="卡姿兰">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1, user-scalable=no">
+<!-- Link Swiper's CSS -->
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<!-- Demo styles -->
+<link type="text/css" rel="stylesheet" href="kzl_lch.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+<style type="text/css">
+/*播放音乐*/
+    #musicControl { position:fixed;right:2%;top:10%;display:inline-block;z-index:99999999; }
+    #musicControl a { display:inline-block;width:29px;height:29px; background:url(images/mcbg.png) no-repeat 0 0; background-size:100%;}
+    #musicControl a audio{width:100%;}
+    #musicControl a.stop { background-position:left bottom; }
+    
+    #musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.2s linear infinite;}
+    #music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+
+
+
+@-webkit-keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zhuan {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+
+
+
+
+/*播放音乐结束*/
+
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+//    var play_filter=document.getElementById('music_play_filter');
+//    play_filter.addEventListener('click', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('touchstart', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('touchend', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('touchmove', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('mousedown', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('mouseup', function(){
+//        just_play(1);
+//    });
+//    play_filter.addEventListener('mousemove',function(){
+//        just_play(1);
+//    });
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+</script>
+<script type="text/javascript">
+$(function () {
+	$('.from_account').change(function(){
+		$('.from_account').css('color', $('.from_account').val() == ''?"#aaa":"#666");
+	});
+});
+</script>
+<script type="text/javascript">
+	$(function () {
+		$(".v_con").eq(0).css('display','block');
+		$(".v_tit h3").click(function(){
+			$(".v_cons").hide();
+			var i = $(this).index()
+			//$(".v_tit h3").removeClass("current").eq(i).addClass("current");
+			$(".v_con").hide().eq(i).show();
+		});
+	});
+</script>
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" loop autoplay="autoplay"><source src="images/Maroon 5 - Lucky Strike.mp3" type="audio/mpeg"></audio>
+        </a>
+ </span>
+<!--嵌入音乐结束 -->
+
+<div class="tip"><img src="images/tips.png"><div class="close"><img src="images/close.png"></div></div>
+<!-- Swiper -->
+<div class="swiper-container">
+	<div class="jiantou"><img src="images/jiantou.png"></div>
+    <div class="qiche"><img src="images/qiche.png"></div>
+    <div class="swiper-wrapper">
+    	<div class="swiper-slide">
+        	<div class="top_bg"><img src="images/top_bg.png"></div>
+            <div class="p1_img02"><img src="images/p1_img02.png"></div>
+        	<div class="bot_bg"><img src="images/bot_bg.png"></div>
+        	<div class="bot_dian"><img src="images/bot_dian.png"></div>
+            <div class="logo01 logo_ani"><img src="images/logo.png"></div>
+            <div class="p1_img01 p1_ani01"><img src="images/p1_img01.png"></div>
+            <div class="p1_img03 p1_ani03"><img src="images/p1_img03.png"></div>
+            <div class="p1_img04 p1_ani04"><img src="images/p1_img04.png"></div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="top_bg"><img src="images/top_bg.png"></div>
+        	<div class="bot_bg"><img src="images/bot_bg.png"></div>
+            <div class="logo02"><img src="images/logo.png"></div>
+            <div class="yun"><img src="images/yun_bg.png"></div>
+            <div class="p2_img01"><img src="images/p2_img01.png"></div>
+            <div class="p2_img02"><img src="images/p2_img02.png"></div>
+            <div class="slid_box01">
+            	<div class="slid_topimg"><img src="images/p2_slide_bg.png" /></div>
+                <div class="swiper-container02">
+                    <div class="swiper-wrapper02">
+                        <div class="swiper-slide02">
+                            <div class="p_box"><img src="images/p2_slide01.png"></div>                    
+                        </div>
+                        <div class="swiper-slide02">
+                            <div class="p_box"><img src="images/p2_slide02.png"></div>
+                        </div>
+                        <div class="swiper-slide02">
+                            <div class="p_box"><img src="images/p2_slide03.png"></div>
+                        </div>
+                    </div>
+                    
+<!--
+                    <div class="swiper-pagination02">
+                        <span class="swiper-pagination-bullet02 swiper-pagination-bullet-active02"></span>
+                        <span class="swiper-pagination-bullet02"></span>
+                    </div> 
+                    <div class="swiper-button-prev02"><img src="images/jiantou_l.png"></div>
+                    <div class="swiper-button-next02"><img src="images/jiantou_r.png"></div>
+-->                    
+                </div>
+            </div>     
+        </div>
+        <div class="swiper-slide">
+        	<div class="top_bg"><img src="images/top_bg.png"></div>
+        	<div class="bot_bg"><img src="images/bot_bg.png"></div>
+            <div class="logo03"><img src="images/logo.png"></div>
+            <div class="p3_img01"><img src="images/p3_img01.png"></div>
+            <div class="p3_img02"><img src="images/p3_img02.png"></div>
+            <div class="slid_body">
+            	<img src="images/p3_slide_bg.png">
+                <div class="mouse"><img src="images/p3_img03.png"></div>
+                <div class="slid_box02">
+                    <div class="swiper-container01">
+                        <div class="swiper-wrapper01">
+                            <div class="swiper-slide01"><img src="images/p3_slide01.jpg"></div>
+                            <div class="swiper-slide01"><img src="images/p3_slide02.jpg"></div>
+                            <div class="swiper-slide01"><img src="images/p3_slide03.jpg"></div>
+                            <div class="swiper-slide01"><img src="images/p3_slide04.jpg"></div>
+                            <div class="swiper-slide01"><img src="images/p3_slide05.jpg"></div>
+                            <div class="swiper-slide01"><img src="images/p3_slide06.jpg"></div>
+                        </div>
+                        <!-- Add Pagination -->
+    <!--
+                         <div class="swiper-pagination01">
+                            <span class="swiper-pagination-bullet01 swiper-pagination-bullet-active01"></span>
+                            <span class="swiper-pagination-bullet01"></span>
+                            <span class="swiper-pagination-bullet01"></span>
+                            <span class="swiper-pagination-bullet01"></span>
+                            <span class="swiper-pagination-bullet01"></span>
+                            <span class="swiper-pagination-bullet01"></span>
+                        </div>
+    -->                    <!-- Add Arrows -->
+    <!--                    <div class="swiper-button-prev01"><img src="images/jiantou_l.png"></div>
+                        <div class="swiper-button-next01"><img src="images/jiantou_r.png"></div>
+    -->
+                    </div>
+                </div>    
+            </div>
+             
+        </div>
+        
+        <div class="swiper-slide">
+        	<div class="top_bg"><img src="images/top_bg.png"></div>
+            <div class="p4_img01"><img src="images/p4_img01.png"></div>
+            <!--<div class="p1_img02"><img src="images/p1_img02.png"></div>-->
+            <div class="p4_men"><img src="images/p4_men.png"></div>
+        	<div class="bot_bgs4"><img src="images/bot_bgs.png"></div>
+            <div class="logo04"><img src="images/logo.png"></div>
+            <div class="p4_img02"><img src="images/p4_img02.png"></div>
+            <div class="p4_img03"><img src="images/p4_img03.png"></div>
+            <div class="p4_img04"><img src="images/p4_img04.png"></div>
+            <div class="p4_img05"><img src="images/p4_img05.png"></div>
+        </div>
+                
+        <div class="swiper-slide">
+        	<div class="top_bg"><img src="images/top_bg.png"></div>
+        	<div class="bot_bgs5"><img src="images/bot_bgs.png"></div>
+            <div class="logo05"><img src="images/logo.png"></div>
+            <div class="slider_s">
+                <div class="v_box">
+                    <div class="v_con"><img src="images/p5_img01.jpg"></div>
+                    <div class="v_con"><img src="images/p5_img02.jpg"></div>
+                	<!--<div class="v_cons"><img src="images/p5_img03.jpg"></div>-->
+                </div>
+                <div class="v_tit">
+                    <h3 class="fl current"><img src="images/btn_img01.png"></h3>
+                    <h3 class="fr"><img src="images/btn_img02.png"></h3>
+                </div>
+            </div>
+            <form id="" target="" name="">
+            <div class="inp_box">
+            	<div class="inp_li"><input type="text" name="from_name" class="from_name" value="" placeholder="姓名" ></div>
+            	<div class="inp_li"><input type="text" name="from_phone" class="from_phone" value="" placeholder="电话" ></div>
+            	<!--<div class="inp_li"><input type="text" name="from_account" class="from_account" value="" placeholder="色号" ></div>-->
+                <div class="inp_li">
+                    <select name="from_account" class="from_account">
+                    	<option value="">色号</option>
+                    	<option value="1">01号色暧昧粉</option>
+                    	<option value="2">02号色时髦玫</option>
+                    </select>
+                </div>
+            	<div class="inp_li"><input type="text" name="from_address" class="from_address" value="" placeholder="地址" ></div>
+            	<div class="go"><a href="javascript:void(0)" onclick="ajax_from()"><img src="images/p5_btn.png" /></a></div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add Pagination <div class="swiper-pagination"></div>-->
+</div>
+
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+<!-- Initialize Swiper -->
+  <script src="js/dist/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="js/dist/sweetalert.css">
+<script>
+function ajax_from()
+{
+	var name=$(".from_name").val();
+	var phone=$(".from_phone").val();
+	var account=$(".from_account").val();
+	var address=$(".from_address").val();
+	if(name=="" || phone=="" || account=="" || address=="")
+	{
+		swal("请填写完整信息", "", "error");
+		return false;
+	}
+	var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	if(!myreg.test(phone)){
+		swal("请输入有效的手机号码！", "", "error");
+		return false;
+	}
+	//58.68.226.131/mini2016
+	$.ajax({
+		type : "get",
+		url : "http://58.68.226.131/mini2016/tprayli/?m=Index&a=kazhilanlch",
+		dataType : "jsonp",
+		jsonp: "callback",
+		jsonpCallback:"success_jsonpCallback",
+		data:{"name":name,"phone":phone,"account":account,"address":address},
+		success : function(json){
+			if(json==1)
+			{
+				swal("手机号已存在", "", "error");
+			}else
+			{
+				// swal("提交成功！", "", "");
+                $('.tip').show();
+			}
+		},
+		error:function(){
+		}
+	});
+}
+$('.close').click(function(){
+    $('.tip').hide();
+});
+</script>
+<script type="text/javascript">
+
+var swiper = new Swiper('.swiper-container', {
+	
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    mousewheelControl: true,
+    onlyExternal: false, //禁止
+
+    onSlideChangeStart: function() {
+        var activeIndex = swiper.activeIndex;
+        var previousIndex = swiper.previousIndex;
+        if (activeIndex != previousIndex) {
+
+            switch (activeIndex) {
+                case 0:
+					$(".logo01").addClass('logo_ani');
+					$(".p1_img01").addClass('p1_ani01');
+					$(".p1_img03").addClass('p1_ani03');
+					$(".p1_img04").addClass('p1_ani04');
+                    break;
+                case 1:
+					$(".logo02").addClass('logo_ani');
+					$(".p2_img01").addClass('p2_ani01');
+					$(".p2_img02").addClass('p2_ani02');
+                    break;
+                case 2:
+					$(".logo03").addClass('logo_ani');
+					$(".p3_img01").addClass('p3_ani01');
+					$(".p3_img02").addClass('p3_ani02');
+                    break;
+                case 3:
+					$(".logo04").addClass('logo_ani');
+					$(".p4_img01").addClass('p4_ani01');
+					$(".p4_img02").addClass('p4_ani02');
+					$(".p4_img03").addClass('p4_ani03');
+					$(".p4_img04").addClass('p4_ani04');
+                    break;
+                case 4:
+					$(".logo05").addClass('logo_ani');
+                    $(".qiche").addClass('display');
+                    $(".jiantou").addClass('display');
+                    break;
+            }
+
+            switch (previousIndex) {
+                case 0:
+					$(".logo01").removeClass('logo_ani');
+					$(".p1_img01").removeClass('p1_ani01');
+					$(".p1_img03").removeClass('p1_ani03');
+					$(".p1_img04").removeClass('p1_ani04');
+                    break;
+                case 1:
+					$(".logo02").removeClass('logo_ani');
+					$(".p2_img01").removeClass('p2_ani01');
+					$(".p2_img02").removeClass('p2_ani02');
+                    break;
+                case 2:
+					$(".logo03").removeClass('logo_ani');
+					$(".p3_img01").removeClass('p3_ani01');
+					$(".p3_img02").removeClass('p3_ani02');
+                    break;
+                case 3:
+					$(".logo04").removeClass('logo_ani');
+					$(".p4_img01").removeClass('p4_ani01');
+					$(".p4_img02").removeClass('p4_ani02');
+					$(".p4_img03").removeClass('p4_ani03');
+					$(".p4_img04").removeClass('p4_ani04');
+                    break;
+                case 4:
+					$(".logo05").removeClass('logo_ani');
+                    $(".qiche").removeClass('display');
+                    $(".jiantou").removeClass('display');
+                    break;
+            }
+
+        }
+    }
+});
+
+</script>
+<script type="text/javascript" src="swipe.js"></script>
+<script type="text/javascript">
+$(function(){
+   var swipe = $('.swiper-container01').Swipe({
+      startSlide: 0,
+      speed: 400,
+      auto: 2000,
+      continuous: true,
+      disableScroll: false,
+      stopPropagation: false,
+  
+        callback:function (i,e) {
+        $('.swiper-pagination-bullet01').eq(i).addClass('swiper-pagination-bullet-active01')
+        .siblings().removeClass('swiper-pagination-bullet-active01');
+    }}).data('Swipe');
+
+    $('.swiper-button-next01').click(function () {
+        swipe.next();
+    });
+    $('.swiper-button-prev01').click(function () {
+        swipe.prev();
+    });
+    $('.swiper-pagination-bullet01').mouseover(function () {
+       swipe.slide($(this).index()); 
+    }); 
+});
+
+</script>
+<script type="text/javascript">
+$(function(){
+   var swipe = $('.swiper-container02').Swipe({
+      startSlide: 0,
+      speed: 400,
+      auto: 2000,
+      continuous: true,
+      disableScroll: false,
+      stopPropagation: false,
+  
+        callback:function (i,e) {
+        $('.swiper-pagination-bullet02').eq(i).addClass('swiper-pagination-bullet-active02')
+        .siblings().removeClass('swiper-pagination-bullet-active02');
+    }}).data('Swipe');
+
+    $('.swiper-button-next02').click(function () {
+        swipe.next();
+    });
+    $('.swiper-button-prev02').click(function () {
+        swipe.prev();
+    });
+    $('.swiper-pagination-bullet02').mouseover(function () {
+       swipe.slide($(this).index()); 
+    }); 
+});
+
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+function getParastrByName(strname) 
+{ 
+   var hrefstr,pos,parastr,para,tempstr; 
+   hrefstr = window.location.href; 
+   pos = hrefstr.indexOf("?"); 
+   parastr = hrefstr.substring(pos+1); 
+   para = parastr.split("&"); 
+   tempstr=""; 
+   for(i=0;i<para.length;i++) 
+   { 
+       tempstr = para[i]; 
+       pos = tempstr.indexOf("="); 
+       if(tempstr.substring(0,pos) == strname) 
+       { 
+          return tempstr.substring(pos+1); 
+       } 
+   } 
+   return null; 
+}
+
+var curUrl = location.href.split('#')[0];
+$.ajax({
+    dataType: 'jsonp',
+    url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+    success: function(wxConfig){     
+        wx.config({ 
+//              debug: true,
+            appId: wxConfig.appId,
+            timestamp: wxConfig.timestamp,
+            nonceStr: wxConfig.nonceStr,
+            signature: wxConfig.signature,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        }); 
+    },
+});      
+    
+// 分享链接
+var index_url = 'http://m.rayli.com.cn/mini/2016/kazhilanlch/index.html';       
+var img_url = 'http://m.rayli.com.cn/mini/2016/kazhilanlch/images/wx_show.jpg';
+var g = getParastrByName('r');  
+if(g == null){
+    g = 80;
+} 
+// 分享信息
+var shareInfo = {
+    title: '#大尺度直播来袭：女神玩吻鲜肉送轻唇釉！#',  // 分享标题
+    desc : '#小轻新也好色，小鲜肉邀你么么哒# 卡姿兰直播走起！',
+    link: index_url, // 分享链接
+    imgUrl: img_url, // 分享图标
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+        alert('分享成功！'); 
+    }, 
+};
+
+wx.ready(function () {
+    wx.onMenuShareTimeline(shareInfo);      
+    wx.onMenuShareAppMessage(shareInfo);
+    wx.onMenuShareQQ(shareInfo);
+    wx.onMenuShareWeibo(shareInfo);
+});
+
+wx.error(function (res) {
+    alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+
+</html>

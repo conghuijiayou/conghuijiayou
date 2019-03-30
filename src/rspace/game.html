@@ -1,0 +1,801 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>收集蝶变能量 千份好礼等你拿</title>
+<meta name="description" content="京东美妆蝴蝶节">
+<meta name="author" content="京东美妆蝴蝶节">
+<link rel="stylesheet" href="css.css" />
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<style type="text/css">
+.swiper-container-z .swiper-scrollbar-drag{ background:#824b75; width:4px;}
+.swiper-container-vertical>.swiper-scrollbar{ width:4px;}
+</style>
+<style type="text/css">
+    #musicControl {
+        position: absolute;
+        right: 2%;
+        top: 1%;
+        display: inline-block;
+        z-index: 99999999;
+    }
+
+    #musicControl a {
+        display: inline-block;
+        width: 29px;
+        height: 29px;
+        background: url(images/mcbg.png) no-repeat 0 0;
+        background-size: 100%;
+    }
+
+    #musicControl a audio {
+        width: 100%;
+    }
+
+    #musicControl a.stop {
+        background-position: left bottom;
+    }
+
+    #musicControl a.on {
+        background-position: 0px 0px;
+        -webkit-animation: zhuan 1.2s linear infinite;
+    }
+
+    #music_play_filter {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999998;
+    }
+
+    @-webkit-keyframes zhuan {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes zhuan {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .zhuan {
+        -webkit-transform-origin: top center;
+        -ms-transform-origin: top center;
+        transform-origin: top center;
+        -webkit-animation-name: zhuan;
+        animation-name: zhuan;
+    }
+
+    /*播放音乐结束*/
+</style>
+<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://adsite3.rayli.com.cn/res/js/func_new.js?123"></script>
+<script type="text/javascript" src="https://adsite3.rayli.com.cn/res/js/lib.js"></script>
+<script type="text/javascript" src="https://adsite3.rayli.com.cn/mini2019/butterfly/js/index.js?2345"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51787134-4', 'auto');
+  ga('send', 'pageview');
+</script>
+	<script type="text/javascript">
+		$(function () {
+			$('#bgm').on('play', function () {
+				$('#mc_play').attr('class', 'on');
+			}).on('pause', function () {
+				$('#mc_play').attr('class', 'stop');
+			});
+			$('#mc_play').on('click', function () {
+				var audio = $('#bgm')[0];
+				if (audio.paused) {
+					audio.play();
+				} else {
+					audio.pause();
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			var count = 0;
+			var playtime = 30;
+			var min = 1.9;
+			var max = 3;
+			var winner = 500;
+			var numz = 3;
+			// { v: 分值, t: 出现次数, img: 图片 }
+			var sprites = [{
+				v: 24,
+				t: 5,
+				img: 'butterfly.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: 12,
+				t: 8,
+				img: 'spaceship.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: 10,
+				t: 8,
+				img: 'powder.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: 5,
+				t: 10,
+				img: 'mascara.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: 6,
+				t: 20,
+				img: 'lipstick.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: 3,
+				t: 50,
+				img: 'beautyblender.png',
+				a: 'ok.mp3'
+			},
+			{
+				v: -6,
+				t: 12,
+				img: 'devil.png',
+				img2: 'devil02.png',
+				a: 'devil.mp3'
+			},
+			{
+				v: -15,
+				t: 10,
+				img: 'bomb.png',
+				img2: 'bomb02.png',
+				a: 'bomb.mp3',
+				o: true
+			}
+			];
+			var presound = function () {
+				for (var i = 0; i < sprites.length; i++) {
+					var id = sprites[i].a.replace(/\./g, '_');
+					if ($('#' + id, '#sound').length) continue;
+					$('<audio preload="auto"></audio>')
+						.attr('id', id)
+						.attr('src', 'mp3/' + sprites[i].a)
+						.appendTo('#sound');
+				}
+			}
+			presound();
+			var sumtimes = function () {
+				var count = 0;
+				for (var i = 0; i < sprites.length; i++) {
+					count += sprites[i].t;
+				}
+				return count;
+			}
+			var sum = sumtimes();
+			var interval = playtime * 1000 / sum;
+			var select = function () {
+				var r = parseInt(Math.random() * sumtimes());
+				for (var i = 0; i < sprites.length; i++) {
+					if (r < sprites[i].t) break;
+					r -= sprites[i].t;
+				}
+				sprites[i].t -= 1;
+				return sprites[i];
+			}
+			var win = $(".couten").width();
+			var complete = function (bomb) {
+				if (timer == null && $('.couten>li').length == 0) {
+					//显示计数结果count
+					$('#bgm')[0].pause();					
+					if (bomb || count < winner) {
+						//失败
+						var taskTotal = getTaskNum();
+						if(taskTotal < 4) {
+							$('.mo02_record').text('您的分数是' + count + '分');
+							$(".mo02").css("display", "block");
+						} else {
+							alert('您的分数是' + count + '分，挑战失败！明天再来参加游戏吧！');
+							window.location.href = 'index.html';
+						}
+					} else {
+						//成功
+						$('.mo_record').text('您的分数是' + count + '分');
+						$(".mo").css("display", "block");
+					}
+					writeCookie('butterfly_score', count, 340);		//分数
+					setGameTimes();
+				}
+			}
+			
+			
+					
+			var sumdown = sum;
+			// t: current time, b: begInnIng value, c: change In value, d: duration
+			var easeOutQuad = function (t, b, c, d) {
+				return -c * (t /= d) * (t - 2) + b;
+			}
+			var easeOutCubic = function (t, b, c, d) {
+				return c * ((t = t / d - 1) * t * t + 1) + b;
+			}
+			var easeOutQuart = function (t, b, c, d) {
+				return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+			}
+			var easeOutQuint = function (t, b, c, d) {
+				return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+			}
+			var add = function () {
+				var hb = select();
+				//单个图标宽度60
+				var wh = 60;
+				var left = parseInt(Math.random() * (win - wh) + 0);
+				//红包角度 -45 ~ 45
+				var rot = (parseInt(Math.random() * (45 - (-45)) - 45)) + "deg";
+				//增加一个图标
+				var li = $("<li><a href='javascript:;'><img src='images/" + hb.img + "'></a></li>").prependTo(".couten");
+				li.data('value', hb.v).css({
+					"left": left,
+					'animation-duration': max - easeOutQuint(sum - sumdown, 0, max - min, sum) + 's'
+				});
+				//设置图片角度
+				$("a img", li).css({
+					"width": wh,
+					"height": wh,
+					"transform": "rotate(" + rot + ")"
+				});
+				li.on('animationend', function () {
+					$(this).remove();
+					complete();
+				});
+				//点击红包的时候弹出模态层
+				li.one('touchstart', function () {
+					var that = $(this);
+					var value = that.data('value');
+					count += value;
+					$('.record span').text(count + '分');
+					if (hb.img2) {
+						$("img", that).attr('src', 'images/' + hb.img2);
+					}
+					if(!hb.o) that.append('<span>' + (value > 0 ? ('+' + value) : value) + '</span>');
+					// that.css('animation-play-state', 'paused');
+					if (hb.a) {
+						var id = hb.a.replace(/\./g, '_');
+						var audio = $('#' + id, '#sound').get(0);
+						if (audio.paused) {
+							audio.play();
+						} else {
+							audio.currentTime = 0
+						}
+					}
+					//加分消失
+					setTimeout(function () {
+						if (hb.o) {
+							sumdown = 0;
+							clearTimeout(timer);
+							timer = null;
+							$('.couten').empty();
+						} else {
+							that.remove();
+						}
+						complete(hb.o == true);
+					}, 500);
+					
+				});
+				timer = (--sumdown) > 0 ? setTimeout(add, interval) : null;
+			}
+			var gameing = function () {
+				//开始增加下落红包
+				$(".backward").remove();
+				numz = 0;
+				add();
+				timing();
+			};
+			//倒数计时
+			var backward = function () {
+				if (numz > 0) {
+					$(".backward span").html(numz);
+					setTimeout(backward, 1000);
+					numz--;
+				} else {
+					//倒记时结束
+					gameing();
+				}
+				console.info('b', numz);
+			}
+			var timing = function () {
+				$('.timing span').text('' + Math.max(playtime - numz, 0) + 'S');
+				$('.progress .value').css('width', (numz * 100 / playtime) + '%');
+				numz++;
+				if ($('.couten>li').length) setTimeout(timing, 1000);
+			}
+			// $('.timing').text('计时:' + playtime + '秒');
+			$('.ready').on('click', function () {
+				$('#bgm').get(0).play();
+				var temp = checkAableGame();
+				if(temp) {
+					$('.p1_body').hide();
+					$('.p2_body').hide();
+					$('.ready_bg').hide();
+					$('.p1_rule').hide();
+					$('#readygo').one('pause', function () {
+						$('#bgm').get(0).play();
+					}).get(0).play();
+					//$('#bgm').get(0).play();
+					$('.ready').hide();
+					$('#musicControl').show();
+					// backward();
+					gameing();
+				}
+				_gaq.push(['_trackEvent', 'butterfly', 'click', 'go', 5]);
+			});
+			$('#musicControl').hide();
+		});
+	</script>
+
+</head>
+
+<body>
+	<div class="swiper-container swiper-container-g">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-no-swiping">
+				<span id="musicControl">
+					<a id="mc_play" class="stop">
+					</a>
+				</span>
+				<div class="all">
+					<div class="girl01"><img src="images/girl01.png" /></div>
+					<div class="girl02"><img src="images/girl02.png" /></div>
+					<div class="girl03"><img src="images/girl03.png" /></div>
+					<div class="girl04"><img src="images/girl04.png" /></div>
+					<div class="girl05"><img src="images/girl05.png" /></div>
+					<ul class="couten">
+						<!--<li>
+                            <a href="#"><img src="images/hb_1.png"></a>
+                    	</li>-->
+					</ul>
+					<div class="mo">
+						<div class="mo_tit">
+							<img src="images/result_ok.png">
+							<div class="mo_record">您的分数是100分</div>
+						</div>
+						<div class="mo_btn"><img src="images/btn_jiang.png"></div>
+					</div>
+					<div class="mo02">
+						<div class="mo02_tit">
+							<img src="images/result_fail.png">
+							<div class="mo02_record">您的分数是100分</div>
+						</div>
+						<div class="mo02_btn"><img src="images/btn_fuhuo.png"></div>
+					</div>
+					<div class="timing"><span></span></div>
+					<div class="record"><span>0分</span></div>
+					<div class="backward">
+						<span></span>
+					</div>
+					<audio id="bgm" src="mp3/bgm.mp3" loop="loop" preload="auto" style="display:none;"></audio>
+					<audio id="readygo" src="mp3/readygo.mp3" preload="auto" style="display:none;"></audio>
+					<div id="sound" style="display:none;">
+						<!-- <audio id="sound"></audio> -->
+					</div>
+					<div class="ready_bg"></div>
+					
+				</div>
+
+				<div class="p1_rule"><img src="images/rule_tit01.png" /></div>
+				<div class="ready"><img src="images/go.png" /></div>
+				<div class="p2_body"></div>
+                <!--规则-->
+				<div class="p1_body">
+					<div class="p1_rule_body">	
+                        <!--<div class="rule_tit"><img src="images/rule_tit.png" /></div> -->
+                    	<div class="rule_body">
+                        	<img src="images/rule_bg_g.png" />
+                            <div class="rule_cir"><img src="images/rule_bg_cir.png" /></div>
+                            <!--
+							<div class="r_btn">
+                                <div class="r_box btn01"><img src="images/num01_a.png" /></div>
+                                <div class="r_box btn02"><img src="images/num02_b.png" /></div>
+                                <div class="r_box btn03"><img src="images/num03_a.png" /></div>
+							</div>
+							-->
+							
+							<div class="btn04"><img src="images/num03_a.png" /></div>
+                            <div class="rule_all">
+<!--
+                                <div class="swiper-container swiper-container-r">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide swiper-no-swiping">
+                                        	<div class="rule_box"><img src="images/rule_img_g.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+-->                                                                
+                                  <div class="swiper-container swiper-container-z">
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                          <div class="wish_txt"><img src="images/rule_img_g.png"></div>
+                                      </div>
+                                    </div>
+                                    <!-- Add Scroll Bar -->
+                                    <div class="swiper-scrollbar"></div>
+                                  </div>                                
+                                
+                                
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+            <!--复活任务-->
+			<div class="swiper-slide swiper-no-swiping">
+				<div class="za_bg02">
+					<div class="share_tip"><img src="images/share_img.png"></div>
+					<div class="fuhuo_tit"><img src="images/fuhuo_tit.png"></div>
+					<div class="fuhuo_bg">
+						<div class="fuhuo_gx"><img src="images/fuhuo_gx.png"></div>
+						<!--<div class="work_li w01 on">
+							<img src="images/work01.png">
+							<div class="work_btn">
+								<img src="images/w_btn00.png">
+								<div class="w_btn on"></div>
+							</div>
+						</div>-->
+						<div class="work_li w02 w_share on">
+							<img src="images/work02.png">
+							<div class="work_btn">
+								<img src="images/w_btn00.png">
+								<div class="w_btn"></div>
+							</div>
+						</div>
+						<a href="https://pro.m.jd.com/mall/active/2gGhBzF22aV5RgTgk3TAXe6j8xus/index.html" target="blank" class="work_li w03 on" onclick="doTask(3);_gaq.push(['_trackEvent', 'butterfly', 'click', 'zhuhuichang', 5]);">
+							<img src="images/work03.png">
+							<div class="work_btn">
+								<img src="images/w_btn00.png">
+								<div class="w_btn on"></div>
+							</div>
+						</a>
+						<a href="https://pro.m.jd.com/mall/active/4LYspLchHpksanf9pWhLacvii9RJ/index.html" target="blank" class="work_li w04 on" onclick="doTask(4);_gaq.push(['_trackEvent', 'butterfly', 'click', 'shishang', 5]);">
+							<img src="images/work04.png">
+							<div class="work_btn">
+								<img src="images/w_btn00.png">
+								<div class="w_btn on"></div>
+							</div>
+						</a>
+                        <a href="https://pro.m.jd.com/mall/active/2UNc32GenB5iwdRu5WSoavpMCnyc/index.html" target="blank" class="work_li w05 on" onclick="doTask(5);_gaq.push(['_trackEvent', 'butterfly', 'click', 'shipin', 5]);">
+							<img src="images/work05.png">
+							<div class="work_btn">
+								<img src="images/w_btn00.png">
+								<div class="w_btn on"></div>
+							</div>
+                        </a>
+					</div>
+				</div>
+			</div>
+            <!--打开你的专属礼物-->
+			<div class="swiper-slide swiper-no-swiping">
+				<div class="za_bg02">
+					<div class="gift_img"><img src="images/gift_img.png"></div>
+					<div class="gift_open"><img src="images/gift_open.png"></div>
+                    <div class="div_open" style="display:none">打开专属礼物</div>
+				</div>
+			</div>
+            <!--填写资料-->
+			<div class="swiper-slide swiper-no-swiping">
+				<div class="za_bg02">
+					<form id="info_form" name="info_form" method="">
+                        <div class="show_gift"><img id="img_gift" src=""></div>
+                        <div class="show_txt"><img src="images/show_txt.png"></div>
+                        <div class="z_info_one"><input type="text" id="name" name="name" placeholder="姓名"  maxlength="10" dataType="Limit" min="1" msg="请输入真实姓名"></div>
+                        <div class="z_info_one"><input type="text" id="mobiphone" name="mobiphone" placeholder="手机" maxlength=11 dataType="Mobile" msg="手机号码不能为空或者格式有误"></div>
+                        <div class="z_info_one"><input type="text" id="address" name="address" placeholder="详细的邮寄地址" dataType="Limit" min="1" msg="请输入详细地址！"></div>
+                        <div class="z_submit"><img src="images/show_submit.png" /></div>
+                        <div class="div_submit" style="display:none">提交</div>
+					</form>
+				</div>
+			</div>
+            <!--礼物赶送中-->
+			<div class="swiper-slide swiper-no-swiping">
+				<div class="za_bg02">
+					<div class="shop"><img src="images/x_fuhuo.png"></div>
+                    <div class="go_back"><img src="images/x_index.png"></div>
+				</div>
+			</div>
+            <!--失败后弹出-->
+			<div class="swiper-slide swiper-no-swiping">
+				<div class="za_bg02">
+					<div class="shop"><img src="images/x_fuhuo.png"></div>
+                    <div class="fuhuo_btn"><img src="images/x_index_fh.png"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function () {
+			$('.p1_rule').click(function () {
+				//$(this).hide();
+				$('.p1_body').fadeIn().css('z-index', '300');
+				$('.p1_rule_body').fadeIn().css('visibility', 'visible');
+
+			});
+			$('.btn04').click(function () {
+				//if($(this).data('on')) {
+					$('.p1_rule').show();
+					$('.p1_rule_body').hide();
+					$('.p1_body').hide();
+				//}
+			});
+			$('.w_share').click(function(){
+				$('.share_tip').fadeIn();
+			});
+			$('.share_tip').click(function(){
+				$(this).fadeOut();
+			});
+		});
+	</script>
+	<!-- Swiper JS -->
+	<script src="swiper.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+
+			var swiperG = new Swiper('.swiper-container-g', {
+				direction: 'vertical',
+				spaceBetween: 0,
+				pagination: {
+					el: '.swiper-pagination-g',
+					clickable: true,
+				},
+
+				on: {
+					slideChange: function () {
+						var activeIndex = swiperG.activeIndex;
+						var previousIndex = swiperG.previousIndex;
+						console.info(activeIndex, previousIndex);
+						if (activeIndex != previousIndex) {
+
+							switch (activeIndex) {
+								case 0:
+									$(".index_img01").addClass('index_img01_ani');
+									$(".p0_qiu01").addClass('p0_qiu01_ani');
+									$(".p0_qiu02").addClass('p0_qiu02_ani');
+									$(".p0_qiu03").addClass('p0_qiu03_ani');
+									$(".p0_img02").addClass('p0_img02_ani');
+									$(".p0_img03").addClass('p0_img03_ani');
+									$(".p0_img04").addClass('p0_img04_ani');
+									$(".p0_img05").addClass('p0_img05_ani');
+
+									break;
+
+								case 1:
+									$('.w01').addClass('i01');
+									$('.w02').addClass('i02');
+									$('.w03').addClass('i03');
+									$('.w04').addClass('i04');
+									$('.w05').addClass('i05');
+									break;
+
+								case 2:
+
+									break;
+
+								case 3:
+									$('.show_gift').addClass('show_gift_ani');
+									break;
+
+							}
+
+							$(".swiper-wrapper .swiper-slide").eq(previousIndex).find("").each(function (index, element) {
+								$(this).hide();
+							});
+
+							switch (previousIndex) {
+								case 0:
+									$(".index_img01").removeClass('index_img01_ani');
+									$(".p0_qiu01").removeClass('p0_qiu01_ani');
+									$(".p0_qiu02").removeClass('p0_qiu02_ani');
+									$(".p0_qiu03").removeClass('p0_qiu03_ani');
+									$(".p0_img02").removeClass('p0_img02_ani');
+									$(".p0_img03").removeClass('p0_img03_ani');
+									$(".p0_img04").removeClass('p0_img04_ani');
+									$(".p0_img05").removeClass('p0_img05_ani');
+									break;
+
+								case 1:
+									break;
+
+								case 2:
+
+									break;
+
+								case 3:
+
+									break;
+
+							}
+
+						}
+					}
+				}
+			});
+
+
+			var swiperR = new Swiper('.swiper-container-r', {
+				//direction: 'horizontal',
+				direction: 'vertical',
+				spaceBetween: 0,
+				noSwiping: false,
+				pagination: {
+					el: '.swiper-pagination-r',
+					clickable: true,
+				},
+
+				on: {
+					slideChange: function () {
+						var activeIndex = swiperR.activeIndex;
+						var previousIndex = swiperR.previousIndex;
+						console.info(activeIndex, previousIndex);
+						if (activeIndex != previousIndex) {
+
+							switch (activeIndex) {
+								case 0:
+
+									break;
+
+								case 1:
+									//$('img', '.btn02').attr('src', 'images/num02_a.png');
+									//$('img', '.btn03').attr('src', 'images/num03_a.png');
+									//$('.btn03').data('on', true);
+									break;
+
+							}
+
+							switch (previousIndex) {
+								case 0:
+									break;
+
+								case 1:
+
+									break;
+
+							}
+
+						}
+					}
+				}
+			});
+			//swiperG.slideTo(1);	
+			$('.mo_btn').click(function () {
+				swiperG.slideTo(2);
+			});
+			
+			$('.mo02_btn').click(function () {
+				swiperG.slideTo(5);
+			});
+
+			$('.div_open').click(function () {
+				swiperG.slideTo(3);
+			});
+						
+			$('.div_submit').click(function(){
+				swiperG.slideTo(4);
+			});
+
+			$('.btn01').click(function(){
+				swiperR.slideTo(0);	
+			});
+
+			$('.btn02').click(function(){
+				swiperR.slideTo(1);	
+			});
+			
+			$('.rule_next').click(function(){
+				swiperR.slideTo(1);	
+			});
+
+			$('.go_back').click(function(){
+				//swiperG.slideTo(0);	
+				window.location.href = 'index.html';
+			});
+
+			$('.fuhuo_btn').click(function(){
+				swiperG.slideTo(1);	
+			});
+
+
+			var match = window.location.href.match(/s=(\d+)/i);
+			if (match) {
+				var index = parseInt(match[1]);
+				swiperG.slideTo(index);
+			}
+			
+			//http://....../game.html?s=2
+
+			
+			var swiperZ = new Swiper('.swiper-container-z', {
+			  direction: 'vertical',
+			  slidesPerView: 'auto',
+			  noSwiping : false,
+			  freeMode: true,
+			  scrollbar: {
+				el: '.swiper-scrollbar',
+			  },
+			  mousewheel: true,
+			});
+	
+	
+		});
+	</script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+		var curUrl = location.href.split('#')[0];
+		$.ajax({
+			dataType: 'jsonp',
+			url: 'https://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url=' + encodeURIComponent(curUrl),
+			success: function (wxConfig) {
+				wx.config({
+					//        		debug: true,
+					appId: wxConfig.appId,
+					timestamp: wxConfig.timestamp,
+					nonceStr: wxConfig.nonceStr,
+					signature: wxConfig.signature,
+					jsApiList: [
+						'onMenuShareTimeline',
+						'onMenuShareAppMessage',
+						'onMenuShareQQ',
+						'onMenuShareWeibo'
+					]
+				});
+			},
+		});
+		// 分享链接_编辑修改以下下两个url和标题描述
+		var index_url = 'https://m.rayli.com.cn/mini/2019/rspace9012/index.html';
+		var img_url = 'http://m.rayli.com.cn/mini/2019/rspace/images/share.jpg';
+		// 分享信息
+		var shareInfo = {
+			title: '收集蝶变能量 千份好礼等你拿', 	// 分享标题
+			desc: '你有一封来自未来的匿名信，快打开看看吧！',
+			link: index_url, // 分享链接
+			imgUrl: img_url, // 分享图标
+			success: function () {
+				// 用户确认分享后执行的回调函数
+				doTask(2);
+				_gaq.push(['_trackEvent', 'butterfly', 'click', ' fenxiang', 5]);
+			},
+		};
+		wx.ready(function () {
+			wx.onMenuShareTimeline(shareInfo);
+			wx.onMenuShareAppMessage(shareInfo);
+			wx.onMenuShareQQ(shareInfo);
+			wx.onMenuShareWeibo(shareInfo);
+		});
+		wx.error(function (res) {
+			alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+		});
+	</script>
+</body>
+</html>

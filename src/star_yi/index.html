@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>星范穿衣</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<!-- Link Swiper's CSS -->
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<!-- Demo styles -->
+<link type="text/css" rel="stylesheet" href="css.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+<style type="text/css">
+/*播放音乐*/
+#musicControl { position:fixed;right:2%;top:2%;display:inline-block;z-index:99999999; }
+#musicControl a { display:inline-block;width:29px;height:29px; background:url(images/music_icon.png) no-repeat 0 0; background-size:100%;}
+#musicControl a audio{width:100%;}
+#musicControl a.stop { background-position:left bottom; }
+#musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.5s linear infinite;}
+#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+
+@-webkit-keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+@keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg);}
+}
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+/*播放音乐结束*/
+
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+</script>
+<script type="text/javascript">
+$(function(){
+	$('audio,video').on('play', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+	$('audio,video').on('pause', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+		
+	$('#musicfx').on('play', function () {
+		$('#mc_play').attr('class','on');
+	}).on('pause', function () {
+		$('#mc_play').attr('class','stop');
+	});
+});
+
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.add_box').hide();
+	$('.add').click(function(){
+		$(this).siblings('.add_box').show(); 
+	});	
+	$('.add_close').click(function(){
+		$('.add_box').hide();	
+	});
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.share_bg').hide();
+	$('.share').click(function(){
+		$('.share_bg').show();
+		event.stopPropagation();
+		$(document).click(function(){
+			$('.share_bg').hide();	
+		});	
+	});	
+});
+</script>
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" loop autoplay="autoplay"><source src="images/music.mp3" type="audio/mpeg"></audio>
+        </a>
+ </span>
+<!--嵌入音乐结束 -->
+
+<!-- Swiper -->
+<div class="swiper-container swiper-container-v">
+	<div class="jiantou"><img src="images/jiantou.png"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+			<div class="za_bg01"></div>
+            <div class="logo ani_logo"><img src="images/logo.png"></div>
+            <div class="index_txt ani_txt"><img src="images/index_txt.png"></div>
+        </div>
+        <div class="swiper-slide">
+			<div class="za_bg02"></div>
+            <div class="slider01">
+                <div class="swiper-container swiper-container-h">
+                	<div class="tit01"><img src="images/tit01.png"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="p_box">
+                                <div class="p_center"><img src="images/slider_a1.jpg"></div>
+                                <div class="add"><img src="images/btn_add.png"></div>
+                                <div class="add_box">
+                                    <div class="add_con">
+                                        <div class="add_img"><img src="images/slider_a1_box.jpg"></div>
+                                        <div class="add_txt">
+                                        	<h3>Angelababy杨颖</h3>
+                                            <p>Angelababy出席《微微一笑》发布会，身穿Alexander McQueen裙装，搭配帅气皮夹克，中性风的短靴与短裙碰撞，皮夹克披着穿更显时髦俏皮。</p>
+                                        </div>
+                                    </div>
+                                    <div class="add_close"><img src="images/btn_close.png"></div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p_box">
+                                <div class="p_center"><img src="images/slider_a2.jpg"></div>
+                                <div class="add"><img src="images/btn_add.png"></div>
+                                <div class="add_box">
+                                    <div class="add_con">
+                                        <div class="add_img"><img src="images/slider_a2_box.jpg"></div>
+                                        <div class="add_txt">
+                                        	<h3>奚梦瑶</h3>
+                                            <p>超模奚梦瑶用Karl Lagerfeld的帅气皮夹克搭配清新的Chanel小白裙，清新与帅气完美碰撞。Chanel迷你小红包成为造型亮点。</p>
+                                        </div>
+                                    </div>
+                                    <div class="add_close"><img src="images/btn_close.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p_box">
+                                <div class="p_center"><img src="images/slider_a3.jpg"></div>
+                                <div class="add"><img src="images/btn_add.png"></div>
+                                <div class="add_box">
+                                    <div class="add_con">
+                                        <div class="add_img"><img src="images/slider_a3_box.jpg"></div>
+                                        <div class="add_txt">
+                                        	<h3>吉吉·哈迪德 (Gigi Hadid) </h3>
+                                            <p>吉吉·哈迪德 (Gigi Hadid)用Tommy Hilfiger牛仔裤搭配棕色修身皮夹克，MIUMIU圆环包与皮夹克色彩呼应。个性印花鞋点睛。</p>
+                                        </div>
+                                    </div>
+                                    <div class="add_close"><img src="images/btn_close.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p_box">
+                                <div class="p_center"><img src="images/slider_a4.jpg"></div>
+                                <div class="add"><img src="images/btn_add.png"></div>
+                                <div class="add_box">
+                                    <div class="add_con">
+                                        <div class="add_img"><img src="images/slider_a4_box.jpg"></div>
+                                        <div class="add_txt">
+                                        	<h3>肯达尔·詹娜（Kendall Jenner）</h3>
+                                            <p>肯达尔·詹娜（Kendall Jenner）的遛狗装也是时髦上天，个性的印花皮夹克酷感吸睛，搭配热裤展现迷人大长腿，斑马纹的GUCCI毛毛拖鞋个性十足。</p>
+                                        </div>
+                                    </div>
+                                    <div class="add_close"><img src="images/btn_close.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="swiper-pagination swiper-pagination-h"></div>
+                    <div class="swiper-button-next swiper-button-next-h"><img src="images/btn_r.png"></div>
+    				<div class="swiper-button-prev swiper-button-prev-h"><img src="images/btn_l.png"></div>                   
+                </div>   
+            </div>
+            <div class="click_bg2">
+                <div class="click_li_bg2 curr"><img src="images/slider_a_bg01.jpg"></div>
+                <div class="click_li_bg2"><img src="images/slider_a_bg02.jpg"></div>
+                <div class="click_li_bg2"><img src="images/slider_a_bg03.jpg"></div>
+                <div class="click_li_bg2"><img src="images/slider_a_bg04.jpg"></div>
+            </div>         
+        </div>
+        <div class="swiper-slide">
+			<div class="za_bg03"></div>
+            <div class="slider02">
+                <div class="swiper-container swiper-container-h2">
+                    <div class="tit02"><img src="images/tit02.png"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="p2_box"><img src="images/slider_b1.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p2_box"><img src="images/slider_b2.jpg"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p2_box"><img src="images/slider_b3.jpg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="click_box">
+                    <div class="click_li current">
+                        <img src="images/btn_img01.jpg">
+                        <span><img src="images/click_bg.png"></span>
+                    </div>
+                    <div class="click_li">
+                        <img src="images/btn_img02.jpg">
+                        <span><img src="images/click_bg.png"></span>
+                    </div>
+                    <div class="click_li">
+                        <img src="images/btn_img03.jpg">
+                        <span><img src="images/click_bg.png"></span>
+                    </div>
+                </div>
+                <div class="ctxt currents2">
+                    <h3>立体装饰</h3>
+                    <P>本季的皮夹克一大流行点就是更加“浮夸”，各种串珠镶嵌，立体拼贴让各式吸睛元素绽放。</P>
+                </div>
+                <div class="ctxt">
+                    <h3>二次元拼贴</h3>
+                    <P>少女时代崔秀英（Soo Young）现身示范，各种有趣的二次元元素让皮夹克更加减龄有趣。</P>
+                </div>
+                <div class="ctxt">
+                    <h3>别致几何</h3>
+                    <P>时尚博主Chiara Ferragni的个性皮衣就用条纹来与皮革碰撞出不一样的火花。</P>
+                </div>
+                <div class="swiper-pagination swiper-pagination-h2"></div>             
+            </div>
+            <div class="swiper-button-next swiper-button-next-h2"><img src="images/btn_r.png"></div>
+            <div class="swiper-button-prev swiper-button-prev-h2"><img src="images/btn_l.png"></div>               
+            <div class="click_bg">
+                <div class="click_li_bg currents"><img src="images/slider_b_bg01.jpg"></div>
+                <div class="click_li_bg"><img src="images/slider_b_bg02.jpg"></div>
+                <div class="click_li_bg"><img src="images/slider_b_bg03.jpg"></div>
+            </div>            
+        </div>
+        <div class="swiper-slide">
+			<div class="za_bg04"></div>
+            <div class="tit03"><img src="images/tit03.png"></div>
+            <div class="video_body">
+            	<div class="video_box">
+                    <video controls width="100%" height="auto" poster="images/video_bg.jpg">
+                        <source src="http://v.rayli.com.cn/2016-10-28/20161028205620.mp4" type="video/mp4">
+                        <source src="http://www.ckplayer.com/webm/0.webm" type="video/webm">
+                        <source src="http://www.ckplayer.com/webm/0.ogv" type="video/ogg">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="za_bg05"></div>
+            <div class="share"><img src="images/weixin.png"></div>
+            <div class="share_bg"><img src="images/share_tip.png"></div>
+        </div>
+    </div>
+    <!-- Add Pagination <div class="swiper-pagination"></div>-->
+</div>
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+$(function() {
+    var $H = $(window).height();
+    var swiperV = new Swiper('.swiper-container-v', {
+        pagination: '.swiper-pagination-v',
+
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        onlyExternal: false, //禁止
+
+        paginationClickable: true,
+        direction: 'vertical',
+        effect: 'coverflow',
+        coverflow: {
+            rotate: -90,
+            stretch: 190,
+            depth: $H,
+            modifier: 1,
+            slideShadows: false
+        },
+
+        onSlideChangeStart: function() {
+            var activeIndex = swiperV.activeIndex;
+            var previousIndex = swiperV.previousIndex;
+            if (activeIndex != previousIndex) {
+
+                switch (activeIndex) {
+                    case 0:
+                        $(".logo").addClass('ani_logo');
+                        $(".index_txt").addClass('ani_txt');
+                        break;
+                    case 4:
+                        $(".jiantou").addClass('display');
+                        break;
+                }
+
+                switch (previousIndex) {
+                    case 0:
+                        $(".logo").removeClass('ani_logo');
+						$(".index_txt").removeClass('ani_txt');
+                        break;
+                    case 4:
+                        $(".jiantou").removeClass('display');
+                        break;
+                }
+
+            }
+        }
+
+    });
+    var swiperH = new Swiper('.swiper-container-h', {
+        pagination: '.swiper-pagination-h',
+        paginationClickable: true,
+        spaceBetween: 50,
+        loop: true,
+        nextButton: '.swiper-button-next-h',
+        prevButton: '.swiper-button-prev-h',
+         onSlideChangeStart: function() {
+            if (swiperH) {
+                var index = (swiperH.activeIndex - 1) % $('.click_li_bg2').length;
+                $('.click_li_bg2').removeClass('curr').eq(index).addClass('curr');
+            }
+        },       
+    });
+
+    var swiperH2 = new Swiper('.swiper-container-h2', {
+        pagination: '.swiper-pagination-h2',
+        paginationClickable: true,
+        spaceBetween: 50,
+        loop: true,
+        nextButton: '.swiper-button-next-h2',
+        prevButton: '.swiper-button-prev-h2',
+        onSlideChangeStart: function() {
+            if (swiperH2) {
+                var index = (swiperH2.activeIndex - 1) % $('.click_li').length;
+                $('.click_li').removeClass('current').eq(index).addClass('current');
+            }
+            if (swiperH2) {
+                var index = (swiperH2.activeIndex - 1) % $('.click_li_bg').length;
+                $('.click_li_bg').removeClass('currents').eq(index).addClass('currents');
+            }
+            if (swiperH2) {
+                var index = (swiperH2.activeIndex - 1) % $('.ctxt').length;
+                $('.ctxt').removeClass('currents2').eq(index).addClass('currents2');
+            }
+        },
+    });
+    $('.click_li').click(function() {
+        swiperH2.slideTo($(this).index() + 1);
+        $(this).addClass('current').siblings().removeClass('current');
+    });
+
+    var timer = setInterval(function () {
+        if($('.p_box img').height() === 0)return;
+        clearInterval(timer);
+        var w = $(window).width();
+        var h = $(window).height();
+        var pw = $('.p_box img').width();
+        var ph = $('.p_box img').height() + parseInt($('.p_box').css('top'));
+        var nh = ((w * ph / pw) * 100) / h;
+        $('.slider01').css('height', (nh<96?nh:96) + '%');
+    },100);
+
+});
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+function getParastrByName(strname) 
+{ 
+   var hrefstr,pos,parastr,para,tempstr; 
+   hrefstr = window.location.href; 
+   pos = hrefstr.indexOf("?"); 
+   parastr = hrefstr.substring(pos+1); 
+   para = parastr.split("&"); 
+   tempstr=""; 
+   for(i=0;i<para.length;i++) 
+   { 
+       tempstr = para[i]; 
+       pos = tempstr.indexOf("="); 
+       if(tempstr.substring(0,pos) == strname) 
+       { 
+          return tempstr.substring(pos+1); 
+       } 
+   } 
+   return null; 
+}
+
+var curUrl = location.href.split('#')[0];
+$.ajax({
+    dataType: 'jsonp',
+    url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+    success: function(wxConfig){     
+        wx.config({ 
+//              debug: true,
+            appId: wxConfig.appId,
+            timestamp: wxConfig.timestamp,
+            nonceStr: wxConfig.nonceStr,
+            signature: wxConfig.signature,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        }); 
+    },
+});      
+    
+// 分享链接
+var index_url = 'http://www.rayli.com.cn/zhuanti/fashion/2016star1';       
+var img_url = 'http://www.rayli.com.cn/zhuanti/fashion/2016star1/images/share.jpg';
+var g = getParastrByName('r');  
+if(g == null){
+    g = 80;
+} 
+// 分享信息
+var shareInfo = {
+    title: '【瑞丽网-星范穿衣】明星们撞衫也要穿 原来你是这样的皮夹克',  // 分享标题
+    desc : '初冬来临，挡风又保暖的皮夹克时髦满分，难怪明星们即便撞衫也要穿。而今年秋冬，皮夹克又有哪些时髦的流行点值得follow呢？看看明星们的示范吧！',
+    link: index_url, // 分享链接
+    imgUrl: img_url, // 分享图标
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+        alert('分享成功！'); 
+    }, 
+};
+
+wx.ready(function () {
+    wx.onMenuShareTimeline(shareInfo);      
+    wx.onMenuShareAppMessage(shareInfo);
+    wx.onMenuShareQQ(shareInfo);
+    wx.onMenuShareWeibo(shareInfo);
+});
+
+wx.error(function (res) {
+    alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+
+</html>

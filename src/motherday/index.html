@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>这是我妈妈，她确实是个美人</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51787134-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- Link Swiper's CSS -->
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<!-- Demo styles -->
+<link type="text/css" rel="stylesheet" href="css.css">
+<script type="text/javascript">
+$(function() {
+    function random(count) {
+        var array = [];
+        for (var x = 0; x < count; x++) {
+            array.push(x);
+        }
+
+        function s(a, b) {
+            return Math.random() > 0.5 ? -1 : 1;
+        }
+        while (true) {
+            array.sort(s);
+            for (var y = 0; y < count; y++) {
+                if (array[y] != y) {
+                    return array;
+                }
+            }
+        }
+        return array;
+    }
+
+    var imgs = [{
+        image: 'images/success01.png',
+        left: ["images/1.png", "images/11.png"],
+        right: ["images/5.png", "images/55.png"],
+    }, {
+        image: 'images/success02.png',
+        left: ["images/2.png", "images/22.png"],
+        right: ["images/6.png", "images/66.png"],
+    }, {
+        image: 'images/success03.png',
+        left: ["images/3.png", "images/33.png"],
+        right: ["images/7.png", "images/77.png"],
+    }, {
+        image: 'images/success04.png',
+        left: ["images/4.png", "images/44.png"],
+        right: ["images/8.png", "images/88.png"],
+    }];
+
+    var count = imgs.length;
+    var left = [];
+    var right = [];
+    for (var i = 0; i < count; ++i) {
+        var img = imgs[i];
+        left.push($('<li/>').attr('index', i)
+            .append($("<img/>").attr("src", img.left[0]))
+            .append($("<img/>").attr("src", img.left[1]).hide()));
+        right.push($('<li/>').attr('index', count + i)
+            .append($("<img/>").attr("src", img.right[0]))
+            .append($("<img/>").attr("src", img.right[1]).hide()));
+    }
+    var ax = random(count);
+    for (var x = 0; x < count; ++x) {
+        left[ax[x]].appendTo('#left');
+    }
+    var ay = random(count);
+    for (var y = 0; y < count; ++y) {
+        right[ay[y]].appendTo('#right');
+    }
+
+    function click(i) {
+        $(i).find('img:last').show();
+        return $(i); //.removeClass('roate_reset').addClass('roate');
+    }
+
+    function clear(i) {
+        $(i).find('img:last').hide();
+        return $(i); //.removeClass('roate').addClass('roate_reset');
+    }
+
+    function warn(i) {
+        $(i).addClass('roate');
+        setTimeout(function() {
+            $(i).removeClass('roate');
+        }, 600);
+
+        return $(i);
+    }
+
+    function success(i) {
+        $(i).find('img:last').show();
+        return $(i); //.css('border-color', 'green');
+    }
+    $('.tip').hide().find('.close').click(function() {
+        $('.tip').hide();
+        if ($('li[success!=ok]').length === 0) {
+            //alert('Complete');
+        }
+    });
+    var old = -1;
+    $('li').on('click', function() {
+        var index = parseInt($(this).attr('index'));
+        if (old == -1) {
+            click(this);
+            old = index;
+            return;
+        }
+        if (old == index) {
+            clear(this);
+            old = -1;
+            return;
+        }
+        if (Math.floor(index / count) == Math.floor(old / count)) {
+            click(this);
+            clear('li[index=' + old + ']');
+            old = index;
+            return;
+        }
+        if (Math.floor(index % count) != Math.floor(old % count)) {
+            warn(this);
+            return;
+        }
+        success(this).attr('success', 'ok').off('click');
+        success('li[index=' + old + ']').attr('success', 'ok').off('click');
+        old = -1;
+        var tip = $('.tip');
+        var entry = imgs[Math.floor(index % count)];
+        tip.find('.success img').attr('src', entry.image);
+        tip.show();
+    });
+});
+</script>
+<script type="text/javascript">
+$(function () {
+    $('.music').click(function () {
+        var audio = document.getElementById('myaudio');
+        if(audio.paused)
+            audio.play();
+        else{
+            audio.pause();
+		}
+    });
+});
+</script>
+</head>
+
+<body>
+<div style="display:none;"><img src="images/weixin_head.jpg">承认吧！每一位妈妈都曾风华绝代，晒出妈妈年轻时候的皂片，妈妈看起来比自己还要年轻 & 惊艳，到底是怎样的一种人生体验！？</div>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="music">
+        <audio id="myaudio" loop autoplay="autoplay">
+            <source src="images/audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="one_bg01"></div>
+            <div class="dian"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="ul_body">
+                <ul class="ul_box left" id="left"></ul>
+                <ul class="ul_box right" id="right"></ul>
+            </div>
+            <div class="tip">
+                <div class="tip_box"></div>
+                <div class="success">
+                    <img src="images/success.png">
+                    <div class="close"></div>
+                </div>
+            </div>
+            <div class="win"></div>
+            <div class="btn"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="one_bg03">
+            	<div class="hd_tit"><img src="images/hd_tit.png"></div>
+            	<div class="hd_txt"><img src="images/hd_txt.png"></div>
+                <div class="hd_show"><img src="images/hd_show.png"></div>
+                <div class="hd_logo"><img src="images/rayli.png"></div>
+            </div>
+            <div class="btn"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="one_bg04">
+            	<div class="last_tit"><img src="images/tit.png"></div>
+                <div class="tep_li">
+                    <h3 class="left"><span class="one"></span><img src="images/tit01.png"></h3>
+                    <div class="ma"><img src="images/ma.png"></div>
+                </div>
+                <div class="tep_li">
+                    <h3><span class="two"></span><img src="images/tit02.png"></h3>
+                </div>
+                <div class="tep_li">
+                    <h3><span class="three"></span><img src="images/tit03.png"></h3>
+                </div>
+                <div class="tep_bo"><img src="images/txt_bottom.png"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Pagination <div class="swiper-pagination"></div>-->
+</div>
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+
+var swiper = new Swiper('.swiper-container', {
+	
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    mousewheelControl: true,
+    onlyExternal: false, //禁止
+
+    onSlideChangeStart: function() {
+        var activeIndex = swiper.activeIndex;
+        var previousIndex = swiper.previousIndex;
+        if (activeIndex != previousIndex) {
+
+            switch (activeIndex) {
+                case 2:
+                    $(".hd_show").addClass("show_i");
+                    break;
+                case 3:
+                    $(".tep_li h3 span").addClass("tep_i");
+                    break;
+            }
+
+            switch (previousIndex) {
+                case 2:
+                    $(".hd_show").removeClass("show_i");
+                    break;
+                case 3:
+                    $(".tep_li h3 span").removeClass("tep_i");
+                    break;
+            }
+
+        }
+    }
+});
+
+$(".dian").click(function() {
+    swiper.slideNext(500);
+});
+</script>
+</body>
+
+</html>

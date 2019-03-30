@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1, user-scalable=no">
+<meta name="description" content="梦妆">
+<meta name="author" content="梦妆">
+<title>梦妆</title>
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css.css">
+<style type="text/css">
+/*播放音乐*/
+#musicControl { position:fixed;right:2%;top:2%;display:inline-block;z-index:99999999; }
+#musicControl a { display:inline-block;width:29px;height:29px; background:url(images/music_icon.png) no-repeat 0 0; background-size:100%;}
+#musicControl a audio{width:100%;}
+#musicControl a.stop { background-position:left bottom; }
+#musicControl a.on { background-position:0px 0px;-webkit-animation: zhuan 1.5s linear infinite;}
+#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
+@-webkit-keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+@keyframes zhuan {
+  0% { -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg);}
+}
+.zhuan {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: zhuan;
+  animation-name: zhuan;
+}
+/*播放音乐结束*/
+</style>
+<script type="text/javascript">
+function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        $('#music_play_filter').hide();
+        //event.stopPropagation(); //阻止冒泡 
+    }
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            $('#music_play_filter').hide();
+        }
+       // event.stopPropagation(); //阻止冒泡 
+    } 
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
+    } 
+</script>
+<script type="text/javascript">
+$(function(){
+	$('audio,video').on('play', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+	$('audio,video').on('pause', function() {
+		$('audio,video').not(this).each(function(i, e) {
+			e.pause();
+		});
+	});
+	
+	$('video').on('pause', function() {
+		$('audio').each(function(i, e) {
+			e.play();
+		});
+	});
+		
+	$('#musicfx').on('play', function () {
+		$('#mc_play').attr('class','on');
+	}).on('pause', function () {
+		$('#mc_play').attr('class','stop');
+	});
+});
+</script>
+<script type="text/javascript" src="swipe.js"></script>
+<script type="text/javascript">
+$(function() {
+	var swipe = $('.swiper-container01').Swipe({
+		startSlide: 0,
+		speed: 400,
+		//auto: 5000,
+		continuous: true,
+		disableScroll: false,
+		stopPropagation: false,
+
+		callback: function(i, e) {
+			$('.swiper-pagination-bullet01').eq(i).addClass('swiper-pagination-bullet-active01')
+				.siblings().removeClass('swiper-pagination-bullet-active01');
+		}
+	}).data('Swipe');
+
+	$('.swiper-button-next01').click(function() {
+		swipe.next();
+	});
+	$('.swiper-button-prev01').click(function() {
+		swipe.prev();
+	});
+	$('.swiper-pagination-bullet01').mouseover(function() {
+		swipe.slide($(this).index());
+	});
+
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$('.spm_tip').hide();
+	$('.spm').click(function(){
+		var i = $(this).index() - 1;
+		$('.spm_tip').eq(i).fadeIn();	
+	});	
+	$('.spm_close,.spm_tip').click(function(){
+		$('.spm_tip').hide();	
+	});
+});
+
+$(function(){
+	$('.d01').click(function(){
+		$('.p2_d01').fadeIn();	
+	});		
+	$('.d02').click(function(){
+		$('.p2_d02').fadeIn();	
+	});	
+	$('.p2_d_close,.p2_d01,.p2_d02').click(function(){
+		$('.p2_d01,.p2_d02').hide();
+	});
+});
+
+$(function(){
+	$('.a01').click(function(){
+		$('.p3_d01').fadeIn();	
+	});		
+	$('.a02').click(function(){
+		$('.p3_d02').fadeIn();	
+	});	
+	$('.a03').click(function(){
+		$('.p3_d03').fadeIn();	
+	});	
+	$('.p3_d_close,.p3_d01,.p3_d02,.p3_d03').click(function(){
+		$('.p3_d01,.p3_d02,.p3_d03').hide();
+	});
+});
+</script>
+</head>
+
+<body>
+<!--嵌入音乐开始 -->
+<!--<span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" loop autoplay="autoplay"><source src="images/music.mp3" type="audio/mpeg"></audio>
+        </a>
+ </span>-->
+<!--嵌入音乐结束 -->
+<div class="spm_tip">
+	<div class="spm_box">
+        富含维E的肌肤不仅水润，更Q弹，水嘭嘭的肌肤更惹人爱
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        干纹紧绷都不见，水嫩润泽才是王道
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        维B3作用下，肌肤自带打光板，水光肌才不需要“妆”出来
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        细腻、紧致、360度无死角的好皮肤怎能少得了维F的帮忙？
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        满满维C助你白成一道光，炎炎烈日也没有“黑”烦恼
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        不仅要白，更要透。拒绝假面，从为肌肤补充净透能量的维P开始吧
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="spm_tip">
+	<div class="spm_box">
+        偶尔熬夜也不会变成黄脸婆，是维B5带来的满满修护力
+    	<div class="spm_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="p2_d01">
+	<div class="p2_d_box">
+        <h3>KO关键词：补水</h3>
+        <p>每天待在空调房中，肌肤水分大量流失，很容易造成干燥。妆容不服帖、卡粉卡纹，严重的还会产生干纹，整个肌肤看上去都粗糙了不少。</p>
+    	<div class="p2_d_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="p2_d02">
+	<div class="p2_d_box">
+        <h3>KO关键词：抗氧化</h3>
+        <p>氧化反应，会让皮肤像铁制器皿生锈、瓜果切开后慢慢变成黄褐色一样，失去活力、暗沉无光，看上去疲惫不堪</p>
+    	<div class="p2_d_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="p3_d01">
+	<div class="p3_d_box">
+        最简单直接的方式就是补水啦！专家推荐具有水分生机功效的苦橙花成分，可以及时为肌肤补充水分，注入新鲜活力。
+    	<div class="p3_d_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="p3_d02">
+	<div class="p3_d_box">
+        抗氧化是抵抗暗沉和衰老的关键，专家提醒，补充维他命可以有效起到抗氧化的作用。修护、亮泽、让肌肤重新拥有弹性。
+    	<div class="p3_d_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="p3_d03">
+	<div class="p3_d_box">
+        当然，想要真正get活力少女肌还要从改变自己的生活习惯开始。少熬夜多锻炼，学会释放压力，可以让肌肤日益健康鲜活。
+    	<div class="p3_d_close"><img src="images/tip_close.png" /></div>
+    </div>
+</div>
+<div class="bg02">
+	<div class="p_head">
+    	<img src="images/bg_head.jpg" />
+        <div class="head_img01"><img src="images/head_img01_g.png" /></div>
+        <div class="head_img02"><img src="images/head_img02.png" /></div>
+        <div class="head_img03"><img src="images/head_img03.png" /></div>
+    </div>
+    <div class="bg_p1">
+    	<img src="images/bg_p1.jpg" />
+        <div class="p1_tit" scroll-class="p1_tit_ani"><img src="images/p_tit01.png" /></div>
+        <div class="girl_show">
+        	<img src="images/girl.png" />
+            <div class="sp1_img01 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img01.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img02 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img02.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img03 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img03.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img04 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img04.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img05 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img05.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img06 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img06.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+            <div class="sp1_img07 spm" scroll-class="spm_ani">
+                <img class="s_img" src="images/p1_img07.png" />
+                <div class="sp1_add"><img src="images/p1_add.png" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="bg_p2">
+    	<img src="images/bg_p2.jpg" />
+        <div class="p2_bg_show"><img src="images/bg_p2_show.png" /></div>
+        <div class="p2_tit" scroll-class="p2_tit_ani"><img src="images/p_tit02.png" /></div>
+        <div class="sp2_add d01"><img src="images/p1_add.png" /></div>
+        <div class="sp2_add d02"><img src="images/p1_add.png" /></div>
+        <div class="p2_li01" scroll-class="p2_li01_ani"><img src="images/p2_li01.png" /></div>
+        <div class="p2_li02" scroll-class="p2_li02_ani"><img src="images/p2_li02.png" /></div>
+        <div class="p2_li03" scroll-class="p2_li03_ani"><img src="images/p2_li03.png" /></div>
+        <div class="p2_li04" scroll-class="p2_li04_ani"><img src="images/p2_li04.png" /></div>
+    </div>
+	<div class="bg_p3_01">
+		<img src="images/bg_p3_01.jpg">
+		<div class="p3_tit" scroll-class="p3_tit_ani"><img src="images/p_tit03.png"></div>
+        <div class="step01" scroll-class="step01_ani"><img src="images/step01.png" /></div>
+        <div class="step02" scroll-class="step02_ani"><img src="images/step02.png" /></div>
+        <div class="step03" scroll-class="step03_ani"><img src="images/step03.png" /></div>
+        <div class="sp3_add a01"><img src="images/p1_add.png" /></div>
+        <div class="sp3_add a02"><img src="images/p1_add.png" /></div>
+        <div class="sp3_add a03"><img src="images/p1_add.png" /></div>
+	</div>
+	<div class="bg_p3_02">
+		<img src="images/bg_p3_02.jpg">
+		<div class="p3_02_img01" scroll-class="p3_02_img01_ani"><img src="images/p3_02_img01.png"></div>
+        <div class="p3_cir_show"><img src="images/p3_cir_show.png" /></div>
+        <div class="sp2_img01" scroll-class="sp2_img01_ani"><img src="images/scr_img01.png" /></div>
+        <div class="sp2_img02" scroll-class="sp2_img02_ani"><img src="images/scr_img02.png" /></div>
+        <div class="sp2_img03" scroll-class="sp2_img03_ani"><img src="images/scr_img03.png" /></div>
+        <div class="sp2_img04" scroll-class="sp2_img04_ani"><img src="images/scr_img04.png" /></div>
+        <div class="sp2_img05" scroll-class="sp2_img05_ani"><img src="images/scr_img05.png" /></div>
+        <div class="sp2_img06" scroll-class="sp2_img06_ani"><img src="images/scr_img06.png" /></div>
+        <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank" class="p3_shop s01"><img src="images/p3_shop.png" /></a>
+        <a href="https://detail.tmall.com/item.htm?spm=a220o.1000855.1998025129.3.7b405efbflasG2&pvid=71f15123-f924-4bfa-85ce-8df855044e07&pos=3&acm=03054.1003.1.2768562&id=574523587833&scm=1007.16862.95220.23864_0&skuId=3756300492912" target="_blank" class="p3_shop s02"><img src="images/p3_shop.png" /></a>
+        <a href="https://detail.tmall.com/item.htm?spm=a220o.1000855.1998025129.1.4de5e28cXGpM05&pvid=844a8fac-fa24-4a45-9cd4-ecfd253776e0&pos=1&acm=03054.1003.1.2768562&id=574165504557&scm=1007.16862.95220.23864_0&skuId=3758159761742" target="_blank" class="p3_shop s03"><img src="images/p3_shop.png" /></a>
+        <a href="https://detail.tmall.com/item.htm?spm=a220o.1000855.1998025129.1.407a5efbRHpEpT&pvid=1a38442a-b5cc-4e83-8178-d771c01d9cfb&pos=1&acm=03054.1003.1.2768562&id=574165996761&scm=1007.16862.95220.23864_0&skuId=3925369659449" target="_blank" class="p3_shop s04"><img src="images/p3_shop.png" /></a>
+        
+	</div>
+	<div class="bg_p3_03">
+		<img src="images/bg_p3_03.jpg">
+		<div class="p3_03_img01" scroll-class="p3_03_img01_ani"><img src="images/p3_03_img01.png"></div>
+		<div class="p3_03_img02" scroll-class="p3_03_img02_ani"><img src="images/p3_03_img02.png"></div>
+	</div>
+    <div class="bg_p4">
+    	<img src="images/bg_p4.jpg" />
+		<div class="p4_tit" scroll-class="p4_tit_ani"><img src="images/p_tit04.png"></div>
+		<div class="slide_body">
+            <div class="slider01">
+                <div class="swiper-container01">
+                    <div class="swiper-wrapper01">
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img01.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a>                   
+                        </div>
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img02.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img03.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img04.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a> 
+                        </div>
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img05.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a> 
+                        </div>
+                        <div class="swiper-slide01">
+                            <a href="https://detail.tmall.com/item.htm?spm=a1z10.1-b-s.w5003-18773636098.20.31693b70fXCBWM&id=574317721516&rn=ce393efc4587eb3202806da7cfeb82ea&abbucket=1&skuId=3925382243090&scene=taobao_shop" target="_blank">
+                                <div class="p_box"><img src="images/p4_img06.png"></div>
+                            	<div class="li_shop"><img src="images/p3_shop.png" /></div>
+                            </a> 
+                        </div>
+                    </div>
+                    <div class="swiper-pagination01">
+                        <div class="swiper-pagination-bullet01 swiper-pagination-bullet-active01"><span class="sp01"><img src="images/p4_nav01_aa.png"></span><span class="sp02"><img src="images/p4_nav01_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav02_aa.png"></span><span class="sp02"><img src="images/p4_nav02_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav03_aa.png"></span><span class="sp02"><img src="images/p4_nav03_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav04_aa.png"></span><span class="sp02"><img src="images/p4_nav04_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav05_aa.png"></span><span class="sp02"><img src="images/p4_nav05_bb.png"></span></div>
+                        <div class="swiper-pagination-bullet01"><span class="sp01"><img src="images/p4_nav06_aa.png"></span><span class="sp02"><img src="images/p4_nav06_bb.png"></span></div>
+                    </div> 
+                </div>        
+				<!--<div class="swiper-button-prev01"><img src="images/jiantou_l.png"></div>-->
+				<!--<div class="swiper-button-next01"><img src="images/jiantou_r.png"></div>-->
+            </div>
+        </div>	
+	</div>
+    <!--<div class="bg_p2_01">
+    	<img src="images/bg_p2_01.jpg" />
+		<div class="p4_tit_s01" scroll-class="p4_tit_s01_ani"><img src="images/p_tit04_s01.png"></div>
+        <div class="p5_show01"><img src="images/p5_show01.png" /></div>
+        <div class="p5_show02"><img src="images/p5_show02.png" /></div>
+        <div class="p2_01_img01" scroll-class="p2_01_img01_ani"><img src="images/hscr_img01.png" /></div>
+        <div class="p2_01_img02" scroll-class="p2_01_img02_ani"><img src="images/hscr_img02.png" /></div>
+        <div class="p2_01_img03" scroll-class="p2_01_img03_ani"><img src="images/hscr_img03.png" /></div>
+        <div class="p2_01_img04" scroll-class="p2_01_img04_ani"><img src="images/hscr_img04.png" /></div>
+        <div class="p2_01_img05" scroll-class="p2_01_img05_ani"><img src="images/hscr_img05.png" /></div>
+        <div class="p2_01_img06" scroll-class="p2_01_img06_ani"><img src="images/hscr_img06.png" /></div>
+        <div class="p2_01_img07" scroll-class="p2_01_img07_ani"><img src="images/hscr_img07.png" /></div>
+        <div class="p2_01_img08" scroll-class="p2_01_img08_ani"><img src="images/hscr_img08.png" /></div>
+    </div>-->
+    <div class="bg_p2_01">
+    	<img src="images/bg_p2_01_b.jpg" />
+		<div class="p4_tit_s02" scroll-class="p4_tit_s02_ani"><img src="images/p_tit04_s02.png"></div>
+        <div class="video_bg" scroll-class="video_bg_ani"><a href="#" target="_blank"><img src="images/link_img.jpg" /></a></div>
+    </div>
+	<div class="bg_p6">
+    	<img src="images/bg_p6.jpg" />
+		<div class="p6_tit" scroll-class="p6_tit_ani"><img src="images/p_tit06.png"></div>
+		<div class="p6_img01" scroll-class="p6_img01_ani"><img src="images/p6_img01.png"></div>
+	</div>
+</div>
+  
+<script type="text/javascript">
+    $(function(){
+        //$('[scroll-class]').css('visibility', 'hidden');
+        $(window).scroll(function(event) {
+            var top = $(window).scrollTop();
+            var height = $(window).height();
+            $('[scroll-class]').each(function (i,e) {
+                if(top > $(e).offset().top - height + $(e).height() / 1.3){
+                    $(e)/*.css('visibility', 'visible')*/.addClass($(e).attr('scroll-class'));
+                }
+            });
+        });
+    });
+</script>
+<script  type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var curUrl = location.href.split('#')[0];
+$.ajax({
+	dataType: 'jsonp',
+	url: 'http://m.rayli.com.cn/mini/zhuanti2016/index.php?m=Index&a=wx_config&url='+encodeURIComponent(curUrl),
+	success: function(wxConfig){ 	 
+		wx.config({ 
+//        		debug: true,
+			appId: wxConfig.appId,
+			timestamp: wxConfig.timestamp,
+			nonceStr: wxConfig.nonceStr,
+			signature: wxConfig.signature,
+			jsApiList: [
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo'
+			]
+		}); 
+	},
+});   	
+// 分享链接_编辑修改以下下两个url和标题描述
+var index_url = 'http://m.rayli.com.cn/mini/2018/MamondeMulti-Hydration/index.html';
+var img_url = 'http://m.rayli.com.cn/mini/2018/MamondeMulti-Hydration/images/share.jpg';
+// 分享信息
+var shareInfo = {
+	title: '活力少女肌养成记 光鲜这样“橙”现！', 	// 分享标题
+	desc : '揭秘！这个夏天肌肤水润生机的秘密法则',
+	link: index_url, // 分享链接
+	imgUrl: img_url, // 分享图标
+	success: function () { 
+		// 用户确认分享后执行的回调函数
+		alert('分享成功！');	
+	}, 
+};
+wx.ready(function () {
+	wx.onMenuShareTimeline(shareInfo);		
+	wx.onMenuShareAppMessage(shareInfo);
+	wx.onMenuShareQQ(shareInfo);
+	wx.onMenuShareWeibo(shareInfo);
+});
+wx.error(function (res) {
+	alert(res.errMsg);  //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+</body>
+
+</html>

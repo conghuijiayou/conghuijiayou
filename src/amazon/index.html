@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<title>肤色其实也要分冷暖，你不会白到适合所有色！</title>
+
+<!-- Link Swiper's CSS -->
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="swiper.min.css">
+<!-- Demo styles -->
+<link type="text/css" rel="stylesheet" href="css.css">
+<link type="text/css" rel="stylesheet" href="animate.css">
+</head>
+
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+	<div class="jiantou"><img src="images/jiantou.png"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+			<div class="za_bg01">
+                <div class="logo"><img src="images/logo.png"></div>
+                <div class="index_txt p_index"><img src="images/index_txt.png"></div>
+                <div class="index_man p_man"><img src="images/index_man.png"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+			<div class="za_bg02">
+            	<div class="con_box">
+                	<img src="images/con_box.png">
+                    <div class="two_show"><img src="images/two_img.jpg"></div>
+                    <div class="two_txt"><img src="images/two_txt.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide"> 
+			<div class="za_bg03">
+            	<div class="thr_tit"><img src="images/thr_tit.png"></div>
+                <div class="thr_a"><a target="_blank" href="#"><img src="images/thr_img01.png"></a></div>
+                <div class="thr_b"><a target="_blank" href="#"><img src="images/thr_img02.png"></a></div>
+                <div class="thr_c"><a target="_blank" href="#"><img src="images/thr_img03.png"></a></div>
+                <div class="thr_d"><a target="_blank" href="#"><img src="images/thr_img04.png"></a></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+			<div class="za_bg04">
+            	<div class="con_box">
+                	<img src="images/con_box.png">
+                    <div class="fr_tit"><img src="images/four_tit.png" /></div>
+                    <div class="fr_banner"><a target="_blank" href="#"><img src="images/four_img01.jpg" /></a></div>
+                    <div class="fr_txt"><img src="images/four_txt.png" /></div>
+                    <a href="game.html" class="go"><img src="images/go.jpg" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Pagination <div class="swiper-pagination"></div>-->
+</div>
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+
+var swiper = new Swiper('.swiper-container', {
+	
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    mousewheelControl: true,
+    onlyExternal: false, //禁止
+
+    onSlideChangeStart: function() {
+        var activeIndex = swiper.activeIndex;
+        var previousIndex = swiper.previousIndex;
+        if (activeIndex != previousIndex) {
+
+            switch (activeIndex) {
+                case 0:
+                    $(".index_txt").addClass('p_index');
+					$(".index_man").addClass('p_man');
+                    break;
+                case 1:
+					$(".two_txt").addClass('p_t01');
+                    break;
+                case 2:
+                    $(".thr_tit").addClass('p_thr01');
+					$(".thr_a").addClass('p_thr_a');
+					$(".thr_b").addClass('p_thr_b');
+					$(".thr_c").addClass('p_thr_c');
+					$(".thr_d").addClass('p_thr_d');
+                    break;
+                case 3:
+					$(".fr_tit").addClass('p_fr01');
+					$(".fr_banner").addClass('p_fr02');
+					$(".fr_txt").addClass('p_fr03');
+                    $(".jiantou").addClass('display');
+                    break;
+            }
+
+            switch (previousIndex) {
+                case 0:
+                    $(".index_txt").removeClass('p_index');
+					$(".index_man").removeClass('p_man');
+                    break;
+                case 1:
+                    $(".two_txt").removeClass('p_t01');
+                    break;
+                case 2:
+                    $(".thr_tit").removeClass('p_thr01');
+					$(".thr_a").removeClass('p_thr_a');
+					$(".thr_b").removeClass('p_thr_b');
+					$(".thr_c").removeClass('p_thr_c');
+					$(".thr_d").removeClass('p_thr_d');
+                    break;
+                case 3:
+					$(".fr_tit").removeClass('p_fr01');
+					$(".fr_banner").removeClass('p_fr02');
+					$(".fr_txt").removeClass('p_fr03');
+                    $(".jiantou").removeClass('display');
+                    break;
+            }
+
+        }
+    }
+});
+if(window.location.href.indexOf('#')>=0){
+    var no = window.location.href.substr(window.location.href.indexOf('#')+1);
+    swiper.slideTo(parseInt(no)-1);
+}
+</script>
+</body>
+
+</html>
